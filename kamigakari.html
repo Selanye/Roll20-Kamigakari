@@ -547,31 +547,38 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                 <div class="section table input-border section-font125">
                     <div class="table-row">
                         <div class="table-cell cell-5" align="center">①</div>
-                        <div class="table-cell cell-a"><input type='text' name='attr_Bond1'></div>
+                        <div class="table-cell cell-15"><input type='text' name='attr_Bond1'></div>
+                        <div class="table-cell cell-75"><input type='text' name='attr_Bond1_Desc'></div>
                     </div>
                     <div class="table-row">
-                        <div class="table-cell cell-5" align="center">②</div>
-                        <div class="table-cell cell-a"><input type='text' name='attr_Bond2'></div>
+                        <div class="table-cell" align="center">②</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond2'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond2_Desc'></div>
                     </div>
                     <div class="table-row">
-                        <div class="table-cell cell-5" align="center">③</div>
-                        <div class="table-cell cell-a"><input type='text' name='attr_Bond3'></div>
+                        <div class="table-cell" align="center">③</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond3'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond3_Desc'></div>
                     </div>
                     <div class="table-row">
-                        <div class="table-cell cell-5" align="center">④</div>
-                        <div class="table-cell cell-a"><input type='text' name='attr_Bond4'></div>
+                        <div class="table-cell" align="center">④</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond4'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond4_Desc'></div>
                     </div>
                     <div class="table-row">
-                        <div class="table-cell cell-5" align="center">⑤</div>
-                        <div class="table-cell cell-a"><input type='text' name='attr_Bond5'></div>
+                        <div class="table-cell" align="center">⑤</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond5'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond5_Desc'></div>
                     </div>
                     <div class="table-row">
-                        <div class="table-cell cell-5" align="center">⑥</div>
-                        <div class="table-cell cell-a"><input type='text' name='attr_Bond6'></div>
+                        <div class="table-cell" align="center">⑥</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond6'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond6_Desc'></div>
                     </div>
                     <div class="table-row">
-                        <div class="table-cell cell-5" align="center">⑦</div>
-                        <div class="table-cell cell-a"><input type='text' name='attr_Bond7'></div>
+                        <div class="table-cell" align="center">⑦</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond7'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond7_Desc'></div>
                     </div>
                 </div>
             </div>
@@ -628,7 +635,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                         <div class="table-cell cell-10"></div>
                         <div class="table-cell cell-8">Total:</div>
                         <div class="table-cell cell-8">Main Stat:</div>
-                        <div class="table-cell cell-8">Base Stat:</div>
+                        <div class="table-cell cell-8">Style Stat:</div>
                         <div class="table-cell cell-8">Weapon:</div>
                         <div class="table-cell cell-8">Armor:</div>
                         <div class="table-cell cell-8">Accessory:</div>
@@ -645,10 +652,10 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             ACCURACY:
                         </div>
                         <div class="table-cell  input-AutoCalc">
-                            <input type="number" name="attr_accuracy" value="0"></td>
+                            <input class="input-Autocalc" type="number" name="attr_accuracy" value="0"></td>
                         </div>
                         <div class="table-cell"><input type='number' name='attr_strength'></div>
-                        <div class="table-cell"><input type='number' name='attr_accuracy_base' value="0"></div>
+                        <div class="table-cell"><input type='number' name='attr_accuracy_style' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_accuracy_weapon' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_accuracy_armor' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_accuracy_accessory1' value="0"></div>
@@ -668,7 +675,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             <input type="number" name="attr_evasion" value="0"></td>
                         </div>
                         <div class="table-cell  cell-center"><input type='number' name='attr_agility'></div>
-                        <div class="table-cell"><input type='number' name='attr_evasion_base' value="0"></div>
+                        <div class="table-cell"><input type='number' name='attr_evasion_style' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_evasion_weapon' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_evasion_armor' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_evasion_accessory1' value="0"></div>
@@ -688,7 +695,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             <input type="number" name="attr_invocation" value="0"></td>
                         </div>
                         <div class="table-cell"><input type='number' name='attr_intellect'></div>
-                        <div class="table-cell"><input type='number' name='attr_invocation_base' value="0"></div>
+                        <div class="table-cell"><input type='number' name='attr_invocation_style' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_invocation_weapon' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_invocation_armor' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_invocation_accessory1' value="0"></div>
@@ -708,7 +715,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             <input type="number" name="attr_resistance" value="0"></td>
                         </div>
                         <div class="table-cell  cell-center"><input type='number' name='attr_will'></div>
-                        <div class="table-cell"><input type='number' name='attr_resistance_base' value="0"></div>
+                        <div class="table-cell"><input type='number' name='attr_resistance_style' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_resistance_weapon' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_resistance_armor' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_resistance_accessory1' value="0"></div>
@@ -728,7 +735,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             <input type="number" name="attr_instinct" value="0"></td>
                         </div>
                         <div class="table-cell  cell-center"><input type='number' name='attr_luck'></div>
-                        <div class="table-cell"><input type='number' name='attr_instinct_base' value="0"></div>
+                        <div class="table-cell"><input type='number' name='attr_instinct_style' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_instinct_weapon' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_instinct_armor' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_instinct_accessory1' value="0"></div>
@@ -745,7 +752,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                         <div class="table-cell cell-8"></div>
                         <div class="table-cell cell-8">Total:</div>
                         <div class="table-cell cell-8"></div>
-                        <div class="table-cell cell-8">Base Stat:</div>
+                        <div class="table-cell cell-8">Style Stat:</div>
                         <div class="table-cell cell-8">Weapon:</div>
                         <div class="table-cell cell-8">Armor:</div>
                         <div class="table-cell cell-8">Accessory:</div>
@@ -762,7 +769,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             <input type="number" name="attr_pd" value="0"></td>
                         </div>
                         <div class="table-cell section-font85 cell-center">Strength ÷ 2</div>
-                        <div class="table-cell"><input type='number' name='attr_pd_base' value="0"></div>
+                        <div class="table-cell"><input type='number' name='attr_pd_style' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_pd_weapon' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_pd_armor' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_pd_accessory1' value="0"></div>
@@ -780,7 +787,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             <input type="number" name="attr_md" value="0"></td>
                         </div>
                         <div class="table-cell section-font85 cell-center">Intellect ÷ 2</div>
-                        <div class="table-cell"><input type='number' name='attr_md_base' value="0"></div>
+                        <div class="table-cell"><input type='number' name='attr_md_style' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_md_weapon' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_md_armor' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_md_accessory1' value="0"></div>
@@ -798,7 +805,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             <input type="number" name="attr_initiative" value="0"></td>
                         </div>
                         <div class="table-cell section-font85 cell-center">Agility + 5</div>
-                        <div class="table-cell"><input type='number' name='attr_initiative_base' value="0"></div>
+                        <div class="table-cell"><input type='number' name='attr_initiative_style' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_initiative_weapon' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_initiative_armor' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_initiative_accessory1' value="0"></div>
@@ -816,7 +823,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             <input type="number" name="attr_hitpoints_max" value="0" ></td>
                         </div>
                         <div class="table-cell section-font75 cell-center">Strength + Will + (Level x 3)</div>
-                        <div class="table-cell"><input type='number' name='attr_hitpoints_base' value="0"></div>
+                        <div class="table-cell"><input type='number' name='attr_hitpoints_style' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_hitpoints_weapon' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_hitpoints_armor' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_hitpoints_accessory1' value="0"></div>
@@ -833,7 +840,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             <input type="number" name="attr_guard" value="0"></td>
                         </div>
                         <div class="table-cell cell-center">-</div>
-                        <div class="table-cell"><input type='number' name='attr_guard_base' value="0"></div>
+                        <div class="table-cell"><input type='number' name='attr_guard_style' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_guard_weapon' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_guard_armor' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_guard_accessory1' value="0"></div>
@@ -850,7 +857,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             <input type="number" name="attr_ward" value="0"></td>
                         </div>
                         <div class="table-cell cell-center">-</div>
-                        <div class="table-cell"><input type='number' name='attr_ward_base' value="0"></div>
+                        <div class="table-cell"><input type='number' name='attr_ward_style' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_ward_weapon' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_ward_armor' value="0"></div>
                         <div class="table-cell"><input type='number' name='attr_ward_accessory1' value="0"></div>
@@ -895,17 +902,19 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                                 <div class="table-cell cell-20">Grip:</div>
                                 <div class="table-cell cell-20">Restriction:</div>
                                 <div class="table-cell cell-a">Element:</div>
-                                <div class="table-cell cell-10">Damage:</div>
+                                <div class="table-cell cell-5">PD:</div>
+                                <div class="table-cell cell-5">MD:</div>
                                 <div class="table-cell cell-5"></div>
                                 <div class="table-cell cell-5"></div>
                             </div>
                             <div class="table-row">
-                                <div class="table-cell cell-20"><input type='text' name='attr_weapon_grip'></div>
-                                <div class="table-cell cell-20"><input type='text' name='attr_weapon_restrict'></div>
-                                <div class="table-cell cell-A"><input type='text' name='attr_weapon_element'></div>
-                                <div class="table-cell cell-10"><input type='number' name='attr_weapon_damage'></div>
-                                <div class="table-cell cell-5">Equipped:</div>
-                                <div class="table-cell cell-5 cell-check "><input class= "equipment"type="checkbox" name="attr_weapon_equipped"><span></span></div>
+                                <div class="table-cell"><input type='text' name='attr_weapon_grip'></div>
+                                <div class="table-cell"><input type='text' name='attr_weapon_restrict'></div>
+                                <div class="table-cell"><input type='text' name='attr_weapon_element'></div>
+                                <div class="table-cell"><input type='number' name='attr_weapon_pd'></div>
+                                <div class="table-cell"><input type='number' name='attr_weapon_md'></div>
+                                <div class="table-cell">Equipped:</div>
+                                <div class="table-cell cell-check "><input class= "equipment"type="checkbox" name="attr_weapon_equipped"><span></span></div>
                                 
                             </div>
                             <div class="section table">
@@ -917,7 +926,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                                 <div class="section table">
                                     <div class="table-row">
                                         <div class="table-cell cell-95">
-                                        <textarea class="textareasize2" placeholder="Additional Effects or Material Synthesis" name='attr_weapon_Synthesis'></textarea>
+                                        <textarea class="textareasize2" placeholder="Customizations and Material Synthesis" name='attr_weapon_Synthesis'></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -951,7 +960,7 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                             <div class="section">
                                 <div>
                                 <textarea class="textareasize1" placeholder="Armor Description" name='attr_armor_desc'></textarea>
-                                <textarea type='text' class="textareasize1" placeholder="Additional Effects" name='attr_armor_effects'></textarea>
+                                <textarea type='text' class="textareasize2" placeholder="Additional Effects and Material Synthesis" name='attr_armor_effects'></textarea>
                                 </div>
                             </div>
                         
@@ -1029,35 +1038,37 @@ on("change:ward change:ward_weapon change:ward_base change:ward_armor change:war
                     <fieldset class="repeating_talents"> 
                     <div class="table-row  input-border">
                             <div class="table-row">
-                                <div class="table-cell cell-8"></div>
-                                <div class="table-cell cell-a">Name</div>
-                                <div class="table-cell cell-10">Style</div>
+                                
+                                <div class="table-cell cell-40">Name</div>
+                                <div class="table-cell cell-15">Style</div>
                                 <div class="table-cell cell-3"></div>
+                                <div class="table-cell cell-a"></div>
                                 <div class="table-cell cell-10">Timing</div>
                                 <div class="table-cell cell-10">Range</div>
                                 <div class="table-cell cell-10">Cost:</div>
                             </div>
                             <div class="table-row">
-                                <div class="table-cell cell-5">                    
-                                    <select name="attr_talent_type" class="cell-drop">
-                                        <option value="0"> </option>
-                                        <option value="1">●</option>
-                                        <option value="2">◎</option>
-                                        <option value="3">※</option>
-                                        <option value="4">▲</option>
-                                    </select>
-                                </div>
-                                <div class="table-cell cell-a"><input type='text' name='attr_talent_name'></div>
-                                <div class="table-cell cell-10"><input type='text' name='attr_talent_style'></div>
-                                <div class="table-cell cell-3">
+                                <div class="table-cell"><input type='text' name='attr_talent_name'></div>
+                                <div class="table-cell"><input type='text' name='attr_talent_style'></div>
+                                <div class="table-cell">
                                     <select name="attr_second_style_type" class="cell-drop">
                                         <option value="A">α</option>
-                                        <option value="B">β</option>
+                                        <option value="B">Ω</option>
                                     </select>
                                 </div>
-                                <div class="table-cell cell-10"><input type='text' name='attr_talent_timing'></div>
-                                <div class="table-cell cell-10"><input type='text' name='attr_talent_range'></div>
-                                <div class="table-cell cell-10"><input type='text' name='attr_talent_Cost_'></div>
+                                <div class="table-cell">                    
+                                    <select name="attr_talent_type" class="cell-drop">
+                                        <option value="0"> </option>
+                                        <option value="1">Key</option>
+                                        <option value="2">Expert</option>
+                                        <option value="3">Focus</option>
+                                        <option value="4">Ancestral</option>
+                                        <option value="5">High</option>
+                                    </select>
+                                </div>
+                                <div class="table-cell"><input type='text' name='attr_talent_timing'></div>
+                                <div class="table-cell"><input type='text' name='attr_talent_range'></div>
+                                <div class="table-cell"><input type='text' name='attr_talent_Cost_'></div>
                             </div>
                             <div class="section">
                                 <div>
