@@ -21,32 +21,43 @@ E7C9A9
 	color: #FEFF59;
 	padding: 2px;
 	border-bottom: 1px solid black;
+	text-align: center;
 	line-height: 1.6em;
 	font-size: 1.2em;
+	font-variant: small-caps;
+	font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
 }
 
 .sheet-rolltemplate-numen div {
 	padding: 5px;
 	border-bottom: 1px solid black;
+	font-variant: small-caps;
+	font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
 }
 
 .sheet-rolltemplate-numen .inlinerollresult  {
 	display: inline-block;
 	min-width: 1.5em;
 	text-align: center;
-	border: 2px solid rgba(167, 168, 170,1);
+	border: 2px solid transparent;
+	background-color: #DCCCB9;
+	color: #DCCCB9;
+	font-variant: small-caps;
+	font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
 }
 
 .sheet-rolltemplate-numen .inlinerollresult.fullcrit {
-	border: 2px solid #3FB315;
+	border: 2px solid #048B84;
+	color: #FEFF59;
+	background-color: #048B84;
 }
 
 .sheet-rolltemplate-numen .inlinerollresult.fullfail {
-	border: 2px solid #B31515;
+	border: 2px solid transparent;
 }
 
 .sheet-rolltemplate-numen .inlinerollresult.importantroll {
-	border: 2px solid #4A57ED;
+	border: 2px solid transparent;
 }
 
 /* CHECK BOXES */
@@ -312,6 +323,7 @@ input.sheet-zero[type="radio"] + span::before
 .sheet-section-font75{font-size: 75%;}
 .sheet-section-font65{font-size: 65%;}
 .sheet-section-font50{font-size: 50%;}
+
 
 .sheet-section2 {
 	float: left;
