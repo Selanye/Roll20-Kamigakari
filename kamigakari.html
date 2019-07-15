@@ -282,7 +282,10 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                     <div class="table-row buffer"></div>
                     <div class="table-row">
                         <div class="table-cell cell-100">
-                        <textarea class="textareasize5" placeholder="Character Description" name='attr_characterDescription'></textarea>
+                            <div class="sheet-expand">
+	                            <span name="attr_characterDescription"></span>
+	                            <textarea spellcheck="false" placeholder="Character Description" name="attr_characterDescription"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -836,8 +839,9 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                             <div class="section">
     
                             </div>
-                                <div>
-                                <textarea class="textareasize2" placeholder="Talent Description" name='attr_talent_desc'></textarea>
+                                <div class="sheet-expand">
+    	                            <span ame="attr_talent_desc"></span>
+    	                            <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc"></textarea>
                                 </div>
                             </div>
                         
@@ -900,13 +904,18 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                             <div class="section table">
                                 <div class="table-row">
                                     <div class="table-cell cell-95">
-                                        <textarea class="textareasize2" placeholder="Weapon Description" name='attr_weapon_desc'></textarea>
+                                        <div class="sheet-expand">
+        	                                <span name='attr_weapon_desc'></span>
+        	                                <textarea spellcheck="false" placeholder="Weapon Description" name='attr_weapon_desc'></textarea>
+                                        </div>
                                     </div>
-                                </div>
                                 <div class="section table">
                                     <div class="table-row">
                                         <div class="table-cell cell-95">
-                                        <textarea class="textareasize2" placeholder="Customizations and Material Synthesis" name='attr_weapon_Synthesis'></textarea>
+                                            <div class="sheet-expand">
+            	                                <span name='attr_weapon_Synthesis'></span>
+            	                                <textarea spellcheck="false" placeholder="Customizations and Material Synthesis" name='attr_weapon_Synthesis'></textarea>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -938,8 +947,15 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                                     </div>
                                     <div class="section">
                                         <div>
-                                        <textarea class="textareasize1" placeholder="Armor Description" name='attr_armor_desc'></textarea>
-                                        <textarea type='text' class="textareasize2" placeholder="Additional Effects and Material Synthesis" name='attr_armor_effects'></textarea>
+                                            <div class="sheet-expand">
+            	                                <span name='attr_armor_desc'></span>
+            	                                <textarea spellcheck="false" placeholder="Armor Description" name='attr_armor_desc'></textarea>
+                                            </div>
+                                            <div class="sheet-expand">
+            	                                <span name='attr_armor_effects'></span>
+            	                                <textarea spellcheck="false" placeholder="Additional Effects and Material Synthesiss" name='attr_armor_effects'></textarea>
+                                            </div>
+                                        </div>
                                         </div>
                                     </div>
                             </div>
@@ -963,7 +979,10 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                                     </div>
                                     <div class="section">
                                         <div>
-                                        <textarea class="textareasize1" placeholder="Material Synthesis" name='attr_accessories_synthesis'></textarea>
+                                            <div class="sheet-expand">
+            	                                <span name="attr_accessories_synthesis"></span>
+            	                                <textarea spellcheck="false" placeholder="Material Synthesis" name="attr_accessories_synthesis"></textarea>
+                                            </div>
                                         </div>
                                     </div>
                             </div>
