@@ -213,12 +213,15 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
     });
 });
 </script>
-
 <!--MAIN SHEET -->
-<div>
-  <input type="checkbox" class="block-switch arrow hideopt"><span></span>
-  <div class="block-a cell-left">
 
+    <input class="sheet-loadout" type=radio name="loadout" value="1"/>
+    <input class="sheet-loadout" type=radio name="loadout" value="2"/>
+    <input class="sheet-loadout" type=radio name="loadout" value="3"/>
+    <input class="sheet-loadout" type=radio name="loadout" value="4"/>
+    <!--MAIN INFO AND STYLES AND MAIN STATS? --->
+    <div class="sheet-loadout-content sheet-loadout1">
+        <!--MAIN INFO --->
         <div class="section2">
             <input type="checkbox" class="arrow collapse" name='attr_CharInfoSec' checked="true"><span></span>
             MAIN INFO
@@ -286,7 +289,8 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                 
             </div>
         </div>
-       <div class="section2">
+        <!--STYLES --->
+        <div class="section2">
             <input type="checkbox" class="arrow collapse" name='attr_CharStyles' checked="true"><span></span>
             STYLES
             <div class="body input-border">
@@ -348,156 +352,10 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                 </div>
             </div>
         </div>
-       
-        <div class="section2">
-            <input type="checkbox" class="arrow collapse" name='attr_NumenPoolSec' checked="true"><span></span>
-            NUMEN POOL
-            <div class="body">
-                <div class="section table input-border">
-                    <div class="table-row">
-                        <div class="table-cell cell-5" align="center">DICE:</div>
-                        <div class="table-cell cell-5">
-                            <select name="attr_numenpool_1" class="cell-drop">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                        <div class="table-cell cell-5">
-                            <select name="attr_numenpool_2" class="cell-drop">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                        <div class="table-cell cell-5">
-                            <select name="attr_numenpool_3" class="cell-drop">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                        <div class="table-cell cell-5">
-                            <select name="attr_numenpool_4" class="cell-drop">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                        <div class="table-cell cell-5">
-                            <select name="attr_numenpool_5" class="cell-drop">
-                                <option value="7">-</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                        <div class="table-cell cell-5">
-                            <select name="attr_numenpool_6" class="cell-drop">
-                                <option value="7">-</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                        <div class="table-cell cell-10"> 
-                            <button class="templatebutton" type='roll' name='NumenPoolRoll' title="Numen Pool" value="&{template:numen} {{name=@{character_name}}} {{die1=[[1d@{numenpool_used_1}cf0cs>0]]}} {{die2=[[1d@{numenpool_used_2}cf0cs>0]]}} {{die3=[[1d@{numenpool_used_3}cf0cs>0]]}} {{die4=[[1d@{numenpool_used_4}cf0cs>0]]}} {{die5=[[1d@{numenpool_used_5}cf0cs>0]]}} {{die6=[[1d@{numenpool_used_6}cf0cs>0]]}}"> Numen Pool</button>
-                        </div>
-                        <div class="table-cell cell-10"> 
-                        </div>
-                        <div class="table-cell cell-10 cell-right">  OVERFLOW:</div>
-                        <div class="table-cell cell-a">
-                            <input type="radio" class="normal zero" name="attr_numen_overflow" value="0" checked="checked" /><span></span>
-                            <input type="radio" class="normal" name="attr_numen_overflow" value="1" /><span></span>
-                            <input type="radio" class="normal" name="attr_numen_overflow" value="2" /><span></span>
-                            <input type="radio" class="normal" name="attr_numen_overflow" value="3" /><span></span>
-                            <input type="radio" class="normal" name="attr_numen_overflow" value="4" /><span></span>
-                            <input type="radio" class="normal" name="attr_numen_overflow" value="5" /><span></span>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell">Used:</div>
-                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_1" value="6"></div>
-                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_2" value="6"></div>
-                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_3" value="6"></div>
-                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_4" value="6"></div>
-                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_5" value="6"></div>
-                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_6" value="6"></div>
-                    </div>
-
-                </div>
-                <div class="section table input-border">
-                    <div class="table-row section">
-                        <div class="table-cell cell-5 cell-right">HP:</div>
-                        <div class="table-cell cell-10"><input type='number' name='attr_hitpoints'></div>
-                        <div class="table-cell cell-A">/</div>
-                        <div class="table-cell cell-10"><input type='number' name='attr_hitpoints_max'></div>
-                        <div class="table-cell cell-10 cell-right">Spirit Crest:</div>
-                        <div class="table-cell cell-5"><input type='number' name='attr_current_spiritcrest' value="22"></div>
-                        <div class="table-cell cell-A">/</div>
-                        <div class="table-cell cell-5">22</div>
-                        <div class="table-cell cell-69"></div>
-                    </div>
-                </div>
-                BONDS
-                <div class="section table input-border section-font125">
-                    <div class="table-row">
-                        <div class="table-cell cell-5" align="center">①</div>
-                        <div class="table-cell cell-15"><input type='text' name='attr_Bond1'></div>
-                        <div class="table-cell cell-75"><input type='text' name='attr_Bond1_Desc'></div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell" align="center">②</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond2'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond2_Desc'></div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell" align="center">③</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond3'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond3_Desc'></div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell" align="center">④</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond4'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond4_Desc'></div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell" align="center">⑤</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond5'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond5_Desc'></div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell" align="center">⑥</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond6'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond6_Desc'></div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell" align="center">⑦</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond7'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond7_Desc'></div>
-                    </div>
-                </div>
-            </div>
-        </div>    
-        
+    </div>
+    <!--NUMEN POOL AND COMBAT STATS --->
+    <div class="sheet-loadout-content sheet-loadout2">
+        <!--COMBAT STATS --->
         <div class="section2">
             <input type="checkbox" class="arrow collapse" name='attr_statssec' checked="true"><span></span>
             MAIN AND COMBAT STATS
@@ -783,7 +641,215 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                 </div>
             </div>
         </div>
-        
+        <!--NUMEN POOL --->  
+        <div class="section2">
+            <input type="checkbox" class="arrow collapse" name='attr_NumenPoolSec' checked="true"><span></span>
+            NUMEN POOL
+            <div class="body">
+                <div class="section table input-border">
+                    <div class="table-row">
+                        <div class="table-cell cell-5" align="center">DICE:</div>
+                        <div class="table-cell cell-5">
+                            <select name="attr_numenpool_1" class="cell-drop">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="table-cell cell-5">
+                            <select name="attr_numenpool_2" class="cell-drop">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="table-cell cell-5">
+                            <select name="attr_numenpool_3" class="cell-drop">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="table-cell cell-5">
+                            <select name="attr_numenpool_4" class="cell-drop">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="table-cell cell-5">
+                            <select name="attr_numenpool_5" class="cell-drop">
+                                <option value="7">-</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="table-cell cell-5">
+                            <select name="attr_numenpool_6" class="cell-drop">
+                                <option value="7">-</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="table-cell cell-10"> 
+                            <button class="templatebutton" type='roll' name='NumenPoolRoll' title="Numen Pool" value="&{template:numen} {{name=@{character_name}}} {{die1=[[1d@{numenpool_used_1}cf0cs>0]]}} {{die2=[[1d@{numenpool_used_2}cf0cs>0]]}} {{die3=[[1d@{numenpool_used_3}cf0cs>0]]}} {{die4=[[1d@{numenpool_used_4}cf0cs>0]]}} {{die5=[[1d@{numenpool_used_5}cf0cs>0]]}} {{die6=[[1d@{numenpool_used_6}cf0cs>0]]}}"> Numen Pool</button>
+                        </div>
+                        <div class="table-cell cell-10"> 
+                        </div>
+                        <div class="table-cell cell-10 cell-right">  OVERFLOW:</div>
+                        <div class="table-cell cell-a">
+                            <input type="radio" class="normal zero" name="attr_numen_overflow" value="0" checked="checked" /><span></span>
+                            <input type="radio" class="normal" name="attr_numen_overflow" value="1" /><span></span>
+                            <input type="radio" class="normal" name="attr_numen_overflow" value="2" /><span></span>
+                            <input type="radio" class="normal" name="attr_numen_overflow" value="3" /><span></span>
+                            <input type="radio" class="normal" name="attr_numen_overflow" value="4" /><span></span>
+                            <input type="radio" class="normal" name="attr_numen_overflow" value="5" /><span></span>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Used:</div>
+                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_1" value="6"></div>
+                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_2" value="6"></div>
+                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_3" value="6"></div>
+                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_4" value="6"></div>
+                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_5" value="6"></div>
+                        <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_6" value="6"></div>
+                    </div>
+
+                </div>
+                <div class="section table input-border">
+                    <div class="table-row section">
+                        <div class="table-cell cell-5 cell-right">HP:</div>
+                        <div class="table-cell cell-10"><input type='number' name='attr_hitpoints'></div>
+                        <div class="table-cell cell-A">/</div>
+                        <div class="table-cell cell-10"><input type='number' name='attr_hitpoints_max'></div>
+                        <div class="table-cell cell-10 cell-right">Spirit Crest:</div>
+                        <div class="table-cell cell-5"><input type='number' name='attr_current_spiritcrest' value="22"></div>
+                        <div class="table-cell cell-A">/</div>
+                        <div class="table-cell cell-5">22</div>
+                        <div class="table-cell cell-69"></div>
+                    </div>
+                </div>
+                BONDS
+                <div class="section table input-border section-font125">
+                    <div class="table-row">
+                        <div class="table-cell cell-5" align="center">①</div>
+                        <div class="table-cell cell-15"><input type='text' name='attr_Bond1'></div>
+                        <div class="table-cell cell-75"><input type='text' name='attr_Bond1_Desc'></div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell" align="center">②</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond2'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond2_Desc'></div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell" align="center">③</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond3'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond3_Desc'></div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell" align="center">④</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond4'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond4_Desc'></div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell" align="center">⑤</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond5'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond5_Desc'></div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell" align="center">⑥</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond6'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond6_Desc'></div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell" align="center">⑦</div>
+                        <div class="table-cell"><input type='text' name='attr_Bond7'></div>
+                        <div class="table-cell"><input type='text' name='attr_Bond7_Desc'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+    <!--TALENTS --->
+    <div class="sheet-loadout-content sheet-loadout3">
+        <div class="section2">
+            <input type="checkbox" class="arrow collapse" name='attr_talentssec' checked="true"><span></span>
+            TALENTS
+            <div class="body">
+                <div class="section table input-border">
+                    <fieldset class="repeating_talents"> 
+                    <div class="table-row  input-border">
+                            <div class="table-row">
+                                
+                                <div class="table-cell cell-40">Name</div>
+                                <div class="table-cell cell-15">Style</div>
+                                <div class="table-cell cell-3"></div>
+                                <div class="table-cell cell-a"></div>
+                                <div class="table-cell cell-10">Timing</div>
+                                <div class="table-cell cell-10">Range</div>
+                                <div class="table-cell cell-10">Cost:</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell"><input type='text' name='attr_talent_name'></div>
+                                <div class="table-cell"><input type='text' name='attr_talent_style'></div>
+                                <div class="table-cell">
+                                    <select name="attr_second_style_type" class="cell-drop">
+                                        <option value="A">α</option>
+                                        <option value="B">Ω</option>
+                                    </select>
+                                </div>
+                                <div class="table-cell">                    
+                                    <select name="attr_talent_type" class="cell-drop">
+                                        <option value="0"> </option>
+                                        <option value="1">Key</option>
+                                        <option value="2">Expert</option>
+                                        <option value="3">Focus</option>
+                                        <option value="4">Ancestral</option>
+                                        <option value="5">High</option>
+                                    </select>
+                                </div>
+                                <div class="table-cell"><input type='text' name='attr_talent_timing'></div>
+                                <div class="table-cell"><input type='text' name='attr_talent_range'></div>
+                                <div class="table-cell"><input type='text' name='attr_talent_Cost_'></div>
+                            </div>
+                            <div class="section">
+    
+                            </div>
+                                <div>
+                                <textarea class="textareasize2" placeholder="Talent Description" name='attr_talent_desc'></textarea>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    </fieldset>
+                </div> 
+            </div>
+        </div> 
+    </div>
+    <!--EQUIPMENT AND INVENTORY --->
+    <div class="sheet-loadout-content sheet-loadout4">
+        <!--EQUIPMENT --->
         <div class="section2">
             <input type="checkbox" class="arrow collapse" name='attr_weaponandarmorsec' checked="true"><span></span>
             WEAPONS AND EQUIPMENT
@@ -905,9 +971,9 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                     </fieldset>
                 </div>
             </div>
-        </div> 
-        
-    <div class="section2">
+        </div>
+        <!--INVENTORY --->
+        <div class="section2">
             <input type="checkbox" class="arrow collapse" name='attr_inventorysec' checked="true"><span></span>
             INVENTORY
             <div class="body">
@@ -948,62 +1014,11 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                 </div>
             </div>
         </div> 
-        
-        <div class="section2">
-            <input type="checkbox" class="arrow collapse" name='attr_talentssec' checked="true"><span></span>
-            TALENTS
-            <div class="body">
-                <div class="section table input-border">
-                    <fieldset class="repeating_talents"> 
-                    <div class="table-row  input-border">
-                            <div class="table-row">
-                                
-                                <div class="table-cell cell-40">Name</div>
-                                <div class="table-cell cell-15">Style</div>
-                                <div class="table-cell cell-3"></div>
-                                <div class="table-cell cell-a"></div>
-                                <div class="table-cell cell-10">Timing</div>
-                                <div class="table-cell cell-10">Range</div>
-                                <div class="table-cell cell-10">Cost:</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell"><input type='text' name='attr_talent_name'></div>
-                                <div class="table-cell"><input type='text' name='attr_talent_style'></div>
-                                <div class="table-cell">
-                                    <select name="attr_second_style_type" class="cell-drop">
-                                        <option value="A">α</option>
-                                        <option value="B">Ω</option>
-                                    </select>
-                                </div>
-                                <div class="table-cell">                    
-                                    <select name="attr_talent_type" class="cell-drop">
-                                        <option value="0"> </option>
-                                        <option value="1">Key</option>
-                                        <option value="2">Expert</option>
-                                        <option value="3">Focus</option>
-                                        <option value="4">Ancestral</option>
-                                        <option value="5">High</option>
-                                    </select>
-                                </div>
-                                <div class="table-cell"><input type='text' name='attr_talent_timing'></div>
-                                <div class="table-cell"><input type='text' name='attr_talent_range'></div>
-                                <div class="table-cell"><input type='text' name='attr_talent_Cost_'></div>
-                            </div>
-                            <div class="section">
-    
-                            </div>
-                                <div>
-                                <textarea class="textareasize2" placeholder="Talent Description" name='attr_talent_desc'></textarea>
-                                </div>
-                            </div>
-                        
-                    </div>
-                    </fieldset>
-                </div> 
-            </div>
-        </div> 
+    </div>
+
+
 <!--Dice pool settings-->
-        </div>
+
         <div class="block-b cell-left">
             <div class="section2">
                 <div class="body input-border section-font75">

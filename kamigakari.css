@@ -10,6 +10,22 @@ EDC69C
 E7C9A9
 
 */
+
+/*TABS*/div.sheet-loadout-content {
+  display: none;
+}
+
+input.sheet-loadout[value="1"]:checked ~ div.sheet-loadout1,
+input.sheet-loadout[value="2"]:checked ~ div.sheet-loadout2,
+input.sheet-loadout[value="3"]:checked ~ div.sheet-loadout3,
+input.sheet-loadout[value="4"]:checked ~ div.sheet-loadout4
+{
+  display: block;
+}
+
+
+
+/*Roll Template*/
 .sheet-rolltemplate-numen div.sheet-template-container {
 	border: 2px solid #048B84;
 	border-radius: 3px 3px 3px 3px;
@@ -621,84 +637,4 @@ input.sheet-aggravated-damage:checked ~ span.sheet-aggravated-damage { display: 
     
 }
 
-}
-
-/* TABSG */
-div.sheet-tab-content { display: none; }
-
-input.sheet-tab1:checked ~ div.sheet-tab1,
-input.sheet-tab2:checked ~ div.sheet-tab2,
-input.sheet-tab3:checked ~ div.sheet-tab3,
-input.sheet-tab4:checked ~ div.sheet-tab4 { display: block; }
-
-input.sheet-tab {
-    width: 150px;
-    height: 20px;
-    position: relative;
-    top: 5px;
-    left: 6px;
-    margin: -1.5px;
-    cursor: pointer;
-    z-index: 1;
-    opacity: 0;
-}
-
-input.sheet-tab + span::before {
-    content: attr(title);
-    border: solid 1px #a8a8a8;
-    border-bottom-color: black;
-    text-align: center;
-    display: inline-block;
-    background: #fff;
-    background: linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
-    width: 150px;
-    height: 20px;
-    font-size: 18px;
-    position: absolute;
-    top: 12px;
-    left: 13px;
-}
-
-input.sheet-tab:checked + span::before {
-    background: #dcdcdc;
-    background: linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
-    border-bottom-color: #fff;
-}
-
-input.sheet-tab:not(:first-child) + span::before { border-left: none; }
-
-input.sheet-tab2 + span::before {
-    background: #fee;
-    background: linear-gradient(to top, #f8c8c8, #fee, #f8c8c8);
-    left: 163px;
-}
-
-input.sheet-tab2:checked + span::before {
-    background: #dcdcdc;
-    background: linear-gradient(to top, #fcecec, #f8c8c8, #fcecec);
-    border-bottom-color: #fcecec;
-}
-
-input.sheet-tab3 + span::before { left: 313px; }
-
-input.sheet-tab4 + span::before { left: 463px; }
-
-div.sheet-tab-content {
-    border: 1px solid #a8a8a8;
-    border-top-color: #000;
-    margin: 2px 0 0 5px;
-    padding: 5px;
-}
-
-div.sheet-tab2 { background-color: #FCECEC; }
-
-
-.sheet-block-a,
-.sheet-block-switch:checked ~ .sheet-block-b {
-  display: block;
-}
-
-.sheet-block-b,
-.sheet-block-switch:checked ~ .sheet-block-a {
-  display: none;
 }
