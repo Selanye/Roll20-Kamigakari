@@ -228,8 +228,8 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
             <div class="body input-border section-font65">
                 <div class="section table input-border">
                     <div class="table-row">
-                        <div class="table-cell cell-30">NAME<input type='text' name='attr_real_name'></div>
-                        <div class="table-cell cell-50">DIVINE NAME<input type='text' name='attr_character_name'></div>
+                        <div class="table-cell cell-30">NAME<input type='text' name="attr_character_name"></div>
+                        <div class="table-cell cell-50">DIVINE NAME<input type='text' name='attr_divine_name'></div>
                     </div>
                 </div>
                 <div class="section table input-border">
@@ -864,7 +864,6 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                     <div class="table-row input-border">
                             <div class="table-row">
                                 <div class="table-cell cell-a">Divine Name:</div>
-
                                 <div class="table-cell cell-5">INIT:</div>
                                 <div class="table-cell cell-8">Range:</div>
                                 <div class="table-cell cell-5">T#:</div>
@@ -920,6 +919,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                                     </div>
                                 </div>
                             </div>
+                            </div>
                     </div>
                     </fieldset>
                     PROTECTORS:
@@ -959,7 +959,6 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                                         </div>
                                     </div>
                             </div>
-                        </div>
                     </fieldset>
                     ACCESSORIES:
                     <fieldset class="repeating_accessories">
@@ -988,51 +987,48 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                             </div>
                         </div>
                     </fieldset>
+                    INVENTORY
+                    <div class="body">
+                         <div class="section table">
+                            <div class="table-row">
+                                <div class="table-cell cell-50"></div>
+                                <div class="table-cell cell-20"><input type='text' name='attr_gold'></div>
+                                <div class="table-cell cell-5 section-font125">G</div>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="body">
+                        <div class="section table input-border">
+                            <div class="section table">
+                                <div class="table-row">
+                                    <div class="table-cell cell-15">Name:</div>
+                                    <div class="table-cell cell-a">Description:</div>
+                                    <div class="table-cell cell-10">Count:</div>
+                                    <div class="table-cell cell-5"></div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-cell cell-15"><input placeholder="Name" type='text' name='attr_gear_name_first'></div>
+                                    <div class="table-cell cell-a"><input placeholder="Description" type='text' name='attr_gear_desc_first'></div>
+                                    <div class="table-cell cell-10"><input type='number' name='attr_gear_amount_first'></div>
+                                    <div class="table-cell cell-5 cell-check"><input type="checkbox" name="attr_inv_equipped"></div>
+                                </div>
+                            </div>
+                            <div class="section table">
+                                <fieldset class="repeating_gear"> 
+                                    <div class="table-row">
+                                        <div class="table-cell cell-15"><input placeholder="Name" type='text' name='attr_gear_name_first'></div>
+                                        <div class="table-cell cell-a"><input placeholder="Description" type='text' name='attr_gear_desc_first'></div>
+                                        <div class="table-cell cell-10"><input type='number' name='attr_gear_amount_first'></div>
+                                        <div class="table-cell cell-5 cell-check"><input type="checkbox" name="attr_inv_equipped"></div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <!--INVENTORY --->
-        <div class="section2">
-            <input type="checkbox" class="arrow collapse" name='attr_inventorysec' checked="true"><span></span>
-            INVENTORY
-            <div class="body">
-                 <div class="section table">
-                    <div class="table-row">
-                        <div class="table-cell cell-50"></div>
-                        <div class="table-cell cell-20"><input type='text' name='attr_gold'></div>
-                        <div class="table-cell cell-5 section-font125">G</div>
-                    </div>
-                </div>
-            </div>    
-            <div class="body">
-                <div class="section table input-border">
-                    <div class="section table">
-                        <div class="table-row">
-                            <div class="table-cell cell-15">Name:</div>
-                            <div class="table-cell cell-a">Description:</div>
-                            <div class="table-cell cell-10">Count:</div>
-                            <div class="table-cell cell-5"></div>
-                        </div>
-                        <div class="table-row">
-                            <div class="table-cell cell-15"><input placeholder="Name" type='text' name='attr_gear_name_first'></div>
-                            <div class="table-cell cell-a"><input placeholder="Description" type='text' name='attr_gear_desc_first'></div>
-                            <div class="table-cell cell-10"><input type='number' name='attr_gear_amount_first'></div>
-                            <div class="table-cell cell-5 cell-check"><input type="checkbox" name="attr_inv_equipped"></div>
-                        </div>
-                    </div>
-                    <div class="section table">
-                        <fieldset class="repeating_gear"> 
-                            <div class="table-row">
-                                <div class="table-cell cell-15"><input placeholder="Name" type='text' name='attr_gear_name_first'></div>
-                                <div class="table-cell cell-a"><input placeholder="Description" type='text' name='attr_gear_desc_first'></div>
-                                <div class="table-cell cell-10"><input type='number' name='attr_gear_amount_first'></div>
-                                <div class="table-cell cell-5 cell-check"><input type="checkbox" name="attr_inv_equipped"></div>
-                            </div>
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
-        </div> 
     </div>
 
 
@@ -1071,5 +1067,3 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                     </div>
                 </div>
             </div>
-        </div> 
-</div>
