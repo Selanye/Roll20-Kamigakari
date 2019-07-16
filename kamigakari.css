@@ -11,13 +11,13 @@ E7C9A9
 
 */
 
-/*TABS*/div.sheet-loadout-content {
+/*TABS*/div.sheet-tabs-content {
   display: none;
 }
 
-input.sheet-loadout[value="1"]:checked ~ div.sheet-loadout1,
-input.sheet-loadout[value="2"]:checked ~ div.sheet-loadout2,
-input.sheet-loadout[value="3"]:checked ~ div.sheet-loadout3,
+input.sheet-tabs[value="1"]:checked ~ div.sheet-tabs1,
+input.sheet-tabs[value="2"]:checked ~ div.sheet-tabs2,
+input.sheet-tabs[value="3"]:checked ~ div.sheet-tabs3,
 input.sheet-loadout[value="4"]:checked ~ div.sheet-loadout4
 {
   display: block;
