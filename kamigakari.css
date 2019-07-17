@@ -18,7 +18,8 @@ E7C9A9
 input.sheet-tabs[value="1"]:checked ~ div.sheet-tabs1,
 input.sheet-tabs[value="2"]:checked ~ div.sheet-tabs2,
 input.sheet-tabs[value="3"]:checked ~ div.sheet-tabs3,
-input.sheet-loadout[value="4"]:checked ~ div.sheet-loadout4
+input.sheet-tabs[value="4"]:checked ~ div.sheet-tabs4,
+input.sheet-tabs[value="5"]:checked ~ div.sheet-tabs5
 {
   display: block;
 }
@@ -402,7 +403,7 @@ select {
 	width: 100%;
 	display: block;
 	box-sizing: border-box;
-	border: solid;
+	border: solid 1px black;
 	border-radius: 0;
 	box-shadow: none;/*
 	color: inherit;
