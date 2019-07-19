@@ -10,6 +10,64 @@ EDC69C
 E7C9A9
 
 */
+
+/*TABS*/
+div.sheet-tabs-content {
+  display: none;
+}
+
+input.sheet-tabs[value="1"]:checked ~ div.sheet-tabs1,
+input.sheet-tabs[value="2"]:checked ~ div.sheet-tabs2,
+input.sheet-tabs[value="3"]:checked ~ div.sheet-tabs3,
+input.sheet-tabs[value="4"]:checked ~ div.sheet-tabs4,
+input.sheet-tabs-small[value="5"]:checked ~ div.sheet-tabs5
+{
+  display: block;
+  width:100%;
+}
+
+/* TABS STYLE */
+.sheet-tabs{
+    opacity:0;
+    width: 170px;
+}
+
+.sheet-tab-label{
+    margin-left: -170px;
+    width: 170px;
+    text-align: center;
+    font-size: 120%;
+    color: #FEFF59;
+    background-color: #048B84;
+    display:inline-block;
+    border-radius: 15px 15px 0px 0px;
+}
+
+
+.sheet-tabs-small{
+    opacity:0;
+    width: 100px;
+}
+
+.sheet-tab-label-small{
+    margin-left: -100px;
+    width: 100px;
+    text-align: center;
+    font-size: 120%;
+    color: #FEFF59;
+    background-color: #048B84;
+    display:inline-block;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.sheet-tabs-small:checked + div.sheet-tab-label-small,
+.sheet-tabs:checked + div.sheet-tab-label {
+    font-weight:700;
+    background-color: #DEB16A;
+    color: black;
+}
+
+/*Roll Template*/
 .sheet-rolltemplate-numen div.sheet-template-container {
 	border: 2px solid #048B84;
 	border-radius: 3px 3px 3px 3px;
@@ -81,6 +139,8 @@ input.sheet-arrow-two:not(:checked) ~ div.sheet-body
 {
     display: none;
 }
+
+
 
 /* NUMBER BOX */
 
@@ -321,8 +381,6 @@ input.sheet-zero[type="radio"] + span::before
 .sheet-section-font80{font-size: 80%;}
 .sheet-section-font95{font-size: 95%;}
 .sheet-section-font75{font-size: 75%;}
-.sheet-section-font65{font-size: 65%;}
-.sheet-section-font50{font-size: 50%;}
 
 
 .sheet-section2 {
@@ -361,20 +419,44 @@ select {
 	margin: 0;
 }
 
-textarea {
+/* TEXT AREA */
+
+.sheet-expand {
+	position: relative;
+	cursor: text;
+	word-wrap: break-word;
+	min-height: 30px;
+}
+.sheet-expand span {
+	visibility: hidden;
+	white-space: pre-wrap;
+	display: block;
+}
+.sheet-expand textarea {
+	position: absolute;
+	z-index: 1;
+	
+	top: 0;
+	left: 0;
 	margin: 0;
+	
+	overflow: hidden;
+	resize: none;
+	height: 100%;
 	width: 100%;
-	height: 28px;
-	resize: vertical;
+	display: block;
 	box-sizing: border-box;
-	border: solid black 1px;
+	border: solid 1px black;
+	border-radius: 0;
+	box-shadow: none;/*
+	color: inherit;
+	font: inherit;
+	letter-spacing: inherit;
+	padding: inherit;
+	text-align: inherit;
+	text-transform: inherit;*/
 }
 
-.sheet-textareasize1 { height: 30px; }
-.sheet-textareasize2 { height: 48px; }
-.sheet-textareasize3 { height: 84px; }
-.sheet-textareasize4 { height: 123px; }
-.sheet-textareasize5 { height: 148px; }
 
 .sheet-repitem,
 .repitem {
@@ -527,8 +609,10 @@ input[type="text"], textarea {
   min-width: 35px;
   max-width: 100%;
   width: 100%;
-  border: 2px solid grey;
-  border-radius: 5px;
+  border: 2px solid #FEFF59;
+  background: #048B84;
+  border-radius: 15px;
+  color: #FEFF59;
 }
 
 .sheet-input-statsMain input[type="number"] {
@@ -621,84 +705,4 @@ input.sheet-aggravated-damage:checked ~ span.sheet-aggravated-damage { display: 
     
 }
 
-}
-
-/* TABSG */
-div.sheet-tab-content { display: none; }
-
-input.sheet-tab1:checked ~ div.sheet-tab1,
-input.sheet-tab2:checked ~ div.sheet-tab2,
-input.sheet-tab3:checked ~ div.sheet-tab3,
-input.sheet-tab4:checked ~ div.sheet-tab4 { display: block; }
-
-input.sheet-tab {
-    width: 150px;
-    height: 20px;
-    position: relative;
-    top: 5px;
-    left: 6px;
-    margin: -1.5px;
-    cursor: pointer;
-    z-index: 1;
-    opacity: 0;
-}
-
-input.sheet-tab + span::before {
-    content: attr(title);
-    border: solid 1px #a8a8a8;
-    border-bottom-color: black;
-    text-align: center;
-    display: inline-block;
-    background: #fff;
-    background: linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
-    width: 150px;
-    height: 20px;
-    font-size: 18px;
-    position: absolute;
-    top: 12px;
-    left: 13px;
-}
-
-input.sheet-tab:checked + span::before {
-    background: #dcdcdc;
-    background: linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
-    border-bottom-color: #fff;
-}
-
-input.sheet-tab:not(:first-child) + span::before { border-left: none; }
-
-input.sheet-tab2 + span::before {
-    background: #fee;
-    background: linear-gradient(to top, #f8c8c8, #fee, #f8c8c8);
-    left: 163px;
-}
-
-input.sheet-tab2:checked + span::before {
-    background: #dcdcdc;
-    background: linear-gradient(to top, #fcecec, #f8c8c8, #fcecec);
-    border-bottom-color: #fcecec;
-}
-
-input.sheet-tab3 + span::before { left: 313px; }
-
-input.sheet-tab4 + span::before { left: 463px; }
-
-div.sheet-tab-content {
-    border: 1px solid #a8a8a8;
-    border-top-color: #000;
-    margin: 2px 0 0 5px;
-    padding: 5px;
-}
-
-div.sheet-tab2 { background-color: #FCECEC; }
-
-
-.sheet-block-a,
-.sheet-block-switch:checked ~ .sheet-block-b {
-  display: block;
-}
-
-.sheet-block-b,
-.sheet-block-switch:checked ~ .sheet-block-a {
-  display: none;
 }

@@ -1,8 +1,8 @@
 <rolltemplate class="sheet-rolltemplate-numen">
     <div class="template-container">
-	<div class="template-header sheet-cell-center">{{name}}'s Numen RollL</div>
-    <div class="">1st: {{die1}} | 2nd: {{die2}} | 3rd: {{die3}} </div>
-    <div class="">4th: {{die4}} | 5th: {{die5}} | 6th: {{die6}} </div>
+	<div class="template-header sheet-cell-center">{{name}}'s Numen Roll</div>
+    <div class="">1st: {{die1}} | 2nd: {{die2}} | 3rd: {{die3}}</div>
+    <div class="">4th: {{die4}} | 5th: {{die5}} | 6th: {{die6}}</div>
     </div>
 </rolltemplate>
 
@@ -213,65 +213,68 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
     });
 });
 </script>
-
-<!--MAIN SHEET -->
-<div>
-  <input type="checkbox" class="block-switch arrow hideopt"><span></span>
-  <div class="block-a cell-left">
-
+    <!--TABS -->
+    <input class="sheet-tabs sheet-tabs1" type=radio name="attr_tab" value="1" checked="true"/><div class="tab-label">Main Info</div>
+    <input class="sheet-tabs sheet-tabs2" type=radio name="attr_tab" value="2"/><div class="tab-label">Stats & Numen</div>
+    <input class="sheet-tabs sheet-tabs3" type=radio name="attr_tab" value="3"/><div class="tab-label">Talents</div>
+    <input class="sheet-tabs sheet-tabs4" type=radio name="attr_tab" value="4"/><div class="tab-label">Equipment</div>
+    <input class="sheet-tabs-small sheet-tabs5" type=radio name="attr_tab" value="5"/><div class="tab-label-small">Settings</div>
+    <!-- MAIN INFO -->
+    <div class="sheet-tabs-content sheet-tabs1">
+        <!--MAIN INFO --->
         <div class="section2">
-            <input type="checkbox" class="arrow collapse" name='attr_CharInfoSec' checked="true"><span></span>
+            <input type="checkbox" class="arrow collapse" name="attr_CharInfoSec" checked="true"><span></span>
             MAIN INFO
             <div class="body input-border section-font65">
                 <div class="section table input-border">
                     <div class="table-row">
-                        <div class="table-cell cell-30">NAME<input type='text' name='attr_real_name'></div>
-                        <div class="table-cell cell-50">DIVINE NAME<input type='text' name='attr_character_name'></div>
+                        <div class="table-cell cell-30">NAME<input type="text" name="attr_character_name"></div>
+                        <div class="table-cell cell-50">DIVINE NAME<input type="text" name="attr_divine_name"></div>
                     </div>
                 </div>
                 <div class="section table input-border">
                     <div class="table-row">
-                        <div class="table-cell cell-25">COVER<input type='text' name='attr_cover'></div>  
-                        <div class="table-cell cell-75">COVER BONUS<input type='text' name='attr_cover'></div>  
+                        <div class="table-cell cell-25">COVER<input type="text" name="attr_cover"></div>  
+                        <div class="table-cell cell-75">COVER BONUS<input type="text" name="attr_cover"></div>  
                     </div>
                 </div>
                 <div class="section table">
                     <div class="table-row">
-                        <div class="table-cell cell-25">ANCESTRY<input type='text' name='attr_ancestry'></div>
-                        <div class="table-cell cell-a">ANCESTRAL TRAIT<input type='text' name='attr_ancestral_trait'></div>
+                        <div class="table-cell cell-25">ANCESTRY<input type="text" name="attr_ancestry"></div>
+                        <div class="table-cell cell-a">ANCESTRAL TRAIT<input type="text" name="attr_ancestral_trait"></div>
                     </div>
                 </div>
                 <div class="section table">
                     <div class="table-row">
-                        <div class="table-cell cell-5">AGE<input type='text' name='attr_age'></div> 
-                        <div class="table-cell cell-5">HEIGHT<input type='text' name='attr_Height'></div>
-                        <div class="table-cell cell-5">WEIGHT<input type='text' name='attr_weight'></div>
-                        <div class="table-cell cell-10">GENDER<input type='text' name='attr_gender'></div>
-                        <div class="table-cell cell-15">EARS<input type='text' name='attr_ears'></div>
+                        <div class="table-cell cell-5">AGE<input type="text" name="attr_age"></div> 
+                        <div class="table-cell cell-5">HEIGHT<input type="text" name="attr_Height"></div>
+                        <div class="table-cell cell-5">WEIGHT<input type="text" name="attr_weight"></div>
+                        <div class="table-cell cell-10">GENDER<input type="text" name="attr_gender"></div>
+                        <div class="table-cell cell-15">EARS<input type="text" name="attr_ears"></div>
                     </div>
                 </div>
                 <div class="section table">
                     <div class="table-row">
-                        <div class="table-cell cell-40">EYES<input type='text' name='attr_eye'></div>
-                        <div class="table-cell cell-40">HAIR<input type='text' name='attr_hair'></div>
-                        <div class="table-cell cell-a">SKIN<input type='text' name='attr_skin'></div>
+                        <div class="table-cell cell-40">EYES<input type="text" name="attr_eye"></div>
+                        <div class="table-cell cell-40">HAIR<input type="text" name="attr_hair"></div>
+                        <div class="table-cell cell-a">SKIN<input type="text" name="attr_skin"></div>
                     </div>
                 </div>
                 <div class="section table ">
                     <div class="table-row">
-                        <div class="table-cell cell-20">FACTION<input type='text' name='attr_faction'></div>
-                        <div class="table-cell cell-a">ORIGINS<input type='text' name='attr_origins'></div> 
+                        <div class="table-cell cell-20">FACTION<input type="text" name="attr_faction"></div>
+                        <div class="table-cell cell-a">ORIGINS<input type="text" name="attr_origins"></div> 
                     </div>
                 </div>
                 <div class="section table ">
                     <div class="table-row">
-                        <div class="table-cell cell-a">GOAL<input type='text' name='attr_goal'></div>
+                        <div class="table-cell cell-a">GOAL<input type="text" name="attr_goal"></div>
                     </div>
                 </div>
                 <div class="section table5">
                     <div class="table-row">
-                        <div class="table-cell cell-25">CREST LOCATION<input type='text' name='attr_crest_location'></div>
-                        <div class="table-cell cell-25">CREST FORM<input type='text' name='attr_crest_form'></div>
+                        <div class="table-cell cell-25">CREST LOCATION<input type="text" name="attr_crest_location"></div>
+                        <div class="table-cell cell-25">CREST FORM<input type="text" name="attr_crest_form"></div>
 
                     </div>
                 </div>
@@ -279,25 +282,29 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                     <div class="table-row buffer"></div>
                     <div class="table-row">
                         <div class="table-cell cell-100">
-                        <textarea class="textareasize5" placeholder="Character Description" name='attr_characterDescription'></textarea>
+                            <div class="sheet-expand">
+	                            <span name="attr_characterDescription"></span>
+	                            <textarea spellcheck="false" placeholder="Character Description" name="attr_characterDescription"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
             </div>
         </div>
-       <div class="section2">
-            <input type="checkbox" class="arrow collapse" name='attr_CharStyles' checked="true"><span></span>
+        <!--STYLES --->
+        <div class="section2">
+            <input type="checkbox" class="arrow collapse" name="attr_CharStyles" checked="true"><span></span>
             STYLES
             <div class="body input-border">
                 <div class="section table">
                     <div class="table-row">
                         <div class="table-cell cell-5 cell-right">Level:</div>
-                        <div class="table-cell cell-5 cell-right"><input type='number' name='attr_level' value="1"></div>
+                        <div class="table-cell cell-5 cell-right"><input type="number" name="attr_level" value="1"></div>
                         <div class="table-cell cell-5 cell-right">XP:</div>
-                        <div class="table-cell cell-15 cell-right"><input type='number' name='attr_xp'></div>
+                        <div class="table-cell cell-15 cell-right"><input type="number" name="attr_xp"></div>
                         <div class="table-cell cell-10 cell-right">Next level:</div>
-                        <div class="table-cell cell-15 cell-right"><input type='number' name='attr_xp_next'></div>
+                        <div class="table-cell cell-15 cell-right"><input type="number" name="attr_xp_next"></div>
                         <div class="table-cell cell-a cell-right">Group:</div>
                         <div class="table-cell cell-10">
                             <select name="attr_group_type" class="cell-drop">
@@ -312,7 +319,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                 <div class="section table">
                     <div class="table-row">
                         <div class="table-cell cell-8 cell-right">Main:</div>
-                        <div class="table-cell cell-60"><input type='text' name='attr_main_style'></div>
+                        <div class="table-cell cell-60"><input type="text" name="attr_main_style"></div>
                         <div class="table-cell cell-5">
                             <select name="attr_main_style_type" class="cell-drop">
                                 <option value="A">α</option>
@@ -322,7 +329,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                     </div>
                     <div class="table-row">
                         <div class="table-cell cell-right">Second:</div>
-                        <div class="table-cell"><input type='text' name='attr_second_style'></div>
+                        <div class="table-cell"><input type="text" name="attr_second_style"></div>
                         <div class="table-cell">
                             <select name="attr_second_style_type" class="cell-drop">
                                 <option value="A">α</option>
@@ -336,7 +343,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                     
                     <div class="table-row">
                         <div class="table-cell cell-8 cell-right">Additional:</div>
-                        <div class="table-cell cell-60"><input type='text' name='attr_repeat_style'></div>
+                        <div class="table-cell cell-60"><input type="text" name="attr_repeat_style"></div>
                         <div class="table-cell cell-5">
                             <select name="attr_repeat_style_type" class="cell-drop">
                                 <option value="A">α</option>
@@ -348,9 +355,298 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                 </div>
             </div>
         </div>
-       
+    </div>
+    <!--NUMEN POOL AND COMBAT STATS --->
+    <div class="sheet-tabs-content sheet-tabs2">
+        <!--COMBAT STATS --->
         <div class="section2">
-            <input type="checkbox" class="arrow collapse" name='attr_NumenPoolSec' checked="true"><span></span>
+            <input type="checkbox" class="arrow collapse" name="attr_statssec" checked="true"><span></span>
+            MAIN AND COMBAT STATS
+            <div class="body">
+                <div class="section table input-statsMain">
+                    <div class="table-cell cell-20">MAIN STATS</div>
+                    <div class="table-cell cell-a"></div>
+                    <div class="table-cell cell-10 cell-right section-font75">STAT TYPE:</div>
+                    <div class="table-cell cell-10">
+                        <select name="attr_Stat_Type" class="cell-drop">
+                            <option value="Warrior">Warrior</option>
+                            <option value="Adept">Adept</option>
+                            <option value="Occultist">Occultist</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="section table input-statsMain">
+                    
+                    <div class="table-row ">
+                        <div class="table-cell cell-20"><input type="number" name="attr_strength" value="0"></div>
+                        <div class="table-cell cell-20"><input type="number" name="attr_agility" value="0"></div>
+                        <div class="table-cell cell-20"><input type="number" name="attr_intellect" value="0"></div>
+                        <div class="table-cell cell-20"><input type="number" name="attr_will" value="0"></div>
+                        <div class="table-cell cell-20"><input type="number" name="attr_luck" value="0"></div>
+                    </div>
+                </div>
+                 <div class="section table input-border">
+                    <div class="table-row">
+                        <div class="table-cell cell-20 cell-center">STRENGTH</div>
+                        <div class="table-cell cell-20 cell-center">AGILITY</div>
+                        <div class="table-cell cell-20 cell-center">INTELLECT</div>
+                        <div class="table-cell cell-20 cell-center">WILL</div>
+                        <div class="table-cell cell-20 cell-center">LUCK</div>
+                    </div>
+                </div>
+
+                <div class="section table input-border">
+                    <div class="table-row buffer"></div>
+                    <div class="table-row">
+                    COMBAT STATS
+                    </div>
+                    
+                </div>
+
+                <div class="section table">
+                    <div class="table-row cell-center">
+                        <div class="table-cell cell-5"></div>
+                        <div class="table-cell cell-10"></div>
+                        <div class="table-cell cell-8">Total:</div>
+                        <div class="table-cell cell-8">Main Stat:</div>
+                        <div class="table-cell cell-8">Style Stat:</div>
+                        <div class="table-cell cell-8">Weapon:</div>
+                        <div class="table-cell cell-8">Armor:</div>
+                        <div class="table-cell cell-8">Accessory:</div>
+                        <div class="table-cell cell-8">Accessory:</div>
+                        <div class="table-cell cell-8">Talent:</div>
+                        <div class="table-cell cell-8">Misc: </div>
+                    </div>
+                    <!--Phsyical -->
+                    <div class="table-row input-border">
+                        <div class="table-cell  cell-right">
+                            <button type="roll" value="/roll @{dicepool_accuracy}d6 + ?{Bonus|0} +@{accuracy}" name="roll_accuracy"></button>
+                        </div>
+                        <div class="table-cell  cell-center">
+                            ACCURACY:
+                        </div>
+                        <div class="table-cell  input-AutoCalc">
+                            <input class="input-Autocalc" type="number" name="attr_accuracy" value="0"></td>
+                        </div>
+                        <div class="table-cell"><input type="number" name="attr_strength"></div>
+                        <div class="table-cell"><input type="number" name="attr_accuracy_style" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_accuracy_weapon" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_accuracy_armor" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_accuracy_accessory1" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_accuracy_accessory2" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_accuracy_talent" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_accuracy_misc" value="0"></div>
+                        <!--break -->
+                    </div>
+                    <div class="table-row input-border">
+                        <div class="table-cell  cell-right">
+                            <button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy"></button>
+                        </div>
+                        <div class="table-cell  cell-center">
+                            EVASION:
+                        </div>
+                        <div class="table-cell  input-AutoCalc">
+                            <input type="number" name="attr_evasion" value="0"></td>
+                        </div>
+                        <div class="table-cell  cell-center"><input type="number" name="attr_agility"></div>
+                        <div class="table-cell"><input type="number" name="attr_evasion_style" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_evasion_weapon" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_evasion_armor" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_evasion_accessory1" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_evasion_accessory2" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_evasion_talent" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_evasion_misc" value="0"></div>
+                        <!--break -->
+                    </div>
+                    <div class="table-row input-border">
+                        <div class="table-cell  cell-right">
+                            <button type="roll" value="/roll @{dicepool_invocation}d6 + ?{Bonus|0} +@{invocation}" name="roll_accuracy"></button>
+                        </div>
+                        <div class="table-cell  cell-center">
+                            INVOCATION:
+                        </div>
+                        <div class="table-cell  input-AutoCalc">
+                            <input type="number" name="attr_invocation" value="0"></td>
+                        </div>
+                        <div class="table-cell"><input type="number" name="attr_intellect"></div>
+                        <div class="table-cell"><input type="number" name="attr_invocation_style" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_invocation_weapon" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_invocation_armor" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_invocation_accessory1" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_invocation_accessory2" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_invocation_talent" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_invocation_misc" value="0"></div>
+                        <!--break -->
+                    </div>
+                    <div class="table-row input-border">
+                        <div class="table-cell  cell-right">
+                            <button type="roll" value="/roll @{dicepool_resistance}d6 + ?{Bonus|0} +@{resistance}" name="roll_accuracy"></button>
+                        </div>
+                        <div class="table-cell  cell-center">
+                            RESISTANCE:
+                        </div>
+                        <div class="table-cell  input-AutoCalc">
+                            <input type="number" name="attr_resistance" value="0"></td>
+                        </div>
+                        <div class="table-cell  cell-center"><input type="number" name="attr_will"></div>
+                        <div class="table-cell"><input type="number" name="attr_resistance_style" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_resistance_weapon" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_resistance_armor" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_resistance_accessory1" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_resistance_accessory2" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_resistance_talent" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_resistance_misc" value="0"></div>
+                        <!--break -->
+                    </div>
+                    <div class="table-row input-border">
+                        <div class="table-cell  cell-right">
+                            <button type="roll" value="/roll @{dicepool_instinct}d6 + ?{Bonus|0} +@{instinct}" name="roll_accuracy"></button>
+                        </div>
+                        <div class="table-cell  cell-center">
+                            INSTINCT:
+                        </div>
+                        <div class="table-cell  input-AutoCalc">
+                            <input type="number" name="attr_instinct" value="0"></td>
+                        </div>
+                        <div class="table-cell  cell-center"><input type="number" name="attr_luck"></div>
+                        <div class="table-cell"><input type="number" name="attr_instinct_style" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_instinct_weapon" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_instinct_armor" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_instinct_accessory1" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_instinct_accessory2" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_instinct_talent" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_instinct_misc" value="0"></div>
+                        <!--break -->
+                    </div>
+                    <div class="table-row buffer"></div>
+                </div>
+                <div class="section table">
+                    <div class="table-row cell-center section-font85">
+                        <div class="table-cell cell-5"></div>
+                        <div class="table-cell cell-8"></div>
+                        <div class="table-cell cell-8">Total:</div>
+                        <div class="table-cell cell-8"></div>
+                        <div class="table-cell cell-8">Style Stat:</div>
+                        <div class="table-cell cell-8">Weapon:</div>
+                        <div class="table-cell cell-8">Armor:</div>
+                        <div class="table-cell cell-8">Accessory:</div>
+                        <div class="table-cell cell-8">Accessory:</div>
+                        <div class="table-cell cell-8">Talent:</div>
+                        <div class="table-cell cell-8">Misc: </div>
+                    </div>
+                    <div class="table-row input-border">
+                        <div class="table-cell"></div>
+                        <div class="table-cell cell-center">
+                            PD:
+                        </div>
+                        <div class="table-cell input-AutoCalc">
+                            <input type="number" name="attr_pd" value="0"></td>
+                        </div>
+                        <div class="table-cell section-font85 cell-center">Strength ÷ 2</div>
+                        <div class="table-cell"><input type="number" name="attr_pd_style" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_pd_weapon" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_pd_armor" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_pd_accessory1" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_pd_accessory2" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_pd_talent" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_pd_misc" value="0"></div>
+                        <!--break -->
+                    </div>
+                    <div class="table-row input-border">
+                        <div class="table-cell cell-15"></div>
+                        <div class="table-cell cell-10 cell-center">
+                            MD:
+                        </div>
+                        <div class="table-cell cell-10 input-AutoCalc">
+                            <input type="number" name="attr_md" value="0"></td>
+                        </div>
+                        <div class="table-cell section-font85 cell-center">Intellect ÷ 2</div>
+                        <div class="table-cell"><input type="number" name="attr_md_style" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_md_weapon" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_md_armor" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_md_accessory1" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_md_accessory2" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_md_talent" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_md_misc" value="0"></div>
+                        <!--break -->
+                    </div>
+                    <div class="table-row input-border">
+                        <div class="table-cell cell-5 cell-right"></div>
+                        <div class="table-cell cell-center">
+                            INITIATIVE:
+                        </div>
+                        <div class="table-cell cell-10 input-AutoCalc">
+                            <input type="number" name="attr_initiative" value="0"></td>
+                        </div>
+                        <div class="table-cell section-font85 cell-center">Agility + 5</div>
+                        <div class="table-cell"><input type="number" name="attr_initiative_style" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_initiative_weapon" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_initiative_armor" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_initiative_accessory1" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_initiative_accessory2" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_initiative_talent" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_initiative_misc" value="0"></div>
+                    </div>
+                    <div class="table-row buffer"></div>
+                    <div class="table-row input-border">
+                        <div class="table-cell cell-10 cell-right"></div>
+                        <div class="table-cell cell-10 cell-center">
+                            HP:
+                        </div>
+                        <div class="table-cell cell-10 input-AutoCalc">
+                            <input type="number" name="attr_hitpoints_max" value="0" ></td>
+                        </div>
+                        <div class="table-cell section-font75 cell-center">Strength + Will + (Level x 3)</div>
+                        <div class="table-cell"><input type="number" name="attr_hitpoints_style" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_hitpoints_weapon" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_hitpoints_armor" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_hitpoints_accessory1" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_hitpoints_accessory2" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_hitpoints_talent" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_hitpoints_misc" value="0"></div>
+                    </div>
+                    <div class="table-row input-border">
+                        <div class="table-cell cell-10 cell-right"></div>
+                        <div class="table-cell cell-10 cell-center">
+                            GUARD:
+                        </div>
+                        <div class="table-cell cell-10 input-AutoCalc">
+                            <input type="number" name="attr_guard" value="0"></td>
+                        </div>
+                        <div class="table-cell cell-center">-</div>
+                        <div class="table-cell"><input type="number" name="attr_guard_style" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_guard_weapon" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_guard_armor" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_guard_accessory1" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_guard_accessory2" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_guard_talent" value="0"></div>
+                        <div class="table-cell cell-10"><input type="number" name="attr_guard_misc" value="0"></div>
+                    </div>
+                    <div class="table-row input-border">
+                        <div class="table-cell cell-10 cell-right"></div>
+                        <div class="table-cell cell-10 cell-center">
+                            WARD:
+                        </div>
+                        <div class="table-cell cell-10 input-AutoCalc">
+                            <input type="number" name="attr_ward" value="0"></td>
+                        </div>
+                        <div class="table-cell cell-center">-</div>
+                        <div class="table-cell"><input type="number" name="attr_ward_style" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_ward_weapon" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_ward_armor" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_ward_accessory1" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_ward_accessory2" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_ward_talent" value="0"></div>
+                        <div class="table-cell"><input type="number" name="attr_ward_misc" value="0"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!--NUMEN POOL --->  
+        <div class="section2">
+            <input type="checkbox" class="arrow collapse" name="attr_NumenPoolSec" checked="true"><span></span>
             NUMEN POOL
             <div class="body">
                 <div class="section table input-border">
@@ -419,7 +715,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                             </select>
                         </div>
                         <div class="table-cell cell-10"> 
-                            <button class="templatebutton" type='roll' name='NumenPoolRoll' title="Numen Pool" value="&{template:numen} {{name=@{character_name}}} {{die1=[[1d@{numenpool_used_1}cf0cs>0]]}} {{die2=[[1d@{numenpool_used_2}cf0cs>0]]}} {{die3=[[1d@{numenpool_used_3}cf0cs>0]]}} {{die4=[[1d@{numenpool_used_4}cf0cs>0]]}} {{die5=[[1d@{numenpool_used_5}cf0cs>0]]}} {{die6=[[1d@{numenpool_used_6}cf0cs>0]]}}"> Numen Pool</button>
+                            <button class="templatebutton" type="roll" name="NumenPoolRoll" title="Numen Pool" value="&{template:numen} {{name=@{character_name}}} {{die1=[[1d@{numenpool_used_1}cf0cs>0]]}} {{die2=[[1d@{numenpool_used_2}cf0cs>0]]}} {{die3=[[1d@{numenpool_used_3}cf0cs>0]]}} {{die4=[[1d@{numenpool_used_4}cf0cs>0]]}} {{die5=[[1d@{numenpool_used_5}cf0cs>0]]}} {{die6=[[1d@{numenpool_used_6}cf0cs>0]]}}"> Numen Pool</button>
                         </div>
                         <div class="table-cell cell-10"> 
                         </div>
@@ -447,11 +743,11 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                 <div class="section table input-border">
                     <div class="table-row section">
                         <div class="table-cell cell-5 cell-right">HP:</div>
-                        <div class="table-cell cell-10"><input type='number' name='attr_hitpoints'></div>
+                        <div class="table-cell cell-10"><input type="number" name="attr_hitpoints"></div>
                         <div class="table-cell cell-A">/</div>
-                        <div class="table-cell cell-10"><input type='number' name='attr_hitpoints_max'></div>
+                        <div class="table-cell cell-10"><input type="number" name="attr_hitpoints_max"></div>
                         <div class="table-cell cell-10 cell-right">Spirit Crest:</div>
-                        <div class="table-cell cell-5"><input type='number' name='attr_current_spiritcrest' value="22"></div>
+                        <div class="table-cell cell-5"><input type="number" name="attr_current_spiritcrest" value="22"></div>
                         <div class="table-cell cell-A">/</div>
                         <div class="table-cell cell-5">22</div>
                         <div class="table-cell cell-69"></div>
@@ -461,491 +757,47 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                 <div class="section table input-border section-font125">
                     <div class="table-row">
                         <div class="table-cell cell-5" align="center">①</div>
-                        <div class="table-cell cell-15"><input type='text' name='attr_Bond1'></div>
-                        <div class="table-cell cell-75"><input type='text' name='attr_Bond1_Desc'></div>
+                        <div class="table-cell cell-15"><input type="text" name="attr_Bond1"></div>
+                        <div class="table-cell cell-75"><input type="text" name="attr_Bond1_Desc"></div>
                     </div>
                     <div class="table-row">
                         <div class="table-cell" align="center">②</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond2'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond2_Desc'></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond2"></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond2_Desc"></div>
                     </div>
                     <div class="table-row">
                         <div class="table-cell" align="center">③</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond3'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond3_Desc'></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond3"></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond3_Desc"></div>
                     </div>
                     <div class="table-row">
                         <div class="table-cell" align="center">④</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond4'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond4_Desc'></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond4"></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond4_Desc"></div>
                     </div>
                     <div class="table-row">
                         <div class="table-cell" align="center">⑤</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond5'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond5_Desc'></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond5"></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond5_Desc"></div>
                     </div>
                     <div class="table-row">
                         <div class="table-cell" align="center">⑥</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond6'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond6_Desc'></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond6"></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond6_Desc"></div>
                     </div>
                     <div class="table-row">
                         <div class="table-cell" align="center">⑦</div>
-                        <div class="table-cell"><input type='text' name='attr_Bond7'></div>
-                        <div class="table-cell"><input type='text' name='attr_Bond7_Desc'></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond7"></div>
+                        <div class="table-cell"><input type="text" name="attr_Bond7_Desc"></div>
                     </div>
-                </div>
-            </div>
-        </div>    
-        
-        <div class="section2">
-            <input type="checkbox" class="arrow collapse" name='attr_statssec' checked="true"><span></span>
-            MAIN AND COMBAT STATS
-            <div class="body">
-                <div class="section table input-statsMain">
-                    <div class="table-cell cell-20">MAIN STATS</div>
-                    <div class="table-cell cell-a"></div>
-                    <div class="table-cell cell-10 cell-right section-font75">STAT TYPE:</div>
-                    <div class="table-cell cell-10">
-                        <select name="attr_Stat_Type" class="cell-drop">
-                            <option value="Warrior">Warrior</option>
-                            <option value="Adept">Adept</option>
-                            <option value="Occultist">Occultist</option>
-                        </select>
-                    </div>
-                    
-                </div>
-                <div class="section table input-statsMain">
-                    
-                    <div class="table-row ">
-                        <div class="table-cell cell-20"><input type='number' name='attr_strength' value="0"></div>
-                        <div class="table-cell cell-20"><input type='number' name='attr_agility' value="0"></div>
-                        <div class="table-cell cell-20"><input type='number' name='attr_intellect' value="0"></div>
-                        <div class="table-cell cell-20"><input type='number' name='attr_will' value="0"></div>
-                        <div class="table-cell cell-20"><input type='number' name='attr_luck' value="0"></div>
-                    </div>
-                </div>
-                 <div class="section table input-border">
-                    <div class="table-row">
-                        <div class="table-cell cell-20 cell-center">STRENGTH</div>
-                        <div class="table-cell cell-20 cell-center">AGILITY</div>
-                        <div class="table-cell cell-20 cell-center">INTELLECT</div>
-                        <div class="table-cell cell-20 cell-center">WILL</div>
-                        <div class="table-cell cell-20 cell-center">LUCK</div>
-                    </div>
-                </div>
-
-                <div class="section table input-border">
-                    <div class="table-row buffer"></div>
-                    <div class="table-row">
-                    COMBAT STATS
-                    </div>
-                    
-                </div>
-
-                <div class="section table">
-                    <div class="table-row cell-center">
-                        <div class="table-cell cell-5"></div>
-                        <div class="table-cell cell-10"></div>
-                        <div class="table-cell cell-8">Total:</div>
-                        <div class="table-cell cell-8">Main Stat:</div>
-                        <div class="table-cell cell-8">Style Stat:</div>
-                        <div class="table-cell cell-8">Weapon:</div>
-                        <div class="table-cell cell-8">Armor:</div>
-                        <div class="table-cell cell-8">Accessory:</div>
-                        <div class="table-cell cell-8">Accessory:</div>
-                        <div class="table-cell cell-8">Talent:</div>
-                        <div class="table-cell cell-8">Misc: </div>
-                    </div>
-                    <!--Phsyical -->
-                    <div class="table-row input-border">
-                        <div class="table-cell  cell-right">
-                            <button type='roll' value='/roll @{dicepool_accuracy}d6 + ?{Bonus|0} +@{accuracy}' name='roll_accuracy'></button>
-                        </div>
-                        <div class="table-cell  cell-center">
-                            ACCURACY:
-                        </div>
-                        <div class="table-cell  input-AutoCalc">
-                            <input class="input-Autocalc" type="number" name="attr_accuracy" value="0"></td>
-                        </div>
-                        <div class="table-cell"><input type='number' name='attr_strength'></div>
-                        <div class="table-cell"><input type='number' name='attr_accuracy_style' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_accuracy_weapon' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_accuracy_armor' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_accuracy_accessory1' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_accuracy_accessory2' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_accuracy_talent' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_accuracy_misc' value="0"></div>
-                        <!--break -->
-                    </div>
-                    <div class="table-row input-border">
-                        <div class="table-cell  cell-right">
-                            <button type='roll' value='/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}' name='roll_accuracy'></button>
-                        </div>
-                        <div class="table-cell  cell-center">
-                            EVASION:
-                        </div>
-                        <div class="table-cell  input-AutoCalc">
-                            <input type="number" name="attr_evasion" value="0"></td>
-                        </div>
-                        <div class="table-cell  cell-center"><input type='number' name='attr_agility'></div>
-                        <div class="table-cell"><input type='number' name='attr_evasion_style' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_evasion_weapon' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_evasion_armor' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_evasion_accessory1' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_evasion_accessory2' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_evasion_talent' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_evasion_misc' value="0"></div>
-                        <!--break -->
-                    </div>
-                    <div class="table-row input-border">
-                        <div class="table-cell  cell-right">
-                            <button type='roll' value='/roll @{dicepool_invocation}d6 + ?{Bonus|0} +@{invocation}' name='roll_accuracy'></button>
-                        </div>
-                        <div class="table-cell  cell-center">
-                            INVOCATION:
-                        </div>
-                        <div class="table-cell  input-AutoCalc">
-                            <input type="number" name="attr_invocation" value="0"></td>
-                        </div>
-                        <div class="table-cell"><input type='number' name='attr_intellect'></div>
-                        <div class="table-cell"><input type='number' name='attr_invocation_style' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_invocation_weapon' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_invocation_armor' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_invocation_accessory1' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_invocation_accessory2' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_invocation_talent' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_invocation_misc' value="0"></div>
-                        <!--break -->
-                    </div>
-                    <div class="table-row input-border">
-                        <div class="table-cell  cell-right">
-                            <button type='roll' value='/roll @{dicepool_resistance}d6 + ?{Bonus|0} +@{resistance}' name='roll_accuracy'></button>
-                        </div>
-                        <div class="table-cell  cell-center">
-                            RESISTANCE:
-                        </div>
-                        <div class="table-cell  input-AutoCalc">
-                            <input type="number" name="attr_resistance" value="0"></td>
-                        </div>
-                        <div class="table-cell  cell-center"><input type='number' name='attr_will'></div>
-                        <div class="table-cell"><input type='number' name='attr_resistance_style' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_resistance_weapon' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_resistance_armor' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_resistance_accessory1' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_resistance_accessory2' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_resistance_talent' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_resistance_misc' value="0"></div>
-                        <!--break -->
-                    </div>
-                    <div class="table-row input-border">
-                        <div class="table-cell  cell-right">
-                            <button type='roll' value='/roll @{dicepool_instinct}d6 + ?{Bonus|0} +@{instinct}' name='roll_accuracy'></button>
-                        </div>
-                        <div class="table-cell  cell-center">
-                            INSTINCT:
-                        </div>
-                        <div class="table-cell  input-AutoCalc">
-                            <input type="number" name="attr_instinct" value="0"></td>
-                        </div>
-                        <div class="table-cell  cell-center"><input type='number' name='attr_luck'></div>
-                        <div class="table-cell"><input type='number' name='attr_instinct_style' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_instinct_weapon' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_instinct_armor' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_instinct_accessory1' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_instinct_accessory2' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_instinct_talent' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_instinct_misc' value="0"></div>
-                        <!--break -->
-                    </div>
-                    <div class="table-row buffer"></div>
-                </div>
-                <div class="section table">
-                    <div class="table-row cell-center section-font85">
-                        <div class="table-cell cell-5"></div>
-                        <div class="table-cell cell-8"></div>
-                        <div class="table-cell cell-8">Total:</div>
-                        <div class="table-cell cell-8"></div>
-                        <div class="table-cell cell-8">Style Stat:</div>
-                        <div class="table-cell cell-8">Weapon:</div>
-                        <div class="table-cell cell-8">Armor:</div>
-                        <div class="table-cell cell-8">Accessory:</div>
-                        <div class="table-cell cell-8">Accessory:</div>
-                        <div class="table-cell cell-8">Talent:</div>
-                        <div class="table-cell cell-8">Misc: </div>
-                    </div>
-                    <div class="table-row input-border">
-                        <div class="table-cell"></div>
-                        <div class="table-cell cell-center">
-                            PD:
-                        </div>
-                        <div class="table-cell input-AutoCalc">
-                            <input type="number" name="attr_pd" value="0"></td>
-                        </div>
-                        <div class="table-cell section-font85 cell-center">Strength ÷ 2</div>
-                        <div class="table-cell"><input type='number' name='attr_pd_style' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_pd_weapon' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_pd_armor' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_pd_accessory1' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_pd_accessory2' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_pd_talent' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_pd_misc' value="0"></div>
-                        <!--break -->
-                    </div>
-                    <div class="table-row input-border">
-                        <div class="table-cell cell-15"></div>
-                        <div class="table-cell cell-10 cell-center">
-                            MD:
-                        </div>
-                        <div class="table-cell cell-10 input-AutoCalc">
-                            <input type="number" name="attr_md" value="0"></td>
-                        </div>
-                        <div class="table-cell section-font85 cell-center">Intellect ÷ 2</div>
-                        <div class="table-cell"><input type='number' name='attr_md_style' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_md_weapon' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_md_armor' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_md_accessory1' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_md_accessory2' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_md_talent' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_md_misc' value="0"></div>
-                        <!--break -->
-                    </div>
-                    <div class="table-row input-border">
-                        <div class="table-cell cell-5 cell-right"></div>
-                        <div class="table-cell cell-center">
-                            INITIATIVE:
-                        </div>
-                        <div class="table-cell cell-10 input-AutoCalc">
-                            <input type="number" name="attr_initiative" value="0"></td>
-                        </div>
-                        <div class="table-cell section-font85 cell-center">Agility + 5</div>
-                        <div class="table-cell"><input type='number' name='attr_initiative_style' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_initiative_weapon' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_initiative_armor' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_initiative_accessory1' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_initiative_accessory2' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_initiative_talent' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_initiative_misc' value="0"></div>
-                    </div>
-                    <div class="table-row buffer"></div>
-                    <div class="table-row input-border">
-                        <div class="table-cell cell-10 cell-right"></div>
-                        <div class="table-cell cell-10 cell-center">
-                            HP:
-                        </div>
-                        <div class="table-cell cell-10 input-AutoCalc">
-                            <input type="number" name="attr_hitpoints_max" value="0" ></td>
-                        </div>
-                        <div class="table-cell section-font75 cell-center">Strength + Will + (Level x 3)</div>
-                        <div class="table-cell"><input type='number' name='attr_hitpoints_style' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_hitpoints_weapon' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_hitpoints_armor' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_hitpoints_accessory1' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_hitpoints_accessory2' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_hitpoints_talent' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_hitpoints_misc' value="0"></div>
-                    </div>
-                    <div class="table-row input-border">
-                        <div class="table-cell cell-10 cell-right"></div>
-                        <div class="table-cell cell-10 cell-center">
-                            GUARD:
-                        </div>
-                        <div class="table-cell cell-10 input-AutoCalc">
-                            <input type="number" name="attr_guard" value="0"></td>
-                        </div>
-                        <div class="table-cell cell-center">-</div>
-                        <div class="table-cell"><input type='number' name='attr_guard_style' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_guard_weapon' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_guard_armor' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_guard_accessory1' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_guard_accessory2' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_guard_talent' value="0"></div>
-                        <div class="table-cell cell-10"><input type='number' name='attr_guard_misc' value="0"></div>
-                    </div>
-                    <div class="table-row input-border">
-                        <div class="table-cell cell-10 cell-right"></div>
-                        <div class="table-cell cell-10 cell-center">
-                            WARD:
-                        </div>
-                        <div class="table-cell cell-10 input-AutoCalc">
-                            <input type="number" name="attr_ward" value="0"></td>
-                        </div>
-                        <div class="table-cell cell-center">-</div>
-                        <div class="table-cell"><input type='number' name='attr_ward_style' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_ward_weapon' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_ward_armor' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_ward_accessory1' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_ward_accessory2' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_ward_talent' value="0"></div>
-                        <div class="table-cell"><input type='number' name='attr_ward_misc' value="0"></div>
-                    </div>
-                    
                 </div>
             </div>
         </div>
-        
+  </div>
+    <!--TALENTS --->
+    <div class="sheet-tabs-content sheet-tabs3">
         <div class="section2">
-            <input type="checkbox" class="arrow collapse" name='attr_weaponandarmorsec' checked="true"><span></span>
-            WEAPONS AND EQUIPMENT
-            <div class="body">
-                <div class="section table">
-                    WEAPONS:
-                    <fieldset class="repeating_weapons"> 
-                    <div class="table-row input-border">
-                            <div class="table-row">
-                                <div class="table-cell cell-a">Divine Name:</div>
-
-                                <div class="table-cell cell-5">INIT:</div>
-                                <div class="table-cell cell-8">Range:</div>
-                                <div class="table-cell cell-5">T#:</div>
-                                <div class="table-cell cell-10">Accuracy:</div>
-                                <div class="table-cell cell-10">Invocation:</div>
-
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell cell-a"><input type='text' name='attr_weapon_name'></div>
-                                <div class="table-cell cell-5"><input type='number' name='attr_weapon_stats_init'></div>
-                                <div class="table-cell cell-8"><input type='text' name='attr_weapon_range'></div>
-                                <div class="table-cell cell-5"><input type='text' name='attr_weapon_target'></div>
-                                <div class="table-cell cell-a"><input type='number' name='attr_weapon_accuracy'></div>
-                                <div class="table-cell cell-10"><input type='number' name='attr_weapon_invocation'></div>
-                            </div>
-                    </div>
-                    <div class="table-row input-border">
-                            <div class="table-row">
-                                <div class="table-cell cell-20">Grip:</div>
-                                <div class="table-cell cell-20">Restriction:</div>
-                                <div class="table-cell cell-a">Element:</div>
-                                <div class="table-cell cell-5">PD:</div>
-                                <div class="table-cell cell-5">MD:</div>
-                                <div class="table-cell cell-5"></div>
-                                <div class="table-cell cell-5"></div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell"><input type='text' name='attr_weapon_grip'></div>
-                                <div class="table-cell"><input type='text' name='attr_weapon_restrict'></div>
-                                <div class="table-cell"><input type='text' name='attr_weapon_element'></div>
-                                <div class="table-cell"><input type='number' name='attr_weapon_pd'></div>
-                                <div class="table-cell"><input type='number' name='attr_weapon_md'></div>
-                                <div class="table-cell">Equipped:</div>
-                                <div class="table-cell cell-check "><input class= "equipment"type="checkbox" name="attr_weapon_equipped"><span></span></div>
-                                
-                            </div>
-                            <div class="section table">
-                                <div class="table-row">
-                                    <div class="table-cell cell-95">
-                                        <textarea class="textareasize2" placeholder="Weapon Description" name='attr_weapon_desc'></textarea>
-                                    </div>
-                                </div>
-                                <div class="section table">
-                                    <div class="table-row">
-                                        <div class="table-cell cell-95">
-                                        <textarea class="textareasize2" placeholder="Customizations and Material Synthesis" name='attr_weapon_Synthesis'></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                    </fieldset>
-                    PROTECTORS:
-                    <fieldset class="repeating_armors"> 
-                    <div class="table-row  input-border">
-                        
-                        
-                            <div class="table-row">
-                                <div class="table-cell cell-a">Name:</div>
-                                <div class="table-cell cell-15">Restriction:</div>
-                                <div class="table-cell cell-8">EVA:</div>
-                                <div class="table-cell cell-8">INIT:</div>
-                                <div class="table-cell cell-10">GUARD:</div>
-                                <div class="table-cell cell-10">WARD:</div>
-                                <div class="table-cell cell-5"></div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell cell-a"><input type='text' name='attr_armor_name'></div>
-                                <div class="table-cell cell-10"><input type='text' name='attr_armor_restrict'></div>
-                                <div class="table-cell cell-8"><input type='number' name='attr_armor_stats_acc'></div>
-                                <div class="table-cell cell-8"><input type='number' name='attr_armor_stats_init'></div>
-                                <div class="table-cell cell-10"><input type='number' name='attr_armor_guard'></div>
-                                <div class="table-cell cell-5"><input type='number' name='attr_armor_ward'></div>
-                                <div class="table-cell cell-5">Equipped:</div>
-                                <div class="table-cell cell-5 cell-check "><input class= "equipment"type="checkbox" name="attr_armor_equipped"><span></span></div>
-                            </div>
-                            <div class="section">
-                                <div>
-                                <textarea class="textareasize1" placeholder="Armor Description" name='attr_armor_desc'></textarea>
-                                <textarea type='text' class="textareasize2" placeholder="Additional Effects and Material Synthesis" name='attr_armor_effects'></textarea>
-                                </div>
-                            </div>
-                        
-                    </div>
-                    </fieldset>
-                    <div class="table-row  input-border">
-                        ACCESSORIES:
-                            <div class="table-row">
-                                <div class="table-cell cell-15">Name:</div>
-                                <div class="table-cell cell-10">Slot:</div>
-                                <div class="table-cell cell-a">Description:</div>
-                                <div class="table-cell cell-5">Equipped:</div>
-                            </div>
-                        <fieldset class="repeating_accessories"> 
-                            <div class="table-row">
-                                <div class="table-cell cell-15"><input placeholder="Name" type='text' name='attr_accessories_name'></div>
-                                <div class="table-cell cell-10"><input placeholder="Slot" type='text' name='attr_accessories_slot'></div>
-                                <div class="table-cell cell-a"><input placeholder="Description" type='text' name='attr_accessories_desc'></div>
-                                <div class="table-cell cell-5 cell-check "><input class= "equipment" type="checkbox" name="attr_accessories_equipped"><span></span></div>
-                            </div>
-                        </fieldset>
-                    </div>
-        
-                </div>
-            </div>
-        </div> 
-        
-    <div class="section2">
-            <input type="checkbox" class="arrow collapse" name='attr_inventorysec' checked="true"><span></span>
-            INVENTORY
-            <div class="body">
-                 <div class="section table">
-                    <div class="table-row">
-                        <div class="table-cell cell-50"></div>
-                        <div class="table-cell cell-20"><input type='text' name='attr_gold'></div>
-                        <div class="table-cell cell-5 section-font125">G</div>
-                    </div>
-                </div>
-            </div>    
-            <div class="body">
-                <div class="section table input-border">
-                    <div class="section table">
-                        <div class="table-row">
-                            <div class="table-cell cell-15">Name:</div>
-                            <div class="table-cell cell-a">Description:</div>
-                            <div class="table-cell cell-10">Count:</div>
-                            <div class="table-cell cell-5"></div>
-                        </div>
-                        <div class="table-row">
-                            <div class="table-cell cell-15"><input placeholder="Name" type='text' name='attr_gear_name_first'></div>
-                            <div class="table-cell cell-a"><input placeholder="Description" type='text' name='attr_gear_desc_first'></div>
-                            <div class="table-cell cell-10"><input type='number' name='attr_gear_amount_first'></div>
-                            <div class="table-cell cell-5 cell-check"><input type="checkbox" name="attr_inv_equipped"></div>
-                        </div>
-                    </div>
-                    <div class="section table">
-                        <fieldset class="repeating_gear"> 
-                            <div class="table-row">
-                                <div class="table-cell cell-15"><input placeholder="Name" type='text' name='attr_gear_name_first'></div>
-                                <div class="table-cell cell-a"><input placeholder="Description" type='text' name='attr_gear_desc_first'></div>
-                                <div class="table-cell cell-10"><input type='number' name='attr_gear_amount_first'></div>
-                                <div class="table-cell cell-5 cell-check"><input type="checkbox" name="attr_inv_equipped"></div>
-                            </div>
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        
-        <div class="section2">
-            <input type="checkbox" class="arrow collapse" name='attr_talentssec' checked="true"><span></span>
+            <input type="checkbox" class="arrow collapse" name="attr_talentssec" checked="true"><span></span>
             TALENTS
             <div class="body">
                 <div class="section table input-border">
@@ -962,8 +814,8 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                                 <div class="table-cell cell-10">Cost:</div>
                             </div>
                             <div class="table-row">
-                                <div class="table-cell"><input type='text' name='attr_talent_name'></div>
-                                <div class="table-cell"><input type='text' name='attr_talent_style'></div>
+                                <div class="table-cell"><input type="text" name="attr_talent_name"></div>
+                                <div class="table-cell"><input type="text" name="attr_talent_style"></div>
                                 <div class="table-cell">
                                     <select name="attr_second_style_type" class="cell-drop">
                                         <option value="A">α</option>
@@ -980,13 +832,16 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                                         <option value="5">High</option>
                                     </select>
                                 </div>
-                                <div class="table-cell"><input type='text' name='attr_talent_timing'></div>
-                                <div class="table-cell"><input type='text' name='attr_talent_range'></div>
-                                <div class="table-cell"><input type='text' name='attr_talent_Cost_'></div>
+                                <div class="table-cell"><input type="text" name="attr_talent_timing"></div>
+                                <div class="table-cell"><input type="text" name="attr_talent_range"></div>
+                                <div class="table-cell"><input type="text" name="attr_talent_Cost_"></div>
                             </div>
                             <div class="section">
-                                <div>
-                                <textarea class="textareasize2" placeholder="Talent Description" name='attr_talent_desc'></textarea>
+    
+                            </div>
+                                <div class="sheet-expand">
+    	                            <span ame="attr_talent_desc"></span>
+    	                            <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc"></textarea>
                                 </div>
                             </div>
                         
@@ -994,41 +849,224 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                     </fieldset>
                 </div> 
             </div>
-        </div> 
-<!--Dice pool settings-->
         </div>
-        <div class="block-b cell-left">
-            <div class="section2">
-                <div class="body input-border section-font75">
-                    <div class="section table input-border">
-                        <div class="table-row">
-                            <div class="table-cell cell-10">Dice Pool Sizes</div>
-                            <div class="table-cell cell-a">Set the number of dice for each pool here for the sheet roll buttons</div>
+    </div>
+    <!--EQUIPMENT AND INVENTORY --->
+    <div class="sheet-tabs-content sheet-tabs4">
+        <!--EQUIPMENT --->
+        <div class="section2">
+            <input type="checkbox" class="arrow collapse" name="attr_weaponandarmorsec" checked="true"><span></span>
+            WEAPONS AND EQUIPMENT
+            <div class="body">
+                <div class="section table">
+                    WEAPONS:
+                    <fieldset class="repeating_weapons"> 
+                    <div class="table-row input-border">
+                            <div class="table-row">
+                                <div class="table-cell cell-a">Divine Name:</div>
+                                <div class="table-cell cell-5">INIT:</div>
+                                <div class="table-cell cell-8">Range:</div>
+                                <div class="table-cell cell-5">T#:</div>
+                                <div class="table-cell cell-10">Accuracy:</div>
+                                <div class="table-cell cell-10">Invocation:</div>
+
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell cell-a"><input type="text" name="attr_weapon_name"></div>
+                                <div class="table-cell cell-5"><input type="number" name="attr_weapon_stats_init"></div>
+                                <div class="table-cell cell-8"><input type="text" name="attr_weapon_range"></div>
+                                <div class="table-cell cell-5"><input type="text" name="attr_weapon_target"></div>
+                                <div class="table-cell cell-a"><input type="number" name="attr_weapon_accuracy"></div>
+                                <div class="table-cell cell-10"><input type="number" name="attr_weapon_invocation"></div>
+                            </div>
+                    </div>
+                    <div class="table-row input-border">
+                            <div class="table-row">
+                                <div class="table-cell cell-20">Grip:</div>
+                                <div class="table-cell cell-20">Restriction:</div>
+                                <div class="table-cell cell-a">Element:</div>
+                                <div class="table-cell cell-5">PD:</div>
+                                <div class="table-cell cell-5">MD:</div>
+                                <div class="table-cell cell-5"></div>
+                                <div class="table-cell cell-5"></div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell"><input type="text" name="attr_weapon_grip"></div>
+                                <div class="table-cell"><input type="text" name="attr_weapon_restrict"></div>
+                                <div class="table-cell"><input type="text" name="attr_weapon_element"></div>
+                                <div class="table-cell"><input type="number" name="attr_weapon_pd"></div>
+                                <div class="table-cell"><input type="number" name="attr_weapon_md"></div>
+                                <div class="table-cell">Equipped:</div>
+                                <div class="table-cell cell-check "><input class= "equipment"type="checkbox" name="attr_weapon_equipped"><span></span></div>
+                                
+                            </div>
+                            <div class="section table">
+                                <div class="table-row">
+                                    <div class="table-cell cell-95">
+                                        <div class="sheet-expand">
+        	                                <span name="attr_weapon_desc"></span>
+        	                                <textarea spellcheck="false" placeholder="Weapon Description" name="attr_weapon_desc"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section table">
+                                    <div class="table-row">
+                                        <div class="table-cell cell-95">
+                                            <div class="sheet-expand">
+            	                                <span name="attr_weapon_Synthesis"></span>
+            	                                <textarea spellcheck="false" placeholder="Customizations and Material Synthesis" name="attr_weapon_Synthesis"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                    </fieldset>
+                    PROTECTORS:
+                    <fieldset class="repeating_armors">
+                        <div class="section table">
+                            <div class="table-row  input-border">
+                                    <div class="table-row">
+                                        <div class="table-cell cell-a">Name:</div>
+                                        <div class="table-cell cell-15">Restriction:</div>
+                                        <div class="table-cell cell-8">EVA:</div>
+                                        <div class="table-cell cell-8">INIT:</div>
+                                        <div class="table-cell cell-10">GUARD:</div>
+                                        <div class="table-cell cell-10">WARD:</div>
+                                        <div class="table-cell cell-5"></div>
+                                    </div>
+                                    <div class="table-row">
+                                        <div class="table-cell cell-a"><input type="text" name="attr_armor_name"></div>
+                                        <div class="table-cell cell-10"><input type="text" name="attr_armor_restrict"></div>
+                                        <div class="table-cell cell-8"><input type="number" name="attr_armor_stats_acc"></div>
+                                        <div class="table-cell cell-8"><input type="number" name="attr_armor_stats_init"></div>
+                                        <div class="table-cell cell-10"><input type="number" name="attr_armor_guard"></div>
+                                        <div class="table-cell cell-5"><input type="number" name="attr_armor_ward"></div>
+                                        <div class="table-cell cell-5">Equipped:</div>
+                                        <div class="table-cell cell-5 cell-check "><input class= "equipment"type="checkbox" name="attr_armor_equipped"><span></span></div>
+                                    </div>
+                                    <div class="section">
+                                        <div>
+                                            <div class="sheet-expand">
+            	                                <span name="attr_armor_desc"></span>
+            	                                <textarea spellcheck="false" placeholder="Armor Description" name="attr_armor_desc"></textarea>
+                                            </div>
+                                            <div class="sheet-expand">
+            	                                <span name="attr_armor_effects"></span>
+            	                                <textarea spellcheck="false" placeholder="Additional Effects and Material Synthesiss" name="attr_armor_effects"></textarea>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    </fieldset>
+                    ACCESSORIES:
+                    <fieldset class="repeating_accessories">
+                        <div class="section table">
+                            <div class="table-row  input-border">
+                                    <div class="table-row">
+                                        <div class="table-cell cell-15">Name:</div>
+                                        <div class="table-cell cell-10">Slot:</div>
+                                        <div class="table-cell cell-70">Description:</div>
+                                        <div class="table-cell cell-5">Equipped:</div>
+                                    </div>
+                                    <div class="table-row">
+                                        <div class="table-cell"><input placeholder="Name" type="text" name="attr_accessories_name"></div>
+                                        <div class="table-cell"><input placeholder="Slot" type="text" name="attr_accessories_slot"></div>
+                                        <div class="table-cell"><input placeholder="Description" type="text" name="attr_accessories_desc"></div>
+                                        <div class="table-cell cell-check"><input class= "equipment" type="checkbox" name="attr_accessories_equipped"><span></span></div>
+                                    </div>
+                                    <div class="section">
+                                        <div>
+                                            <div class="sheet-expand">
+            	                                <span name="attr_accessories_synthesis"></span>
+            	                                <textarea spellcheck="false" placeholder="Material Synthesis" name="attr_accessories_synthesis"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
                         </div>
-                        <div class="table-row">
-                            <div class="table-cell cell-10"><input type='number' name='attr_dicepool_accuracy' value="2"></div>
-                            <div class="table-cell cell-20">Accuracy</div>
+                    </fieldset>
+                    INVENTORY
+                    <div class="body">
+                         <div class="section table">
+                            <div class="table-row">
+                                <div class="table-cell cell-50"></div>
+                                <div class="table-cell cell-20"><input type="text" name="attr_gold"></div>
+                                <div class="table-cell cell-5 section-font125">G</div>
+                            </div>
                         </div>
-                        <div class="table-row">
-                            <div class="table-cell cell-10"><input type='number' name='attr_dicepool_evasion' value="2"></div>
-                            <div class="table-cell cell-20">Evasion</div>
-                        </div>
-                        <div class="table-row">
-                            <div class="table-cell cell-10"><input type='number' name='attr_dicepool_invocation' value="2"></div>
-                            <div class="table-cell cell-20">Invocation</div>
-                        </div>
-                        <div class="table-row">
-                            <div class="table-cell cell-10"><input type='number' name='attr_dicepool_resistance' value="2"></div>
-                            <div class="table-cell cell-20">Resistance</div>
-                        </div>
-                        <div class="table-row">
-                            <div class="table-cell cell-10"><input type='number' name='attr_dicepool_instinct' value="2"></div>
-                            <div class="table-cell cell-20">Instinct</div>
-                        </div>
-                        
+                    </div>    
+                    <div class="body">
+                        <div class="section table input-border">
+                            <div class="section table">
+                                <div class="table-row">
+                                    <div class="table-cell cell-15">Name:</div>
+                                    <div class="table-cell cell-a">Description:</div>
+                                    <div class="table-cell cell-10">Count:</div>
+                                    <div class="table-cell cell-5"></div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-cell cell-15"><input placeholder="Name" type="text" name="attr_gear_name_first"></div>
+                                    <div class="table-cell cell-a"><input placeholder="Description" type="text" name="attr_gear_desc_first"></div>
+                                    <div class="table-cell cell-10"><input type="number" name="attr_gear_amount_first"></div>
+                                    <div class="table-cell cell-5 cell-check"><input type="checkbox" name="attr_inv_equipped"></div>
+                                </div>
+                            </div>
+                            <div class="section table">
+                                <fieldset class="repeating_gear"> 
+                                    <div class="table-row">
+                                        <div class="table-cell cell-15"><input placeholder="Name" type="text" name="attr_gear_name_first"></div>
+                                        <div class="table-cell cell-a"><input placeholder="Description" type="text" name="attr_gear_desc_first"></div>
+                                        <div class="table-cell cell-10"><input type="number" name="attr_gear_amount_first"></div>
+                                        <div class="table-cell cell-5 cell-check"><input type="checkbox" name="attr_inv_equipped"></div>
+                                    </div>
+                                </fieldset>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> 
-</div>
+        </div>
+        <!--INVENTORY --->
+    </div>
+    <!-- SETTINGS -->
+    <div class="sheet-tabs-content sheet-tabs5">
+        <div class="section2">
+            <div class="block-b cell-left">
+                <div class="section2">
+                    <div class="body input-border section-font75">
+                        <div class="section table input-border">
+                            <div class="table-row">
+                                <div class="table-cell cell-10">Dice Pool Sizes</div>
+                                <div class="table-cell cell-a">Set the number of dice for each pool here for the sheet roll buttons</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell cell-10"><input type="number" name="attr_dicepool_accuracy" value="2"></div>
+                                <div class="table-cell cell-20">Accuracy</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell cell-10"><input type="number" name="attr_dicepool_evasion" value="2"></div>
+                                <div class="table-cell cell-20">Evasion</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell cell-10"><input type="number" name="attr_dicepool_invocation" value="2"></div>
+                                <div class="table-cell cell-20">Invocation</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell cell-10"><input type="number" name="attr_dicepool_resistance" value="2"></div>
+                                <div class="table-cell cell-20">Resistance</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell cell-10"><input type="number" name="attr_dicepool_instinct" value="2"></div>
+                                <div class="table-cell cell-20">Instinct</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
