@@ -20,7 +20,7 @@ input.sheet-tabs[value="1"]:checked ~ div.sheet-tabs1,
 input.sheet-tabs[value="2"]:checked ~ div.sheet-tabs2,
 input.sheet-tabs[value="3"]:checked ~ div.sheet-tabs3,
 input.sheet-tabs[value="4"]:checked ~ div.sheet-tabs4,
-input.sheet-tabs[value="5"]:checked ~ div.sheet-tabs5
+input.sheet-tabs-small[value="5"]:checked ~ div.sheet-tabs5
 {
   display: block;
   width:100%;
@@ -29,23 +29,42 @@ input.sheet-tabs[value="5"]:checked ~ div.sheet-tabs5
 /* TABS STYLE */
 .sheet-tabs{
     opacity:0;
-    width:100px;
-    height:2em!important;
+    width: 170px;
 }
 
-.sheet-tablabel{
+.sheet-tab-label{
+    margin-left: -170px;
+    width: 170px;
+    text-align: center;
+    font-size: 120%;
+    color: #FEFF59;
+    background-color: #048B84;
+    display:inline-block;
+    border-radius: 15px 15px 0px 0px;
+}
+
+
+.sheet-tabs-small{
+    opacity:0;
+    width: 100px;
+}
+
+.sheet-tab-label-small{
     margin-left: -100px;
     width: 100px;
     text-align: center;
-    color:#FEFF59;
-    background-color:#048B84;
+    font-size: 120%;
+    color: #FEFF59;
+    background-color: #048B84;
     display:inline-block;
-    border-radius:5px;
-
+    border-radius: 15px 15px 0px 0px;
 }
 
-.sheet-tabs:checked + div.sheet-tablabel {
+.sheet-tabs-small:checked + div.sheet-tab-label-small,
+.sheet-tabs:checked + div.sheet-tab-label {
     font-weight:700;
+    background-color: #DEB16A;
+    color: black;
 }
 
 /*Roll Template*/
