@@ -269,7 +269,6 @@ input.sheet-equipment[type="checkbox"]:checked + span::before
 }
 
 /* RADIO BUTTONS*/
-/* -----Hide actual radio----- */
 input.sheet-normal[type="radio"]
 {
     opacity: 0;
@@ -283,7 +282,6 @@ input.sheet-normal[type="radio"]
     z-index: 1;
 }
 
-/* -----Fake radio----- */
 input.sheet-normal[type="radio"] + span::before
 {
     margin-right: 2px;
@@ -315,48 +313,16 @@ input.sheet-normal[type="radio"]:checked ~ input.sheet-normal[type="radio"] + sp
     background:white;
 }
 
-/*------------empty traits-----------*/
-input.sheet-zero[type="radio"]:checked + span::before
-{
-    opacity: 0;
-}
-
-input.sheet-zero[type="radio"]:hover + span::before
-{
-    opacity: 1;
-}
-
-input.sheet-zero[type="radio"] + span::before
-{
-    
-    font-size: 25px;
-    content: "x";
-    opacity: 0.65;
-    background:black;
-    
-}
 
 
-/* === GENERAL === */
+
+
 .charsheet {
     min-width: 850px;
 }
 
 .sheet-header {
 	
-}
-
-.sheet-subheader {
-	margin-bottom: 4px;
-	padding: 2px 4px;
-
-	background: #048B84;
-	color: black;
-	font-weight: bold;
-}
-
-.sheet-spacer100 {
-    width: 100px;
 }
 
 
@@ -398,21 +364,6 @@ input.sheet-zero[type="radio"] + span::before
 	min-width: 848px;
 }
 
-.sheet-half {
-	max-width: 50%;
-}
-
-.sheet-quarter {
-	max-width: 25%;
-}
-
-.sheet-3quarter {
-	max-width: 75%;
-}
-
-.sheet-break {
-	clear: both;
-}
 
 label,
 select {
@@ -448,13 +399,7 @@ select {
 	box-sizing: border-box;
 	border: solid 1px black;
 	border-radius: 0;
-	box-shadow: none;/*
-	color: inherit;
-	font: inherit;
-	letter-spacing: inherit;
-	padding: inherit;
-	text-align: inherit;
-	text-transform: inherit;*/
+	box-shadow: none;
 }
 
 
@@ -575,10 +520,6 @@ button[type=roll]{
     background-image:none;
     text-shadow: #016560; 
     text-shadow:none;
-    /*border:none;
-    border-radius:5px;
-    text-shadow:none;
-    padding:3px 3px 0px 3px !important;*/
 }
 
 
@@ -670,39 +611,3 @@ input[type="text"], textarea {
 
 /* TALENT THING */
 
-div.sheet-damage-box {
-    width: 195px;
-    height: 30px;
-    position: relative;
-}
-
-input.sheet-damage-box {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    z-index: 1;
-}
-
-span.sheet-damage-box {
-    margin: 10px 0 0 40px;
-    display: none;
-}
-
-input.sheet-no-damage { z-index: 2; }
-
-input.sheet-no-damage:checked + input.sheet-bashing-damage,
-input.sheet-bashing-damage:checked + input.sheet-lethal-damage,
-input.sheet-lethal-damage:checked + input.sheet-aggravated-damage { z-index: 3; }
-
-input.sheet-no-damage:checked ~ span.sheet-no-damage,
-input.sheet-bashing-damage:checked ~ span.sheet-bashing-damage,
-input.sheet-lethal-damage:checked ~ span.sheet-lethal-damage,
-input.sheet-aggravated-damage:checked ~ span.sheet-aggravated-damage { display: inline-block; }
-
-.sheet-talent-icon{
-    font-size: 175%;
-    margin-top:-25px;
-    
-}
-
-}
