@@ -11,7 +11,8 @@ E7C9A9
 
 */
 
-/*TABS*/div.sheet-tabs-content {
+/*TABS*/
+div.sheet-tabs-content {
   display: none;
 }
 
@@ -22,9 +23,30 @@ input.sheet-tabs[value="4"]:checked ~ div.sheet-tabs4,
 input.sheet-tabs[value="5"]:checked ~ div.sheet-tabs5
 {
   display: block;
+  width:100%;
 }
 
+/* TABS STYLE */
+.sheet-tabs{
+    opacity:0;
+    width:100px;
+    height:2em!important;
+}
 
+.sheet-tablabel{
+    margin-left: -100px;
+    width: 100px;
+    text-align: center;
+    color:#FEFF59;
+    background-color:#048B84;
+    display:inline-block;
+    border-radius:5px;
+
+}
+
+.sheet-tabs:checked + div.sheet-tablabel {
+    font-weight:700;
+}
 
 /*Roll Template*/
 .sheet-rolltemplate-numen div.sheet-template-container {
@@ -98,6 +120,8 @@ input.sheet-arrow-two:not(:checked) ~ div.sheet-body
 {
     display: none;
 }
+
+
 
 /* NUMBER BOX */
 
