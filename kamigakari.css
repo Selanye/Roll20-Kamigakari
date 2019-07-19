@@ -428,7 +428,6 @@ select {
   width: 100%;
 }
 
-/* Add `.cell` for the table cells, or columns */
 .sheet-table-cell {
   display: table-cell;
   vertical-align: middle;
@@ -443,6 +442,8 @@ select {
 .sheet-cell-15 { width: 15%; }
 .sheet-cell-20 { width: 20%; }
 .sheet-cell-25 { width: 25%; }
+.sheet-cell-30 { width: 35%; }
+.sheet-cell-35 { width: 35%; }
 .sheet-cell-40 { width: 40%; }
 .sheet-cell-41 { width: 41%; }
 .sheet-cell-47 { width: 47%; }
@@ -460,6 +461,8 @@ select {
 .sheet-cell-center{text-align: center;}
 .sheet-cell-right{text-align: right;}
 .sheet-cell-left{text-align: left;}
+.sheet-cell-boarder{border: solid 1px;}
+
 
 .sheet-buffer{height: 10px;}
 
