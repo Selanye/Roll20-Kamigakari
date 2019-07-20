@@ -69,10 +69,12 @@ input.sheet-tabs-small[value="5"]:checked ~ div.sheet-tabs5
 
 /*Roll Template*/
 
+.sheet-rolltemplate-talent table,
 .sheet-rolltemplate-numen table {
     
 }
 
+.sheet-rolltemplate-talent td,
 .sheet-rolltemplate-numen td {
     width: auto;
     text-align: center;
@@ -81,29 +83,53 @@ input.sheet-tabs-small[value="5"]:checked ~ div.sheet-tabs5
     padding-right: 5px;
 }
 
+.sheet-rolltemplate-talent td {
+    border-bottom: solid 1px black;
+}
+
+.sheet-rolltemplate-talent div.sheet-template-container, 
 .sheet-rolltemplate-numen div.sheet-template-container {
 	border: 2px solid #048B84;
 	border-radius: 3px 3px 3px 3px;
 	background-color: #DCCCB9;
 }
 
+.sheet-rolltemplate-talent .sheet-template-header,
 .sheet-rolltemplate-numen .sheet-template-header {
 	background-color: #048B84;
 	color: #FEFF59;
 	padding: 2px;
 	border-bottom: 1px solid black;
 	text-align: center;
-	line-height: 1.6em;
-	font-size: 1.2em;
+	font-variant: small-caps;
+	font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+	line-height: 1.4em;
+	font-size: 1.3em;
+}
+
+
+.sheet-rolltemplate-talent .sheet-template-header2 {
+	line-height: 0.7em;
+	font-size: 0.8em;
+	background-color: #048B84;
+	color: #FEFF59;
+	padding: 2px;
+	text-align: center;
 	font-variant: small-caps;
 	font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
 }
 
+}
+
+.sheet-rolltemplate-talent div,
 .sheet-rolltemplate-numen div {
 	padding: 5px;
 	border-bottom: 1px solid black;
-	font-variant: small-caps;
 	font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+}
+
+.sheet-rolltemplate-numen div {
+	font-variant: small-caps;
 }
 
 .sheet-rolltemplate-numen .inlinerollresult  {
@@ -360,6 +386,7 @@ input.sheet-normal[type="radio"]:checked ~ input.sheet-normal[type="radio"] + sp
 .sheet-section-font80{font-size: 80%;}
 .sheet-section-font95{font-size: 95%;}
 .sheet-section-font75{font-size: 75%;}
+.sheet-section-font45{font-size: 45%;}
 
 
 .sheet-section2 {
