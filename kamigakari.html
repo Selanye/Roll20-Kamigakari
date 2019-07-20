@@ -1,10 +1,35 @@
 <rolltemplate class="sheet-rolltemplate-numen">
     <div class="template-container">
+    	<div class="template-header sheet-cell-center">{{name}}'s Numen Roll</div>
+    	<table class="sheet-rolltemplate-numen">
+    	    <tr>
+    	        <td>1st:</td>
+    	        <td>{{die1}}</td>
+    	        <td>2nd:</td>
+    	        <td>{{die2}}</td>
+    	        <td>3rd:</td>
+    	        <td>{{die3}}</td>
+    	    </tr>
+    	    <tr>
+    	        <td>4th:</td>
+    	        <td>{{die4}}</td>
+    	        <td>5th:</td>
+    	        <td>{{die5}}</td>
+    	        <td>6th:</td>
+    	        <td>{{die6}}</td>
+    	    </tr>
+    	</table>
+    </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-talent">
+    <div class="template-container">
 	<div class="template-header sheet-cell-center">{{name}}'s Numen Roll</div>
     <div class="">1st: {{die1}} | 2nd: {{die2}} | 3rd: {{die3}}</div>
     <div class="">4th: {{die4}} | 5th: {{die5}} | 6th: {{die6}}</div>
     </div>
 </rolltemplate>
+
 
 <script type="text/worker">
 /* ---- Auto Calc Nonsense ---- */
@@ -800,171 +825,229 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
             <input type="checkbox" class="arrow collapse" name="attr_talentssec" checked="true"><span></span>
             TALENTS
             <div class="body">
-                    <div class="section table input-border">
-                        <div class="table-row  input-border">
-                            <div class="table-row">
-                                <div class="table-cell cell-30">Name</div>
-                                <div class="table-cell cell-a">Style</div>
-                                <div class="table-cell cell-15"></div>
-                                <div class="table-cell cell-8">Timing</div>
-                                <div class="table-cell cell-10">Target</div>
-                                <div class="table-cell cell-10">Range</div>
-                                <div class="table-cell cell-8">Cost:</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell cell-boarder cell-center">Numinal Barrier</div>
-                                <div class="table-cell cell-boarder cell-center">Innate Power</div>
-                                <div class="table-cell cell-boarder"></div>
-                                <div class="table-cell cell-boarder">Start</div>
-                                <div class="table-cell cell-boarder section-font85">Combat Zone</div>
-                                <div class="table-cell cell-boarder section-font85">Combat Zone</div>
-                                <div class="table-cell cell-boarder"><input type="text" name="attr_talent_Cost_race2"></div>
-                            </div>
-                                <div class="sheet-expand">
-    	                            <span ame="attr_talent_desc"></span>
-    	                            <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_numinalbarrier"></textarea>
-                                </div>
-                            <div class="table-row">
-                                <div class="table-cell cell-30">Name</div>
-                                <div class="table-cell cell-a">Style</div>
-                                <div class="table-cell cell-15"></div>
-                                <div class="table-cell cell-8">Timing</div>
-                                <div class="table-cell cell-10">Target</div>
-                                <div class="table-cell cell-10">Range</div>
-                                <div class="table-cell cell-8">Cost:</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell cell-boarder cell-center">Soul Burn</div>
-                                <div class="table-cell cell-boarder cell-center">Innate Power</div>
-                                <div class="table-cell cell-boarder"></div>
-                                <div class="table-cell cell-boarder">Free</div>
-                                <div class="table-cell cell-boarder">User</div>
-                                <div class="table-cell cell-boarder">User</div>
-                                <div class="table-cell cell-boarder"><input type="text" name="attr_talent_Cost_race2"></div>
-                            </div>
-                                <div class="sheet-expand">
-    	                            <span ame="attr_talent_desc"></span>
-    	                            <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_soulburn"></textarea>
-                                </div>
-                        </div>
+                <!--Numinal Barrier --->
+                <div class="section table">
+                    <div class="table-row input-border">
+                        <div class="table-cell cell-5 cell-right">Name:</div>
+                        <div class="table-cell cell-30 cell-center cell-boarder">Numinal Barrier</div>
+                        <div class="table-cell cell-5 cell-right">Style:</div>
+                        <div class="table-cell cell-20 cell-center cell-boarder">Innate Power</div>
+                        <div class="table-cell cell-5">Type:</div>
+                        <div class="table-cell cell-5"></div>
+                        <div class="table-cell cell-10 cell-center">Innate Power</div>
                     </div>
-                    
-                    <div class="section table input-border">
-                        <div class="table-row  input-border">
-                            <div class="table-row">
-                                <div class="table-cell cell-30">Name</div>
-                                <div class="table-cell cell-a">Style</div>
-                                <div class="table-cell cell-8">Timing</div>
-                                <div class="table-cell cell-10">Target</div>
-                                <div class="table-cell cell-10">Range</div>
-                                <div class="table-cell cell-8">Cost:</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell"><input type="text" name="attr_talent_name_race1"></div>
-                                <div class="table-cell cell-center cell-boarder">Innate Ancestral Talent</div>
-                                <div class="table-cell"><input type="text" name="attr_talent_timing_race1"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_target_race1"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_range_race1"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_Cost_race1"></div>
-                            </div>
-                                <div class="sheet-expand">
-    	                            <span ame="attr_talent_desc"></span>
-    	                            <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_race1"></textarea>
-                                </div>
-                        </div>
+                </div>
+                <div class="section table">
+                    <div class="table-row input-border cell-center">
+                        <div class="table-cell cell-a">Timing:</div>
+                        <div class="table-cell cell-12 cell-boarder"> Start</div>
+                        <div class="table-cell cell-a">Range:</div>
+                        <div class="table-cell cell-15 cell-boarder">Combat Zone</div>
+                        <div class="table-cell cell-8">Target:</div>
+                        <div class="table-cell cell-15 cell-boarder">Combat Zone</div>
+                        <div class="table-cell cell-5">Cost:</div>
+                        <div class="table-cell cell-12 cell-boarder">None</div>
+                        <div class="table-cell cell-5">Share:</div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">GM</button></div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">Chat</button></div>
                     </div>
-                    <div class="section table input-border">
-                        <div class="table-row  input-border">
-                            <div class="table-row">
-                                <div class="table-cell cell-30">Name</div>
-                                <div class="table-cell cell-a">Style</div>
-                                <div class="table-cell cell-8">Timing</div>
-                                <div class="table-cell cell-10">Target</div>
-                                <div class="table-cell cell-10">Range</div>
-                                <div class="table-cell cell-8">Cost:</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell"><input type="text" name="attr_talent_name_race2"></div>
-                                <div class="table-cell cell-center cell-boarder">Innate Ancestral Talent</div>
-                                <div class="table-cell"><input type="text" name="attr_talent_timing_race2"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_target_race2"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_range_race2"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_Cost_race2"></div>
-                            </div>
-                                <div class="sheet-expand">
-    	                            <span ame="attr_talent_desc"></span>
-    	                            <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_race2"></textarea>
-                                </div>
-                        </div>
+                </div>
+                <div class="section table">
+                    <div class="sheet-expand">
+                        <span ame="attr_talent_desc"></span>
+                        <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_numinalbarrier"></textarea>
                     </div>
-                    <div class="section table input-border">
-                        <div class="table-row  input-border">
-                            <div class="table-row">
-                                <div class="table-cell cell-30">Name</div>
-                                <div class="table-cell cell-a">Style</div>
-                                <div class="table-cell cell-15"></div>
-                                <div class="table-cell cell-8">Timing</div>
-                                <div class="table-cell cell-10">Target</div>
-                                <div class="table-cell cell-10">Range</div>
-                                <div class="table-cell cell-8">Cost:</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell"><input type="text" name="attr_talent_name_innate_a"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_style_innate_a"></div>
-                                <div class="table-cell cell-center cell-boarder">Alpha Key Talent</div>
-                                <div class="table-cell"><input type="text" name="attr_talent_timing_innate_a"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_target_innate_a"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_range_innate_a"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_Cost_innate_a"></div>
-                            </div>
-                                <div class="sheet-expand">
-    	                            <span ame="attr_talent_desc"></span>
-    	                            <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_innate_a"></textarea>
-                                </div>
-                        </div>
+                </div>
+                <div class="section table">
+                    <div class="buffer"></div>
+                </div>
+                <!--Soul Burn --->
+                <div class="section table">
+                    <div class="table-row input-border">
+                        <div class="table-cell cell-5 cell-right">Name:</div>
+                        <div class="table-cell cell-30 cell-center cell-boarder">Soul Burn</div>
+                        <div class="table-cell cell-5 cell-right">Style:</div>
+                        <div class="table-cell cell-20 cell-center cell-boarder">Innate Power</div>
+                        <div class="table-cell cell-5">Type:</div>
+                        <div class="table-cell cell-5"></div>
+                        <div class="table-cell cell-10 cell-center">Innate Power</div>
                     </div>
-                    <div class="section table input-border">
-                        <div class="table-row  input-border">
-                            <div class="table-row">
-                                <div class="table-cell cell-30">Name</div>
-                                <div class="table-cell cell-a">Style</div>
-                                <div class="table-cell cell-15"></div>
-                                <div class="table-cell cell-8">Timing</div>
-                                <div class="table-cell cell-10">Target</div>
-                                <div class="table-cell cell-10">Range</div>
-                                <div class="table-cell cell-8">Cost:</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell"><input type="text" name="attr_talent_name_innate_b"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_style_innate_b"></div>
-                                <div class="table-cell cell-center cell-boarder">Omega Key Talent</div>
-                                <div class="table-cell"><input type="text" name="attr_talent_timing_innate_b"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_target_innate_b"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_range_innate_b"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_Cost__innate_b"></div>
-                            </div>
-                                <div class="sheet-expand">
-    	                            <span ame="attr_talent_desc"></span>
-    	                            <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_innate_b"></textarea>
-                                </div>
-                        </div>
+                </div>
+                <div class="section table">
+                    <div class="table-row input-border cell-center">
+                        <div class="table-cell cell-a">Timing:</div>
+                        <div class="table-cell cell-12 cell-boarder">Free</div>
+                        <div class="table-cell cell-a">Range:</div>
+                        <div class="table-cell cell-15 cell-boarder">User</div>
+                        <div class="table-cell cell-8">Target:</div>
+                        <div class="table-cell cell-15 cell-boarder">User</div>
+                        <div class="table-cell cell-5">Cost:</div>
+                        <div class="table-cell cell-12 cell-boarder">None</div>
+                        <div class="table-cell cell-5">Share:</div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">GM</button></div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">Chat</button></div>
                     </div>
-                <div class="section table input-border">
-                    <fieldset class="repeating_talents"> 
-                    <div class="table-row  input-border">
-                            <div class="table-row">
-                                <div class="table-cell cell-30">Name</div>
-                                <div class="table-cell cell-a">Style</div>
-                                <div class="table-cell cell-5"></div>
-                                <div class="table-cell cell-10"></div>
-                                <div class="table-cell cell-8">Timing</div>
-                                <div class="table-cell cell-10">Target</div>
-                                <div class="table-cell cell-10">Range</div>
-                                <div class="table-cell cell-8">Cost:</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell"><input type="text" name="attr_talent_name"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_style"></div>
+                </div>
+                <div class="section table">
+                    <div class="sheet-expand">
+                        <span ame="attr_talent_desc"></span>
+                        <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_soulburn"></textarea>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="buffer"></div>
+                </div>
+                <!--Ancestral Innate 1-->
+                <div class="section table">
+                    <div class="table-row input-border">
+                        <div class="table-cell cell-5 cell-right">Name:</div>
+                        <div class="table-cell cell-30"><input type="text" name="attr_talent_ancestral_a_name"></div>
+                        <div class="table-cell cell-5 cell-right">Style:</div>
+                        <div class="table-cell cell-20 cell-center cell-boarder">Ancestral</div>
+                        <div class="table-cell cell-5">Type:</div>
+                        <div class="table-cell cell-5"></div>
+                        <div class="table-cell cell-10 cell-center cell-boarder">Ancestral</div>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="table-row input-border cell-center">
+                        <div class="table-cell cell-a">Timing:</div>
+                        <div class="table-cell cell-12"><input type="text" name="attr_talent_ancestral_a_time"></div>
+                        <div class="table-cell cell-a">Range:</div>
+                        <div class="table-cell cell-15"><input type="text" name="attr_talent_ancestral_a_range"></div>
+                        <div class="table-cell cell-8">Target:</div>
+                        <div class="table-cell cell-15"><input type="text" name="attr_talent_ancestral_a_target"></div>
+                        <div class="table-cell cell-5">Cost:</div>
+                        <div class="table-cell cell-12"><input type="text" name="attr_talent_ancestral_a_cost"></div>
+                        <div class="table-cell cell-5">Share:</div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">GM</button></div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">Chat</button></div>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="sheet-expand">
+                        <span ame="attr_talent_desc"></span>
+                        <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_ancestral_a"></textarea>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="buffer"></div>
+                </div>
+                <!--Ancestral Innate 2-->
+                <div class="section table">
+                    <div class="table-row input-border">
+                        <div class="table-cell cell-5 cell-right">Name:</div>
+                        <div class="table-cell cell-30"><input type="text" name="attr_talent_ancestral_a_name"></div>
+                        <div class="table-cell cell-5 cell-right">Style:</div>
+                        <div class="table-cell cell-20 cell-center cell-boarder">Ancestral</div>
+                        <div class="table-cell cell-5">Type:</div>
+                        <div class="table-cell cell-5"></div>
+                        <div class="table-cell cell-10 cell-center cell-boarder">Ancestral</div>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="table-row input-border cell-center">
+                        <div class="table-cell cell-a">Timing:</div>
+                        <div class="table-cell cell-12"><input type="text" name="attr_talent_ancestral_b_time"></div>
+                        <div class="table-cell cell-a">Range:</div>
+                        <div class="table-cell cell-15"><input type="text" name="attr_talent_ancestral_b_range"></div>
+                        <div class="table-cell cell-8">Target:</div>
+                        <div class="table-cell cell-15"><input type="text" name="attr_talent_ancestral_b_target"></div>
+                        <div class="table-cell cell-5">Cost:</div>
+                        <div class="table-cell cell-12"><input type="text" name="attr_talent_ancestral_b_cost"></div>
+                        <div class="table-cell cell-5">Share:</div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">GM</button></div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">Chat</button></div>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="sheet-expand">
+                        <span ame="attr_talent_desc"></span>
+                        <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_ancestral_b"></textarea>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="buffer"></div>
+                </div>
+                <!--Key 1 -->
+                <div class="section table">
+                    <div class="table-row input-border">
+                        <div class="table-cell cell-5 cell-right">Name:</div>
+                        <div class="table-cell cell-30"><input type="text" name="attr_talent_key_a_name"></div>
+                        <div class="table-cell cell-5 cell-right">Style:</div>
+                        <div class="table-cell cell-20"><input type="text" name="attr_talent_key_a_style"></div>
+                        <div class="table-cell cell-5 cell-center cell-boarder">α</div>
+                        <div class="table-cell cell-10 cell-center cell-boarder">Key</div>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="table-row input-border cell-center">
+                        <div class="table-cell cell-a">Timing:</div>
+                        <div class="table-cell cell-12"><input type="text" name="attr_talent_key_a_time"></div>
+                        <div class="table-cell cell-a">Range:</div>
+                        <div class="table-cell cell-15"><input type="text" name="attr_talent_key_a_range"></div>
+                        <div class="table-cell cell-8">Target:</div>
+                        <div class="table-cell cell-15"><input type="text" name="attr_talent_key_a_target"></div>
+                        <div class="table-cell cell-5">Cost:</div>
+                        <div class="table-cell cell-12"><input type="text" name="attr_talent_key_a_cost"></div>
+                        <div class="table-cell cell-5">Share:</div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">GM</button></div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">Chat</button></div>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="sheet-expand">
+                        <span ame="attr_talent_desc"></span>
+                        <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_key_a"></textarea>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="buffer"></div>
+                </div>
+                <!--Key 2 -->
+                <div class="section table">
+                    <div class="table-row input-border">
+                        <div class="table-cell cell-5 cell-right">Name:</div>
+                        <div class="table-cell cell-30"><input type="text" name="attr_talent_key_b_name"></div>
+                        <div class="table-cell cell-5 cell-right">Style:</div>
+                        <div class="table-cell cell-20"><input type="text" name="attr_talent_key_b_style"></div>
+                        <div class="table-cell cell-5 cell-center cell-boarder">Ω</div>
+                        <div class="table-cell cell-10 cell-center cell-boarder">Key</div>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="table-row input-border cell-center">
+                        <div class="table-cell cell-a">Timing:</div>
+                        <div class="table-cell cell-12"><input type="text" name="attr_talent_key_b_time"></div>
+                        <div class="table-cell cell-a">Range:</div>
+                        <div class="table-cell cell-15"><input type="text" name="attr_talent_key_b_range"></div>
+                        <div class="table-cell cell-8">Target:</div>
+                        <div class="table-cell cell-15"><input type="text" name="attr_talent_key_b_target"></div>
+                        <div class="table-cell cell-5">Cost:</div>
+                        <div class="table-cell cell-12"><input type="text" name="attr_talent_key_b_cost"></div>
+                        <div class="table-cell cell-5">Share:</div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">GM</button></div>
+                        <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">Chat</button></div>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="sheet-expand">
+                        <span ame="attr_talent_desc"></span>
+                        <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc_key_b"></textarea>
+                    </div>
+                </div>
+                <div class="section table">
+                    <div class="buffer"></div>
+                </div>
+                <!--Repeating -->
+                <fieldset class="repeating_talents">
+                    <div class="section table">
+                        <div class="table-row input-border">
+                            <div class="table-cell cell-5 cell-right">Name:</div>
+                            <div class="table-cell cell-30"><input type="text" name="attr_talent_name"></div>
+                            <div class="table-cell cell-5 cell-right">Style:</div>
+                            <div class="table-cell cell-20"><input type="text" name="attr_talent__style"></div>
+                            <div class="table-cell cell-5">
                                 <div class="table-cell">
                                     <select name="attr_second_style_type" class="cell-drop">
                                         <option value="-">-</option>
@@ -972,6 +1055,8 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                                         <option value="B">Ω</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div class="table-cell cell-10">
                                 <div class="table-cell">                    
                                     <select name="attr_talent_type" class="cell-drop">
                                         <option value="0"> </option>
@@ -982,23 +1067,34 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                                         <option value="5">High</option>
                                     </select>
                                 </div>
-                                <div class="table-cell"><input type="text" name="attr_talent_timing"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_target"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_range"></div>
-                                <div class="table-cell"><input type="text" name="attr_talent_Cost_"></div>
                             </div>
-                            <div class="section">
-    
-                            </div>
-                                <div class="sheet-expand">
-    	                            <span ame="attr_talent_desc"></span>
-    	                            <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc"></textarea>
-                                </div>
-                            </div>
-                        
+                        </div>
                     </div>
-                    </fieldset>
-                </div> 
+                    <div class="section table">
+                        <div class="table-row input-border cell-center">
+                            <div class="table-cell cell-a">Timing:</div>
+                            <div class="table-cell cell-12"><input type="text" name="attr_talent_time"></div>
+                            <div class="table-cell cell-a">Range:</div>
+                            <div class="table-cell cell-15"><input type="text" name="attr_talent_range"></div>
+                            <div class="table-cell cell-8">Target:</div>
+                            <div class="table-cell cell-15"><input type="text" name="attr_talent_target"></div>
+                            <div class="table-cell cell-5">Cost:</div>
+                            <div class="table-cell cell-12"><input type="text" name="attr_talent_cost"></div>
+                            <div class="table-cell cell-5">Share:</div>
+                            <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">GM</button></div>
+                            <div class="table-cell cell-8"><button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_accuracy">Chat</button></div>
+                        </div>
+                    </div>
+                    <div class="section table">
+                        <div class="sheet-expand">
+                            <span ame="attr_talent_desc"></span>
+                            <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc"></textarea>
+                        </div>
+                    </div>
+                    <div class="section table">
+                        <div class="buffer"></div>
+                    </div>
+                </fieldset>
             </div>
         </div>
     </div>
