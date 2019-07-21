@@ -146,10 +146,11 @@ on("change:accuracy change:strength change:accuracy_style change:accuracy_armor 
     
 });
 //Evasion & Initiative Total
-on("change:evasion change:agility change:evasion_style change:evasion_armor change:evasion_weapon change:evasion_accessory1 change:evasion_accessory2 change:evasion_talent change:evasion_misc sheet:opened change:initiative change:initiative_weapon change:initiative_style change:initiative_armor change:initiative_accessory1 change:initiative_accessory2 change:initiative_talent change:initiative_misc change:agility_cover change:agility_talents change:agility_items change:agility_misc", function()
+on("change:combat_move_misc change:full_move_misc change:evasion change:agility change:evasion_style change:evasion_armor change:evasion_weapon change:evasion_accessory1 change:evasion_accessory2 change:evasion_talent change:evasion_misc sheet:opened change:initiative change:initiative_weapon change:initiative_style change:initiative_armor change:initiative_accessory1 change:initiative_accessory2 change:initiative_talent change:initiative_misc change:agility_cover change:agility_talents change:agility_items change:agility_misc", function()
     {
     getAttrs (["agility", "evasion_style", "evasion_armor", "evasion_weapon", "evasion_accessory1", "evasion_accessory2", "evasion_talent", "evasion_misc",
     "agility_cover", "agility_talents", "agility_items", "agility_misc",
+    "combat_move_misc",  "full_move_misc",
     "initiative_weapon", "initiative_style", "initiative_armor", "initiative_accessory1", "initiative_accessory2", "initiative_talent", "initiative_misc"], function(values) {
     //Multiuse stat    
     const agi               = parseInt(values.agility,10)||0;
@@ -170,6 +171,7 @@ on("change:evasion change:agility change:evasion_style change:evasion_armor chan
     const ini_accessory2    = parseInt(values.initiative_accessory2,10)||0;
     const ini_talent        = parseInt(values.initiative_talent,10)||0;
     const ini_misc          = parseInt(values.initiative_misc,10)||0;
+    const init              = ini_weapon + ini_style + ini_armor + ini_accessory1 + ini_accessory2 + ini_talent + ini_misc + agi + 5
     console.log("Initiative", agi, ini_style, ini_armor, ini_accessory1, ini_accessory2, ini_talent, ini_misc);
     //Generic Agility
     const agi_items         = parseInt(values.agility_items,10)||0;
@@ -177,6 +179,20 @@ on("change:evasion change:agility change:evasion_style change:evasion_armor chan
     const agi_cover         = parseInt(values.agility_cover,10)||0;
     const agi_misc          = parseInt(values.agility_misc,10)||0;
     console.log("Generic Agi", agi, agi_items, agi_talents, agi_cover, agi_misc);
+    //Movement
+    //(Initiative + 5) / 3 COMBAT MOVE
+    const combat_move       = Math.ceil((init + 5)/3);
+    const combat_misc       = parseInt(values.combat_move_misc,10)||0;
+    //Initiative + 5 FULL MOVE
+    const full_misc         = parseInt(values.full_move_misc,10)||0;
+    
+    setAttrs({                            
+		combat_move_total: combat_move + combat_misc 
+	});
+	
+	setAttrs({                            
+		full_move_total: init + 5 + full_misc
+	});
     
     setAttrs({                            
 		agility_generic: agi + agi_items + agi_talents + agi_cover + agi_misc
@@ -187,7 +203,7 @@ on("change:evasion change:agility change:evasion_style change:evasion_armor chan
 	});
 	
 	setAttrs({                            
-		initiative: ini_weapon + ini_style + ini_armor + ini_accessory1 + ini_accessory2 + ini_talent + ini_misc + agi + 5
+		initiative: init
 	});
 	
     });
@@ -220,12 +236,6 @@ on("change:intellect_cover change:intellect_talents change:intellect_items chang
     const md_talent         = parseInt(values.md_talent,10)||0;
     const md_misc           = parseInt(values.md_misc,10)||0;
     console.log(md_weapon, md_style, md_armor, md_accessory1, md_accessory2, md_talent, md_misc);
-	//Generic Agility
-    //const agi_items         = parseInt(values.agility_items,10)||0;
-    //const agi_talents       = parseInt(values.agility_talents,10)||0;
-    //const agi_cover         = parseInt(values.agility_cover,10)||0;
-    //const agi_misc          = parseInt(values.agility_misc,10)||0;
-    //console.log("Generic Agi", agi, agi_items, agi_talents, agi_cover, agi_misc);
     //Generic intellect
     const int_items         = parseInt(values.intellect_items,10)||0;
     const int_talents       = parseInt(values.intellect_talents,10)||0;
@@ -302,8 +312,6 @@ on("change:guard change:guard_weapon change:guard_style change:guard_armor chang
 });
 
 //Ward Total
-
-
 on("change:ward change:ward_weapon change:ward_style change:ward_armor change:ward_accessory1 change:ward_accessory2 change:ward_talent change:ward_misc sheet:opened", function()
     {
     getAttrs (["ward", "ward_weapon", "ward_style", "ward_armor", "ward_accessory1", "ward_accessory2", "ward_talent", "ward_misc"], function(values) {
@@ -317,6 +325,22 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
     console.log(weapon, style, armor, accessory1, accessory2, talent, misc);
 	setAttrs({                            
 		ward: weapon + style + armor + accessory1 + accessory2 + talent + misc
+	});
+
+    
+    });
+});
+//Custom Roll?!
+on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items change:custom_roll_misc", function()
+    {
+    getAttrs (["custom_roll_cover", "custom_roll_talents", "custom_roll_items", "custom_roll_misc"], function(values) {
+    const cover         = parseInt(values.custom_roll_cover,10)||0;
+    const talents       = parseInt(values.custom_roll_talents,10)||0;
+    const items         = parseInt(values.custom_roll_items,10)||0;
+    const misc          = parseInt(values.custom_roll_misc,10)||0;
+    console.log(cover, talents, items, misc);
+	setAttrs({                            
+		custom_roll_total: cover + talents + items + misc 
 	});
 
     
@@ -508,7 +532,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                         </div>
                     </div>
                     <div class="section table input-border">
-                        <div class="table-row">
+                        <div class="table-row cell-center">
                             <div class="table-cell cell-5"></div>
                             <div class="table-cell cell-5"></div>
                             <div class="table-cell cell-5">Total</div>
@@ -525,14 +549,14 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                             <div class="table-cell cell-5">Misc</div>
                         </div>
                         <div class="table-row">
-                            <div class="table-cell cell-3 cell-right"><button type="roll" value="/roll @{dicepool_accuracy}d6 + ?{Bonus|0} +@{accuracy}" name="roll_accuracy"></button></div>
+                            <div class="table-cell cell-3 cell-right"><button type="roll" value="/roll [Strength] 2d6 + ?{Bonus|0} + ?{Bonus dice|0}d6 +@{strength_generic}" name="roll_strength"></button></div>
                             <div class="table-cell cell-5">Strength</div>
                             <div class="table-cell input-AutoCalc"><input type="number" name="attr_strength_generic" value="0" readonly></div>
                             <div class="table-cell cell-5"><input type="number" name="attr_strength_cover" value="0"></div>
                             <div class="table-cell cell-5"><input type="number" name="attr_strength_talents" value="0"></div>
                             <div class="table-cell cell-5"><input type="number" name="attr_strength_items" value="0"></div>
                             <div class="table-cell cell-5"><input type="number" name="attr_strength_misc" value="0"></div>
-                            <div class="table-cell cell-3 cell-right"><button type="roll" value="/roll @{dicepool_accuracy}d6 + ?{Bonus|0} +@{accuracy}" name="roll_accuracy"></button></div>
+                            <div class="table-cell cell-3 cell-right"><button type="roll" value="/roll [Intellect] 2d6 + ?{Bonus|0} + ?{Bonus dice|0}d6 +@{Intellect_generic} " name="roll_Intellect"></button></div>
                             <div class="table-cell cell-5">Intellect</div>
                             <div class="table-cell input-AutoCalc"><input type="number" name="attr_intellect_generic" value="0"></div>
                             <div class="table-cell cell-5"><input type="number" name="attr_intellect_cover" value="0"></div>
@@ -541,14 +565,14 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                             <div class="table-cell cell-5"><input type="number" name="attr_intellect_misc" value="0"></div>
                         </div>
                         <div class="table-row">
-                            <div class="table-cell cell-right"><button type="roll" value="/roll @{dicepool_accuracy}d6 + ?{Bonus|0} +@{accuracy}" name="roll_accuracy"></button></div>
+                            <div class="table-cell cell-right"><button type="roll" value="/roll [Agility] 2d6 + ?{Bonus|0} + ?{Bonus dice|0}d6 +@{Agility_generic}" name="roll_Agility"></button></div>
                             <div class="table-cell">Agility</div>
                             <div class="table-cell input-AutoCalc"><input type="number" name="attr_agility_generic" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_agility_cover" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_agility_talents" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_agility_items" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_agility_misc" value="0"></div>
-                            <div class="table-cell cell-right"><button type="roll" value="/roll @{dicepool_accuracy}d6 + ?{Bonus|0} +@{accuracy}" name="roll_accuracy"></button></div>
+                            <div class="table-cell cell-right"><button type="roll" value="/roll [Will] 2d6 + ?{Bonus|0} + ?{Bonus dice|0}d6 +@{Will_generic}" name="roll_Will"></button></div>
                             <div class="table-cell">Will</div>
                             <div class="table-cell input-AutoCalc"><input type="number" name="attr_will_generic" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_will_cover" value="0"></div>
@@ -557,20 +581,20 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                             <div class="table-cell"><input type="number" name="attr_will_misc" value="0"></div>
                         </div>
                         <div class="table-row">
-                            <div class="table-cell cell-right"><button type="roll" value="/roll @{dicepool_accuracy}d6 + ?{Bonus|0} +@{accuracy}" name="roll_accuracy"></button></div>
+                            <div class="table-cell cell-right"><button type="roll" value="/roll [Luck] 2d6 + ?{Bonus|0} + ?{Bonus dice|0}d6 +@{Luck_generic}" name="roll_luck"></button></div>
                             <div class="table-cell">Luck</div>
                             <div class="table-cell input-AutoCalc"><input type="number" name="attr_luck_generic" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_luck_cover" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_luck_talents" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_luck_items" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_luck_misc" value="0"></div>
-                            <div class="table-cell cell-right"><button type="roll" value="/roll @{dicepool_accuracy}d6 + ?{Bonus|0} +@{accuracy}" name="roll_accuracy"></button></div>
-                            <div class="table-cell">???</div>
-                            <div class="table-cell input-AutoCalc"><input type="number" name="attr_notused_generic" value="0"></div>
-                            <div class="table-cell"><input type="number" name="attr_notused_cover" value="0"></div>
-                            <div class="table-cell"><input type="number" name="attr_notused_talents" value="0"></div>
-                            <div class="table-cell"><input type="number" name="attr_notused_items" value="0"></div>
-                            <div class="table-cell"><input type="number" name="attr_notused_misc" value="0"></div>
+                            <div class="table-cell cell-right"><button type="roll" value="/roll [@{custom_roll}] 2d6 + ?{Bonus|0} + ?{Bonus dice|0}d6 +@{custom_roll_total}" name="roll_misc"></button></div>
+                            <div class="table-cell"><input type="text" name="attr_custom_roll" value="Misc"></div>
+                            <div class="table-cell input-AutoCalc"><input type="number" name="attr_custom_roll_total" value="0"></div>
+                            <div class="table-cell"><input type="number" name="attr_custom_roll_cover" value="0"></div>
+                            <div class="table-cell"><input type="number" name="attr_custom_roll_talents" value="0"></div>
+                            <div class="table-cell"><input type="number" name="attr_custom_roll_items" value="0"></div>
+                            <div class="table-cell"><input type="number" name="attr_custom_roll_misc" value="0"></div>
                         </div>
                     </div>
                     <div class="section table input-border">
@@ -596,7 +620,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                         <!--Phsyical -->
                         <div class="table-row input-border">
                             <div class="table-cell  cell-right">
-                                <button type="roll" value="/roll @{dicepool_accuracy}d6 + ?{Bonus|0} +@{accuracy}" name="roll_accuracy"></button>
+                                <button type="roll" value="/roll [Accuracy] @{dicepool_accuracy}d6 + ?{Bonus|0} +@{accuracy} + ?{Bonus dice|0}d6" name="roll_accuracy"></button>
                             </div>
                             <div class="table-cell  cell-center">
                                 ACCURACY:
@@ -604,7 +628,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                             <div class="table-cell  input-AutoCalc">
                                 <input class="input-Autocalc" type="number" name="attr_accuracy" value="0" readyonly></td>
                             </div>
-                            <div class="table-cell cell-center">strength</div>
+                            <div class="table-cell cell-center">Strength</div>
                             <div class="table-cell"><input type="number" name="attr_accuracy_style" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_accuracy_weapon" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_accuracy_armor" value="0"></div>
@@ -616,7 +640,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                         </div>
                         <div class="table-row input-border">
                             <div class="table-cell  cell-right">
-                                <button type="roll" value="/roll @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion}" name="roll_evasion"></button>
+                                <button type="roll" value="/roll [Evasion] @{dicepool_evasion}d6 + ?{Bonus|0} +@{evasion} + ?{Bonus dice|0}d6" name="roll_evasion"></button>
                             </div>
                             <div class="table-cell cell-center">
                                 EVASION:
@@ -636,7 +660,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                         </div>
                         <div class="table-row input-border">
                             <div class="table-cell cell-right">
-                                <button type="roll" value="/roll @{dicepool_invocation}d6 + ?{Bonus|0} +@{invocation}" name="roll_invocation"></button>
+                                <button type="roll" value="/roll [Invoaction] @{dicepool_invocation}d6 + ?{Bonus|0} +@{invocation} + ?{Bonus dice|0}d6" name="roll_invocation"></button>
                             </div>
                             <div class="table-cell cell-center">
                                 INVOCATION:
@@ -656,7 +680,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                         </div>
                         <div class="table-row input-border">
                             <div class="table-cell cell-right">
-                                <button type="roll" value="/roll @{dicepool_resistance}d6 + ?{Bonus|0} +@{resistance}" name="roll_resistance"></button>
+                                <button type="roll" value="/roll [Resistance] @{dicepool_resistance}d6 + ?{Bonus|0} +@{resistance} + ?{Bonus dice|0}d" name="roll_resistance"></button>
                             </div>
                             <div class="table-cell cell-center">
                                 RESISTANCE:
@@ -676,7 +700,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                         </div>
                         <div class="table-row input-border">
                             <div class="table-cell  cell-right">
-                                <button type="roll" value="/roll @{dicepool_instinct}d6 + ?{Bonus|0} +@{instinct}" name="roll_instinct"></button>
+                                <button type="roll" value="/roll [Instinct] @{dicepool_instinct}d6 + ?{Bonus|0} +@{instinct} + ?{Bonus dice|0}d6" name="roll_instinct"></button>
                             </div>
                             <div class="table-cell cell-center">
                                 INSTINCT:
@@ -747,7 +771,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                             <!--break -->
                         </div>
                         <div class="table-row input-border">
-                            <div class="table-cell cell-5 cell-right"></div>
+                            <div class="table-cell cell-5 cell-right tracker-font"><button type="roll" value="/roll @{initiative} + ?{Bonus|0} &{tracker}" name="roll_instinct">Track</button></div>
                             <div class="table-cell cell-center">
                                 INITIATIVE:
                             </div>
@@ -815,7 +839,24 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                             <div class="table-cell"><input type="number" name="attr_ward_talent" value="0"></div>
                             <div class="table-cell"><input type="number" name="attr_ward_misc" value="0"></div>
                         </div>
-                        
+                    <div class="table-row buffer"></div>    
+                    </div>
+                    <div class="section table">
+                        <div class="table-row input-border cell-center">
+                            <div class="table-cell cell-10 cell-right">Simple Move:</div>
+                            <div class="table-cell cell-5 input-AutoCalc"><input type="number" name="attr_simple_move_total" value="@{simple_move_misc} + 1" disabled="true"></div>
+                            <div class="table-cell cell-5"><input type="number" name="attr_simple_move_misc" value="0"></div>
+                            <div class="table-cell cell-10 cell-right">Combat Move:</div>
+                            <div class="table-cell cell-5 input-AutoCalc"><input type="number" name="attr_combat_move_total" value="0" readonly></div>
+                            <div class="table-cell cell-10">(Initiative + 5) / 3</div>
+                            <div class="table-cell cell-5"><input type="number" name="attr_combat_move_misc" value="0"></div>
+                            <div class="table-cell cell-8 cell-right">Full Move:</div>
+                            <div class="table-cell cell-5 input-AutoCalc"><input type="number" name="attr_full_move_total" value="0" readonly></div>
+                            <div class="table-cell cell-8">Initiative + 5</div>
+                            <div class="table-cell cell-5"><input type="number" name="attr_full_move_misc" value="0"></div>
+                            <div class="table-cell cell-5"></div>
+                        </div>
+                        <div class="table-row buffer"></div> 
                     </div>
                 </div>
             </div>
@@ -1296,6 +1337,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                                 <div class="table-cell cell-20">Grip:</div>
                                 <div class="table-cell cell-20">Restriction:</div>
                                 <div class="table-cell cell-a">Element:</div>
+                                <div class="table-cell cell-5">Rank:</div>
                                 <div class="table-cell cell-5">PD:</div>
                                 <div class="table-cell cell-5">MD:</div>
                                 <div class="table-cell cell-5"></div>
@@ -1305,6 +1347,7 @@ on("change:ward change:ward_weapon change:ward_style change:ward_armor change:wa
                                 <div class="table-cell"><input type="text" name="attr_weapon_grip"></div>
                                 <div class="table-cell"><input type="text" name="attr_weapon_restrict"></div>
                                 <div class="table-cell"><input type="text" name="attr_weapon_element"></div>
+                                <div class="table-cell"><input type="text" name="attr_weapon_rank"></div>
                                 <div class="table-cell"><input type="number" name="attr_weapon_pd"></div>
                                 <div class="table-cell"><input type="number" name="attr_weapon_md"></div>
                                 <div class="table-cell">Equipped:</div>
