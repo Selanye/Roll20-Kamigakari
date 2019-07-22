@@ -1022,7 +1022,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                     <div class="table-row input-border">
                         <div class="table-cell cell-5 cell-right">Name:</div>
                         <div class="table-cell cell-30 cell-center cell-boarder">Numinal Barrier</div>
-                        <div class="table-cell cell-5 cell-right">Style:</div>
+                        <div class="table-cell cell-5 cell-right">Source:</div>
                         <div class="table-cell cell-20 cell-center cell-boarder">Innate Power</div>
                         <div class="table-cell cell-5">Type:</div>
                         <div class="table-cell cell-5"></div>
@@ -1058,7 +1058,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                     <div class="table-row input-border">
                         <div class="table-cell cell-5 cell-right">Name:</div>
                         <div class="table-cell cell-30 cell-center cell-boarder">Soul Burn</div>
-                        <div class="table-cell cell-5 cell-right">Style:</div>
+                        <div class="table-cell cell-5 cell-right">Source:</div>
                         <div class="table-cell cell-20 cell-center cell-boarder">Innate Power</div>
                         <div class="table-cell cell-5">Type:</div>
                         <div class="table-cell cell-5"></div>
@@ -1094,7 +1094,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                     <div class="table-row input-border">
                         <div class="table-cell cell-5 cell-right">Name:</div>
                         <div class="table-cell cell-30"><input type="text" name="attr_talent_ancestral_a_name"></div>
-                        <div class="table-cell cell-5 cell-right">Style:</div>
+                        <div class="table-cell cell-5 cell-right">Source:</div>
                         <div class="table-cell cell-20 cell-center cell-boarder">Ancestral</div>
                         <div class="table-cell cell-5">Type:</div>
                         <div class="table-cell cell-5"></div>
@@ -1130,7 +1130,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                     <div class="table-row input-border">
                         <div class="table-cell cell-5 cell-right">Name:</div>
                         <div class="table-cell cell-30"><input type="text" name="attr_talent_ancestral_b_name"></div>
-                        <div class="table-cell cell-5 cell-right">Style:</div>
+                        <div class="table-cell cell-5 cell-right">Source:</div>
                         <div class="table-cell cell-20 cell-center cell-boarder">Ancestral</div>
                         <div class="table-cell cell-5">Type:</div>
                         <div class="table-cell cell-5"></div>
@@ -1166,8 +1166,8 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                     <div class="table-row input-border">
                         <div class="table-cell cell-5 cell-right">Name:</div>
                         <div class="table-cell cell-30"><input type="text" name="attr_talent_key_a_name"></div>
-                        <div class="table-cell cell-5 cell-right">Style:</div>
-                        <div class="table-cell cell-20"><input type="text" name="attr_talent_key_a_style"></div>
+                        <div class="table-cell cell-5 cell-right">Source:</div>
+                        <div class="table-cell cell-20"><input type="text" name="attr_talent_key_a_Source"></div>
                         <div class="table-cell cell-5">
                             <div class="table-cell">
                                 <select name="attr_second_style_type" class="cell-drop">
@@ -1209,8 +1209,8 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                     <div class="table-row input-border">
                         <div class="table-cell cell-5 cell-right">Name:</div>
                         <div class="table-cell cell-30"><input type="text" name="attr_talent_key_b_name"></div>
-                        <div class="table-cell cell-5 cell-right">Style:</div>
-                        <div class="table-cell cell-20"><input type="text" name="attr_talent_key_b_style"></div>
+                        <div class="table-cell cell-5 cell-right">Source:</div>
+                        <div class="table-cell cell-20"><input type="text" name="attr_talent_key_b_Source"></div>
                         <div class="table-cell cell-5">
                             <div class="table-cell">
                                 <select name="attr_second_style_type" class="cell-drop">
@@ -1253,8 +1253,8 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                         <div class="table-row input-border">
                             <div class="table-cell cell-5 cell-right">Name:</div>
                             <div class="table-cell cell-30"><input type="text" name="attr_talent_name"></div>
-                            <div class="table-cell cell-5 cell-right">Style:</div>
-                            <div class="table-cell cell-20"><input type="text" name="attr_talent__style"></div>
+                            <div class="table-cell cell-5 cell-right">Source:</div>
+                            <div class="table-cell cell-20"><input type="text" name="attr_talent_Source"></div>
                             <div class="table-cell cell-5">
                                 <div class="table-cell">
                                     <select name="attr_second_style_type" class="cell-drop">
@@ -1317,39 +1317,60 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                     <div class="table-row input-border">
                             <div class="table-row">
                                 <div class="table-cell cell-a">Divine Name:</div>
+                                <div class="table-cell cell-5">ACC:</div>
+                                <div class="table-cell cell-5">IVC:</div>
                                 <div class="table-cell cell-5">INIT:</div>
-                                <div class="table-cell cell-8">Range:</div>
-                                <div class="table-cell cell-5">T#:</div>
-                                <div class="table-cell cell-10">Accuracy:</div>
-                                <div class="table-cell cell-10">Invocation:</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-cell cell-a"><input type="text" name="attr_weapon_name"></div>
-                                <div class="table-cell cell-5"><input type="number" name="attr_weapon_stats_init"></div>
-                                <div class="table-cell cell-8"><input type="text" name="attr_weapon_range"></div>
-                                <div class="table-cell cell-5"><input type="text" name="attr_weapon_target"></div>
-                                <div class="table-cell cell-a"><input type="number" name="attr_weapon_accuracy"></div>
-                                <div class="table-cell cell-10"><input type="number" name="attr_weapon_invocation"></div>
-                            </div>
-                    </div>
-                    <div class="table-row input-border">
-                            <div class="table-row">
-                                <div class="table-cell cell-20">Grip:</div>
-                                <div class="table-cell cell-20">Restriction:</div>
-                                <div class="table-cell cell-a">Element:</div>
-                                <div class="table-cell cell-5">Rank:</div>
                                 <div class="table-cell cell-5">PD:</div>
                                 <div class="table-cell cell-5">MD:</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell"><input type="text" name="attr_weapon_name"></div>
+                                <div class="table-cell"><input type="number" name="attr_weapon_accuracy"></div>
+                                <div class="table-cell"><input type="number" name="attr_weapon_invocation"></div>
+                                <div class="table-cell"><input type="number" name="attr_weapon_stats_init"></div>
+                                <div class="table-cell"><input type="number" name="attr_weapon_pd"></div>
+                                <div class="table-cell"><input type="number" name="attr_weapon_md"></div>
+                                
+                            </div>
+                    </div>
+                    <div class="table-row input-border"> 
+                            <div class="table-row">
+                                <div class="table-cell cell-12">Form:</div>
+                                <div class+"table-cell cell-10">DMG Type:</div>
+                                <div class="table-cell cell-8">Range:</div>
+                                <div class="table-cell cell-5">T#:</div>
+                                <div class="table-cell cell-5">Rank:</div>
+                                <div class="table-cell cell-15">Element:</div>
+                                <div class="table-cell cell-8">Resist:</div>
+                                <div class="table-cell cell-10">Restriction:</div>
+                                <div class="table-cell cell-10">Grip:</div>
                                 <div class="table-cell cell-5"></div>
                                 <div class="table-cell cell-5"></div>
                             </div>
                             <div class="table-row">
-                                <div class="table-cell"><input type="text" name="attr_weapon_grip"></div>
-                                <div class="table-cell"><input type="text" name="attr_weapon_restrict"></div>
-                                <div class="table-cell"><input type="text" name="attr_weapon_element"></div>
+                                <div class="table-cell"><input type="text" name="attr_weapon_form"></div>
+                                <div class="table-cell">
+                                    <select name="attr_attr_weapon_dmg_type" class="cell-drop">
+                                        <option value="Physical">Physical</option>
+                                        <option value="Magic">Magic</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="table-cell"><input type="text" name="attr_weapon_range"></div>
+                                <div class="table-cell"><input type="text" name="attr_weapon_target"></div>
                                 <div class="table-cell"><input type="text" name="attr_weapon_rank"></div>
-                                <div class="table-cell"><input type="number" name="attr_weapon_pd"></div>
-                                <div class="table-cell"><input type="number" name="attr_weapon_md"></div>
+                                <div class="table-cell"><input type="text" name="attr_weapon_element"></div>
+                                <div class="table-cell">
+                                    <select name="attr_attr_weapon_dmg_type" class="cell-drop">
+                                        <option value="-">-</option>
+                                        <option value="N/A">N/A</option>
+                                        <option value="Physical">Half</option>
+                                        <option value="Magic">None</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="table-cell"><input type="text" name="attr_weapon_restriction"></div>
+                                <div class="table-cell"><input type="number" name="attr_weapon_grip"></div>
                                 <div class="table-cell">Equipped:</div>
                                 <div class="table-cell cell-check "><input class= "equipment"type="checkbox" name="attr_weapon_equipped"><span></span></div>
                             </div>
@@ -1377,7 +1398,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                     
                     </fieldset>
                     </div>
-                    <div class="equipment-header">PROTECTORS:</div>
+                    <div class="equipment-header">ARMORS:</div>
                     <div class="section table">
                     <fieldset class="repeating_armors">
                         <div class="section table">
