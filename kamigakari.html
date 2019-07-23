@@ -80,7 +80,7 @@ on("change:accuracy change:strength change:accuracy_style change:accuracy_armor 
     const acc_misc          = parseInt(values.accuracy_misc,10)||0;
     console.log("accuracy", str, acc_style, acc_armor, acc_accessory1, acc_accessory2, acc_talent, acc_misc, acc_weapon);
 	//PD
-    const pd_third         	= Math.ceil(str/3);
+    const pd_third         	= Math.ceil(str/2);
     const pd_weapon        	= parseInt(values.pd_weapon,10)||0;
     const pd_style          = parseInt(values.pd_style,10)||0;
     const pd_armor         	= parseInt(values.pd_armor,10)||0;
@@ -227,7 +227,7 @@ on("change:intellect_cover change:intellect_talents change:intellect_items chang
     const inv_misc          = parseInt(values.invocation_misc,10)||0;
     console.log(int, inv_style, inv_armor, inv_accessory1, inv_accessory2, inv_talent, inv_misc, inv_weapon);
     //Magic Damage
-    const md_third          = Math.ceil(int/3);
+    const md_third          = Math.ceil(int/2);
     const md_weapon         = parseInt(values.md_weapon,10)||0;
     const md_style          = parseInt(values.md_style,10)||0;
     const md_armor          = parseInt(values.md_armor,10)||0;
@@ -1319,16 +1319,16 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                                 <div class="table-cell cell-5">ACC:</div>
                                 <div class="table-cell cell-5">IVC:</div>
                                 <div class="table-cell cell-5">INIT:</div>
-                                <div class="table-cell cell-5">PD:</div>
-                                <div class="table-cell cell-5">MD:</div>
+                                <div class="table-cell cell-8">PD:</div>
+                                <div class="table-cell cell-8">MD:</div>
                             </div>
                             <div class="table-row">
                                 <div class="table-cell"><input type="text" name="attr_weapon_name" spellcheck="false"></div>
                                 <div class="table-cell"><input type="number" name="attr_weapon_accuracy"></div>
                                 <div class="table-cell"><input type="number" name="attr_weapon_invocation"></div>
                                 <div class="table-cell"><input type="number" name="attr_weapon_stats_init"></div>
-                                <div class="table-cell"><input type="number" name="attr_weapon_pd"></div>
-                                <div class="table-cell"><input type="number" name="attr_weapon_md"></div>
+                                <div class="table-cell"><input type="text" name="attr_weapon_pd" spellcheck="false"></div>
+                                <div class="table-cell"><input type="text" name="attr_weapon_md" spellcheck="false"></div>
                                 
                             </div>
                     </div>
@@ -1369,7 +1369,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                                     </select>
                                 </div>
                                 <div class="table-cell"><input type="text" name="attr_weapon_restriction" spellcheck="false"></div>
-                                <div class="table-cell"><input type="number" name="attr_weapon_grip"></div>
+                                <div class="table-cell"><input type="text" name="attr_weapon_grip"></div>
                                 <div class="table-cell">Equipped:</div>
                                 <div class="table-cell cell-check "><input class= "equipment"type="checkbox" name="attr_weapon_equipped"><span></span></div>
                             </div>
