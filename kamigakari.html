@@ -611,7 +611,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                             <div class="table-cell cell-8">Main Stat:</div>
                             <div class="table-cell cell-8">Style Stat:</div>
                             <div class="table-cell cell-8">Weapon:</div>
-                            <div class="table-cell cell-8">Armor:</div>
+                            <div class="table-cell cell-8">Vesture:</div>
                             <div class="table-cell cell-8">Accessory:</div>
                             <div class="table-cell cell-8">Accessory:</div>
                             <div class="table-cell cell-8">Talent:</div>
@@ -1013,6 +1013,105 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
     <!--TALENTS --->
     <div class="sheet-tabs-content sheet-tabs3">
         <div class="section2">
+                <input type="checkbox" class="arrow collapse" name="attr_NumenQuickRef" checked="True" value="true"><span></span>
+                NUMEN POOL <!---& STATS QUICK REFENCE:--->
+                <div class="body">
+                    <div class="section table input-border">
+                        <div class="table-row">
+                            <div class="table-cell cell-5" align="center">DICE:</div>
+                            <div class="table-cell cell-5">
+                                <select name="attr_numenpool_1" class="cell-drop">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div class="table-cell cell-5">
+                                <select name="attr_numenpool_2" class="cell-drop">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div class="table-cell cell-5">
+                                <select name="attr_numenpool_3" class="cell-drop">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div class="table-cell cell-5">
+                                <select name="attr_numenpool_4" class="cell-drop">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div class="table-cell cell-5">
+                                <select name="attr_numenpool_5" class="cell-drop">
+                                    <option value="7">-</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div class="table-cell cell-5">
+                                <select name="attr_numenpool_6" class="cell-drop">
+                                    <option value="7">-</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div class="table-cell cell-10"> 
+                                <button class="templatebutton" type="roll" name="NumenPoolRoll" title="Numen Pool" value="&{template:numen} {{name=@{character_name}}} {{die1=[[1d@{numenpool_used_1}cf0cs>0]]}} {{die2=[[1d@{numenpool_used_2}cf0cs>0]]}} {{die3=[[1d@{numenpool_used_3}cf0cs>0]]}} {{die4=[[1d@{numenpool_used_4}cf0cs>0]]}} {{die5=[[1d@{numenpool_used_5}cf0cs>0]]}} {{die6=[[1d@{numenpool_used_6}cf0cs>0]]}}"> Numen Pool</button>
+                            </div>
+                            <div class="table-cell cell-10"> 
+                            </div>
+                            <div class="table-cell cell-10 cell-right">  OVERFLOW:</div>
+                            <div class="table-cell cell-a">
+                                <input type="radio" class="normal zero" name="attr_numen_overflow" value="0" checked="checked" /><span></span>
+                                <input type="radio" class="normal" name="attr_numen_overflow" value="1" /><span></span>
+                                <input type="radio" class="normal" name="attr_numen_overflow" value="2" /><span></span>
+                                <input type="radio" class="normal" name="attr_numen_overflow" value="3" /><span></span>
+                                <input type="radio" class="normal" name="attr_numen_overflow" value="4" /><span></span>
+                                <input type="radio" class="normal" name="attr_numen_overflow" value="5" /><span></span>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Used:</div>
+                            <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_1" value="6"></div>
+                            <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_2" value="6"></div>
+                            <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_3" value="6"></div>
+                            <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_4" value="6"></div>
+                            <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_5" value="6"></div>
+                            <div class="table-cell sheet-cell-center"><input type="checkbox" name="attr_numenpool_used_6" value="6"></div>
+                        </div>
+    
+                    </div>
+                    <!---BONDS--->
+                    
+                </div>
+            </div>
+        <div class="section2">
             <input type="checkbox" class="arrow collapse" name="attr_talentssec" checked="true"><span></span>
             TALENTS
             <div class="body">
@@ -1169,7 +1268,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                         <div class="table-cell cell-20"><input type="text" name="attr_talent_key_a_Source" spellcheck="false"></div>
                         <div class="table-cell cell-5">
                             <div class="table-cell">
-                                <select name="attr_second_style_type" class="cell-drop">
+                                <select name="attr_second_key_a_type" class="cell-drop">
                                     <option value="-">-</option>
                                     <option value="A">α</option>
                                     <option value="B">Ω</option>
@@ -1212,7 +1311,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                         <div class="table-cell cell-20"><input type="text" name="attr_talent_key_b_Source" spellcheck="false"></div>
                         <div class="table-cell cell-5">
                             <div class="table-cell">
-                                <select name="attr_second_style_type" class="cell-drop">
+                                <select name="attr_key_b_type" class="cell-drop">
                                     <option value="-">-</option>
                                     <option value="A">α</option>
                                     <option value="B">Ω</option>
@@ -1396,7 +1495,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                     
                     </fieldset>
                     </div>
-                    <div class="equipment-header">ARMORS:</div>
+                    <div class="equipment-header">VESTURE:</div>
                     <div class="section table">
                     <fieldset class="repeating_armors">
                         <div class="section table">
