@@ -372,7 +372,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                 <div class="section table input-border">
                     <div class="table-row">
                         <div class="table-cell cell-25">COVER<input type="text" name="attr_cover"></div>  
-                        <div class="table-cell cell-75">COVER BONUS<input type="text" name="attr_cover"></div>  
+                        <div class="table-cell cell-75">COVER BONUS<input type="text" name="attr_cover_bonus"></div>  
                     </div>
                 </div>
                 <div class="section table">
@@ -1568,9 +1568,9 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                     <div class="body">
                          <div class="section table">
                             <div class="table-row">
-                                <div class="table-cell cell-50"></div>
-                                <div class="table-cell cell-20"><input type="text" name="attr_gold"></div>
-                                <div class="table-cell cell-5 section-font125">G</div>
+                                <div class="table-cell cell-60"></div>
+                                <div class="table-cell cell-25"><input type="text" name="attr_gold"></div>
+                                <div class="table-cell cell-a section-font125 sheet-cell-left">G</div>
                             </div>
                         </div>
                     </div>    
@@ -1581,13 +1581,13 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                                     <div class="table-cell cell-15">Name:</div>
                                     <div class="table-cell cell-a">Description:</div>
                                     <div class="table-cell cell-10">Count:</div>
-                                    <div class="table-cell cell-5"></div>
+                                    <div class="table-cell cell-5">Equip:</div>
                                 </div>
                                 <div class="table-row">
                                     <div class="table-cell cell-15"><input placeholder="Name" type="text" name="attr_gear_name_first" spellcheck="false"></div>
                                     <div class="table-cell cell-a"><input placeholder="Description" type="text" name="attr_gear_desc_first" spellcheck="false"></div>
                                     <div class="table-cell cell-10"><input type="number" name="attr_gear_amount_first"></div>
-                                    <div class="table-cell cell-5 cell-check"><input type="checkbox" name="attr_inv_equipped"></div>
+                                    <div class="table-cell cell-5 cell-check "><input type="checkbox" name="attr_inv_equipped"><span></span></div>
                                 </div>
                             </div>
                             <div class="section table">
