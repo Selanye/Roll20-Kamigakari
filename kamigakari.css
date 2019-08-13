@@ -334,7 +334,7 @@ input.sheet-equipment[type="checkbox"]:checked + span::before
 input.sheet-normal[type="radio"]
 {
     opacity: 0;
-    width: 36px;
+    width: 30px;
     height: 36px;
     position: relative;
     top: 5px;

@@ -933,9 +933,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                             <div class="table-cell cell-10"> 
                                 <button class="templatebutton" type="roll" name="NumenPoolRoll" title="Numen Pool" value="&{template:numen} {{name=@{character_name}}} {{die1=[[1d@{numenpool_used_1}cf0cs>0]]}} {{die2=[[1d@{numenpool_used_2}cf0cs>0]]}} {{die3=[[1d@{numenpool_used_3}cf0cs>0]]}} {{die4=[[1d@{numenpool_used_4}cf0cs>0]]}} {{die5=[[1d@{numenpool_used_5}cf0cs>0]]}} {{die6=[[1d@{numenpool_used_6}cf0cs>0]]}}"> Numen Pool</button>
                             </div>
-                            <div class="table-cell cell-10"> 
-                            </div>
-                            <div class="table-cell cell-10 cell-right">  OVERFLOW:</div>
+                            <div class="table-cell cell-15 cell-right">  OVERFLOW:</div>
                             <div class="table-cell cell-a">
                                 <input type="radio" class="normal zero" name="attr_numen_overflow" value="0" checked="checked" /><span></span>
                                 <input type="radio" class="normal" name="attr_numen_overflow" value="1" /><span></span>
@@ -943,6 +941,8 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                                 <input type="radio" class="normal" name="attr_numen_overflow" value="3" /><span></span>
                                 <input type="radio" class="normal" name="attr_numen_overflow" value="4" /><span></span>
                                 <input type="radio" class="normal" name="attr_numen_overflow" value="5" /><span></span>
+                                <input type="radio" class="normal" name="attr_numen_overflow" value="6" /><span></span>
+                                <input type="radio" class="normal" name="attr_numen_overflow" value="7" /><span></span>
                             </div>
                         </div>
                         <div class="table-row">
@@ -1084,17 +1084,11 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                             <div class="table-cell cell-10"> 
                                 <button class="templatebutton" type="roll" name="NumenPoolRoll" title="Numen Pool" value="&{template:numen} {{name=@{character_name}}} {{die1=[[1d@{numenpool_used_1}cf0cs>0]]}} {{die2=[[1d@{numenpool_used_2}cf0cs>0]]}} {{die3=[[1d@{numenpool_used_3}cf0cs>0]]}} {{die4=[[1d@{numenpool_used_4}cf0cs>0]]}} {{die5=[[1d@{numenpool_used_5}cf0cs>0]]}} {{die6=[[1d@{numenpool_used_6}cf0cs>0]]}}"> Numen Pool</button>
                             </div>
-                            <div class="table-cell cell-10"> 
+                            <div class="table-cell cell-12 cell-right">  OVERFLOW:</div>
+                            <div class="table-cell cell-10">
+                                <input type="number" class="normal zero" name="attr_numen_overflow" value="0"><span></span>
                             </div>
-                            <div class="table-cell cell-10 cell-right">  OVERFLOW:</div>
-                            <div class="table-cell cell-a">
-                                <input type="radio" class="normal zero" name="attr_numen_overflow" value="0" checked="checked" /><span></span>
-                                <input type="radio" class="normal" name="attr_numen_overflow" value="1" /><span></span>
-                                <input type="radio" class="normal" name="attr_numen_overflow" value="2" /><span></span>
-                                <input type="radio" class="normal" name="attr_numen_overflow" value="3" /><span></span>
-                                <input type="radio" class="normal" name="attr_numen_overflow" value="4" /><span></span>
-                                <input type="radio" class="normal" name="attr_numen_overflow" value="5" /><span></span>
-                            </div>
+                            <div class="table-cell cell-20"></div>
                         </div>
                         <div class="table-row">
                             <div class="table-cell">Used:</div>
