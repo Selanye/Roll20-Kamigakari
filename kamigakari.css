@@ -89,12 +89,14 @@ input.sheet-tabs-small[value="6"]:checked ~ div.sheet-tabs6
 }
 
 /*Roll Template*/
-
+.sheet-rolltemplate-mononoke table,
 .sheet-rolltemplate-talent table,
 .sheet-rolltemplate-numen table {
+    width: 100%;
     
 }
 
+.sheet-rolltemplate-mononoke td,
 .sheet-rolltemplate-talent td,
 .sheet-rolltemplate-numen td {
     width: auto;
@@ -104,17 +106,27 @@ input.sheet-tabs-small[value="6"]:checked ~ div.sheet-tabs6
     padding-right: 5px;
 }
 
+.sheet-rolltemplate-background {
+    background-color: #048B84;
+    font-weight: bold;
+    color: #FEFF59;
+}
+
+.sheet-rolltemplate-mononoke td,
 .sheet-rolltemplate-talent td {
     border-bottom: solid 1px black;
 }
 
+.sheet-rolltemplate-mononoke div.sheet-template-container, 
 .sheet-rolltemplate-talent div.sheet-template-container, 
 .sheet-rolltemplate-numen div.sheet-template-container {
 	border: 2px solid #048B84;
-	border-radius: 3px 3px 3px 3px;
+	border-radius: 5px 5px 5px 5px;
 	background-color: #DCCCB9;
+	max-width: 400px;
 }
 
+.sheet-rolltemplate-mononoke .sheet-template-header,
 .sheet-rolltemplate-talent .sheet-template-header,
 .sheet-rolltemplate-numen .sheet-template-header {
 	background-color: #048B84;
@@ -129,6 +141,7 @@ input.sheet-tabs-small[value="6"]:checked ~ div.sheet-tabs6
 }
 
 
+.sheet-rolltemplate-mononoke .sheet-template-header2,
 .sheet-rolltemplate-talent .sheet-template-header2 {
 	line-height: 0.7em;
 	font-size: 0.8em;
@@ -142,6 +155,7 @@ input.sheet-tabs-small[value="6"]:checked ~ div.sheet-tabs6
 
 }
 
+.sheet-rolltemplate-mononoke div,
 .sheet-rolltemplate-talent div,
 .sheet-rolltemplate-numen div {
 	padding: 5px;
@@ -533,6 +547,7 @@ select {
 }
 
 .sheet-cell-a { width: auto; }
+.sheet-cell-3 { width: 3%; }
 .sheet-cell-5 { width: 5%; }
 .sheet-cell-8 { width: 8%; }
 .sheet-cell-10 { width: 10%; }

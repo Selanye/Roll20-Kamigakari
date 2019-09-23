@@ -1,3 +1,4 @@
+<!-- Numen Pool Template -->
 <rolltemplate class="sheet-rolltemplate-numen">
     <div class="template-container">
     	<div class="template-header sheet-cell-center">{{name}}'s Numen Roll</div>
@@ -21,32 +22,126 @@
     	</table>
     </div>
 </rolltemplate>
-
+<!-- Talent to Chat -->
 <rolltemplate class="sheet-rolltemplate-talent">
     <div class="sheet-template-container">
     	<div class="sheet-template-header2 sheet-cell-center">{{name}}</div>
     	<div class="sheet-template-header sheet-cell-center">{{talent}}</div>
             <table class="sheet-rolltemplate-talent">
         	    <tr>
-        	        <td>Timing:</td>
+        	        <td class="sheet-rolltemplate-background">Timing:</td>
         	        <td>{{time}}</td>
         	    </tr>
         	    <tr>
-        	        <td>Range:</td>
+        	        <td class="sheet-rolltemplate-background">Range:</td>
         	        <td>{{range}}</td>
         	    </tr>
         	    <tr>
-        	        <td>Target:</td>
+        	        <td class="sheet-rolltemplate-background">Target:</td>
         	        <td>{{target}}</td>
         	    </tr>
         	    <tr>
-        	        <td>Cost:</td>
+        	        <td class="sheet-rolltemplate-background">Cost:</td>
         	        <td>{{cost}}</td>
         	    </tr>
         	</table>
         <div>{{desc}}</div>
     </div>
 </rolltemplate>
+<!-- Identify Mononoke/Aramitama -->
+<rolltemplate class="sheet-rolltemplate-mononoke">
+    <div class="sheet-template-container">
+    	<div class="sheet-template-header sheet-cell-center">{{name}}</div>
+            <table class="sheet-rolltemplate-mononoke">
+                {{#class}}
+                <tr>
+        	        <td class="sheet-rolltemplate-background">Class:</td>
+        	        <td colspan="3">{{class}}</td>
+        	    </tr>
+        	    {{/class}}
+        	    {{#level}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Level:</td>
+        	        <td colspan="3">{{level}}</td>
+        	    </tr>
+        	    {{/level}}
+        	    {{#initiative}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Initiative:</td>
+        	        <td colspan="3">{{initiative}}</td>
+        	    </tr>
+        	    {{/initiative}}
+        	    {{#perception}}
+                <tr>
+        	        <td class="sheet-rolltemplate-background">Senses:</td>
+        	        <td colspan="3">{{perception}}</td>
+        	    </tr>
+        	    {{/perception}}
+        	    {{#acc}}
+        	    <tr class="sheet-rolltemplate-background">
+        	        <td>ACC</td>
+        	        <td>EVA</td>
+        	        <td>CNJ</td>
+        	        <td>RES</td>
+        	    </tr>
+        	    <tr>
+        	        <td>{{acc}}</td>
+        	        <td>{{eva}}</td>
+        	        <td>{{cnj}}</td>
+        	        <td>{{res}}</td>
+        	    </tr>
+        	    {{/acc}}
+        	    {{#guard}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Guard:</td>
+        	        <td>{{guard}}</td>
+        	        <td class="sheet-rolltemplate-background">Ward:</td>
+        	        <td>{{ward}}</td>
+        	    </tr>
+        	    {{/guard}}
+        	    {{#HP}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">HP:</td>
+        	        <td colspan="3">{{HP}}</td>
+        	    </tr>
+        	    {{/HP}}
+        	    {{#reaction}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Reaction:</td>
+        	        <td colspan="3">{{reaction}}</td>
+        	    </tr>
+        	    {{/reaction}}
+        	    {{#speech}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Speech:</td>
+        	        <td colspan="3">{{speech}}</td>
+        	    </tr>
+        	    {{/speech}}
+        	    {{#weaknesses}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background" colspan="4">Weaknesses:</td>
+        	    </tr>
+        	    <tr>
+        	        <td colspan="3">{{weaknesses}}</td>
+        	    </tr>
+        	    {{/weaknesses}}
+        	    {{#movement}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Movement:</td>
+        	        <td colspan="3">{{movement}}</td>
+        	    </tr>
+        	    {{/movement}}
+        	    {{#size}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Size:</td>
+        	        <td colspan="3">{{size}}</td>
+        	    </tr>
+        	    {{/size}}
+        	</table>
+    </div>
+</rolltemplate>
+
+
 
 <!--
 <button class="templatebutton" type="roll" name="NumenPoolRoll" title="Numen Pool" value="&{template:talent} {{name=@{character_name}}} {{talent=@{talent_name}} {{time=@{talent_time}} {{range=@{talent_range}} {{cost=@{talent_cost}} {{desc=@{talent_desc}}"> Numen Pool</button>
@@ -728,7 +823,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                             <div class="table-cell cell-8"></div>
                             <div class="table-cell cell-8">Style Stat:</div>
                             <div class="table-cell cell-8">Weapon:</div>
-                            <div class="table-cell cell-8">Armor:</div>
+                            <div class="table-cell cell-8">Vesture:</div>
                             <div class="table-cell cell-8">Accessory:</div>
                             <div class="table-cell cell-8">Accessory:</div>
                             <div class="table-cell cell-8">Talent:</div>
@@ -1356,6 +1451,8 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                                     </select>
                                 </div>
                             </div>
+                            <div class="table-cell cell-3">LV:</div>
+                            <div class="table-cell cell-5"><input type="text" name="attr_talent_level_taken" spellcheck="false"></div>
                             <div class="table-cell cell-10">
                                 <div class="table-cell">                    
                                     <select name="attr_talent_type" class="cell-drop">
@@ -1599,7 +1696,7 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                 </div>
             </div>
         </div>
-        <!--INVENTORY --->
+    <!--INVENTORY --->
     </div>
     <!-- SETTINGS -->
     <div class="sheet-tabs-content sheet-tabs5">
@@ -1635,107 +1732,144 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
                         </div>
                     </div>
                 </div>
+                <div class="section2">
+                    <div class="body input-border section-font75">
+                        <div class="section table input-border">
+                        You can change the built in sheet macro that puts Mononoke or Aramitama information in chat here:    
+                        </div>
+                        <div class="section table input-border">
+                            
+                            <div class="table-row">
+                                <div class="table-cell cell-10">Mononoke Info:</div>
+                                <div class="table-cell cell-a"><input type="text" name="attr_mononoke_macro" spellcheck="false" value="?{Warning: this will send all info to chat|0} {{name=@{mononoke_name}}} {{class=@{mononoke_class}}} {{level=@{mononoke_level}}} {{initiative=@{mononoke_Initiative}}} {{perception=@{mononoke_perception} }} {{acc=@{mononoke_acc_fix} }} {{eva=@{mononoke_eva_fix} }} {{cnj=@{mononoke_cnj_fix} }} {{res=@{mononoke_res_fix} }} {{guard=@{mononoke_guard} }} {{ward=@{mononoke_ward} }} {{HP=@{mononoke_hp}  }} {{reaction=@{mononoke_reaction} }} {{speech=@{mononoke_speech} }} {{weaknesses=@{mononoke_weakness} }} {{movement=@{mononoke_movement} }} {{size=@{mononoke_size}}"></div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell cell-10">Boss/Aramitama Info</div>
+                                <div class="table-cell cell-20"><input type="text" name="attr_boss_macro" spellcheck="false" value="?{Warning: this will send boss info to chat|0} {{name=@{mononoke_name}}} {{class=@{mononoke_class}}} {{level=@{mononoke_level}}} {{initiative=@{mononoke_Initiative}}} {{perception=@{mononoke_perception} }} {{reaction=@{mononoke_reaction} }} {{speech=@{mononoke_speech} }} {{weaknesses=@{mononoke_weakness} }} {{movement=@{mononoke_movement} }} {{size=@{mononoke_size}}"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
             </div> 
         </div>
     </div>
-        <div class="sheet-tabs-content sheet-tabs6">
-        <!--EQUIPMENT --->
-            <div class="section2">
-                MONONOKE:
-                <div class="section table">
-                    <div class="table-row input-border">
-                        <div class="table-cell cell-40"><input type="text" placeholder="Name" name="attr_mononoke_name" spellcheck="false"></div>
-                        <div class="table-cell cell-40"><input type="text" placeholder="Type" name="attr_mononoke_type" spellcheck="false"></div>
-                        <div class="table-cell cell-5">LV: </div>
-                        <div class="table-cell cell-15"><input type="text" name="attr_mononoke_level"></div>
+    <!--MONONOKE --->
+    <div class="sheet-tabs-content sheet-tabs6">
+        <div class="section2">
+            MONONOKE:
+            <div class="section table">
+                <div class="table-row input-border">
+                    <div class="table-cell cell-40"><input type="text" placeholder="Name" name="attr_mononoke_name" spellcheck="false"></div>
+                    <div class="table-cell cell-40"><input type="text" placeholder="Type" name="attr_mononoke_class" spellcheck="false"></div>
+                    <div class="table-cell cell-5">LV: </div>
+                    <div class="table-cell cell-15"><input type="text" name="attr_mononoke_level"></div>
+                </div>
+            </div>
+            <div class="section table">
+                <div class="table-row input-border cell-center">
+                    <div class="table-cell cell-8 cell-boarder">Size</div>
+                    <div class="table-cell cell-12"><input type="text" name="attr_mononoke_size"></div>
+                    <div class="table-cell cell-8 cell-boarder">Cunning</div>
+                    <div class="table-cell cell-12"><input type="text" name="attr_mononoke_cunning"></div>
+                    <div class="table-cell cell-8 cell-boarder">Perception</div>
+                    <div class="table-cell cell-12"><input type="text" name="attr_mononoke_perception"></div>
+                </div>
+               <div class="table-row input-border cell-center">
+                    <div class="table-cell cell-boarder">Speech</div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_speech" spellcheck="false"></div>
+                    <div class="table-cell cell-boarder">Reaction</div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_reaction" spellcheck="false"></div>
+                    <div class="table-cell cell-boarder">ID</div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_ID" spellcheck="false"></div>
+                </div>
+            </div>
+            <div class="section table">
+                <div class="table-row input-border cell-center">
+                    <div class="table-cell cell-8 cell-boarder">Weakness</div>
+                    <div class="table-cell cell-a"><input type="text" name="attr_mononoke_weakness" spellcheck="false"></div>
+                    <div class="table-cell cell-8 cell-boarder">Movement</div>
+                    <div class="table-cell cell-a"><input type="text" name="attr_mononoke_movement"></div>
+                </div>
+            </div>
+            <div class="section table">
+                <div class="buffer"></div>
+            </div>
+            <div class="section table">
+                <div class="table-row input-border cell-center">
+                    <div class="table-cell cell-12"></div>
+                    <div class="table-cell cell-5">ACC</div>
+                    <div class="table-cell cell-5">EVA</div>
+                    <div class="table-cell cell-5">CNJ</div>
+                    <div class="table-cell cell-5">RES</div>
+                    <div class="table-cell cell-5">CHK</div>
+                    <div class="table-cell cell-5"></div>
+                    <div class="table-cell cell-10">Initiative</div>
+                    <div class="table-cell cell-10">HP</div>
+                    <div class="table-cell cell-10">Guard</div>
+                    <div class="table-cell cell-10">Ward</div>
+                </div>
+                <div class="table-row input-border">
+                    <div class="table-cell">Combat Stats</div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_acc"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_eva"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_cnj"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_res"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_chk"></div>
+                    <div class="table-cell"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_Initiative"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_hp"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_guard"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_ward"></div>
+                </div>
+                <div class="table-row input-border">
+                    <div class="table-cell">Fixed Values</div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_acc_fix"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_eva_fix"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_cnj_fix"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_res_fix"></div>
+                    <div class="table-cell"><input type="text" name="attr_mononoke_chk_fix"></div>
+                </div>
+            </div>
+            <div class="section table">
+                <div class="table-row input-border cell-center">
+                    <div class="table-cell table-cell cell-10">Identify:</div>
+                    <div class="table-cell table-cell cell-15"><button type="roll" value="&{template:mononoke} @{mononoke_macro}" name="roll_Mononoke">Mononoke</button></div>
+                    <div class="table-cell table-cell cell-15"><button type="roll" value="&{template:mononoke} @{boss_macro}" name="roll_likeaboss">Aramitama/Boss</button></div>
+                    <div class="table-cell table-cell cell-a"></div>
+                </div>
+            </div>
+            <div class="equipment-header">Attack Options</div>
+            <div class="section table">
+                <div class="table-row">
+                    <div class="table-cell cell-95">
+                        <div class="sheet-expand">
+                            <span name="attr_mononoke_attack_desc"></span>
+                            <textarea spellcheck="false" name="attr_mononoke_attack_desc" spellcheck="false"></textarea>
+                        </div>
                     </div>
                 </div>
-                <div class="section table">
-                    <div class="table-row input-border cell-center">
-                        <div class="table-cell cell-8 cell-boarder">Size</div>
-                        <div class="table-cell cell-12"><input type="text" name="attr_mononoke_size"></div>
-                        <div class="table-cell cell-8 cell-boarder">Cunning</div>
-                        <div class="table-cell cell-12"><input type="text" name="attr_mononoke_cunning"></div>
-                        <div class="table-cell cell-8 cell-boarder">Perception</div>
-                        <div class="table-cell cell-12"><input type="text" name="attr_mononoke_perception"></div>
-                    </div>
-                   <div class="table-row input-border cell-center">
-                        <div class="table-cell cell-boarder">Speech</div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_speech" spellcheck="false"></div>
-                        <div class="table-cell cell-boarder">Reaction</div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_reaction" spellcheck="false"></div>
-                        <div class="table-cell cell-boarder">ID</div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_ID" spellcheck="false"></div>
-                    </div>
-                </div>
-                <div class="section table">
-                    <div class="table-row input-border cell-center">
-                        <div class="table-cell cell-8 cell-boarder">Weakness</div>
-                        <div class="table-cell cell-a"><input type="text" name="attr_mononoke_weakness" spellcheck="false"></div>
-                        <div class="table-cell cell-8 cell-boarder">Movement</div>
-                        <div class="table-cell cell-a"><input type="text" name="attr_mononoke_movement"></div>
-                    </div>
-                </div>
-                <div class="section table">
-                    <div class="buffer"></div>
-                </div>
-                <div class="section table">
-                    <div class="table-row input-border cell-center">
-                        <div class="table-cell cell-12"></div>
-                        <div class="table-cell cell-5">ACC</div>
-                        <div class="table-cell cell-5">EVA</div>
-                        <div class="table-cell cell-5">CNJ</div>
-                        <div class="table-cell cell-5">RES</div>
-                        <div class="table-cell cell-5">CHK</div>
-                        <div class="table-cell cell-5"></div>
-                        <div class="table-cell cell-10">Initiative</div>
-                        <div class="table-cell cell-10">HP</div>
-                        <div class="table-cell cell-10">Armor</div>
-                        <div class="table-cell cell-10">Barrier</div>
-                    </div>
-                    <div class="table-row input-border">
-                        <div class="table-cell">Combat Stats</div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_ACC"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_EVA"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_CNJ"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_RES"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_CHK"></div>
-                        <div class="table-cell"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_Initiative"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_HP"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_Armor"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_Barrier"></div>
-                    </div>
-                    <div class="table-row input-border">
-                        <div class="table-cell">Fixed Values</div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_ACC_fix"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_EVA_fix"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_CNJ_fix"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_RES_fix"></div>
-                        <div class="table-cell"><input type="text" name="attr_mononoke_CHK_fix"></div>
-                    </div>
-                </div>
-                <div class="equipment-header">Attack Options</div>
-                <div class="section table">
+            </div>
+            <div class="equipment-header">Materials</div>
+            <div class="section table">
+                <div class="table-cell cell-95">
                     <div class="sheet-expand">
-                        <span name="attr_mononoke_attack_desc"></span>
-                        <textarea spellcheck="false" name="attr_mononoke_attack_desc" spellcheck="false"></textarea>
-                    </div>
-                </div>
-                <div class="equipment-header">Materials</div>
-                <div class="section table">
-                    <div class="sheet-expand">
-                        <span name="attr_mononoke_attack_desc"></span>
+                        <span name="attr_mononoke_materials_desc"></span>
                         <textarea spellcheck="false" name="attr_mononoke_materials_desc" spellcheck="false"></textarea>
                     </div>
                 </div>
-                <div class="equipment-header">Description</div>
-                <div class="section table">
-                    <div class="sheet-expand">
-                        <span name="attr_mononoke_attack_desc"></span>
-                        <textarea spellcheck="false" name="attr_mononoke_description" spellcheck="false"></textarea>
+            </div>
+            <div class="equipment-header">Description</div>
+            <div class="section table">
+                <div class="sheet-expand">
+                    <div class="table-row">
+                        <div class="table-cell cell-95">
+                            <span name="attr_mononoke_description"></span>
+                            <textarea spellcheck="false" name="attr_mononoke_description" spellcheck="false"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
