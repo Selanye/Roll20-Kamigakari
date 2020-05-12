@@ -1,447 +1,4 @@
-<!-- Numen Pool Template -->
-<rolltemplate class="sheet-rolltemplate-numen">
-    <div class="template-container">
-    	<div class="template-header sheet-cell-center">{{name}}'s Numen Roll</div>
-    	<table class="sheet-rolltemplate-numen">
-    	    <tr>
-    	        <td>1st:</td>
-    	        <td>{{die1}}</td>
-    	        <td>2nd:</td>
-    	        <td>{{die2}}</td>
-    	        <td>3rd:</td>
-    	        <td>{{die3}}</td>
-    	    </tr>
-    	    <tr>
-    	        <td>4th:</td>
-    	        <td>{{die4}}</td>
-    	        <td>5th:</td>
-    	        <td>{{die5}}</td>
-    	        <td>6th:</td>
-    	        <td>{{die6}}</td>
-    	    </tr>
-    	</table>
-    </div>
-</rolltemplate>
-<!-- Talent to Chat -->
-<rolltemplate class="sheet-rolltemplate-talent">
-    <div class="sheet-template-container">
-    	<div class="sheet-template-header2 sheet-cell-center">{{name}}</div>
-    	<div class="sheet-template-header sheet-cell-center">{{talent}}</div>
-            <table class="sheet-rolltemplate-talent">
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">Timing:</td>
-        	        <td>{{time}}</td>
-        	    </tr>
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">Range:</td>
-        	        <td>{{range}}</td>
-        	    </tr>
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">Target:</td>
-        	        <td>{{target}}</td>
-        	    </tr>
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">Cost:</td>
-        	        <td>{{cost}}</td>
-        	    </tr>
-        	</table>
-        <div>{{desc}}</div>
-    </div>
-</rolltemplate>
-<!-- Identify Mononoke/Aramitama -->
-<rolltemplate class="sheet-rolltemplate-mononoke">
-    <div class="sheet-template-container">
-    	<div class="sheet-template-header sheet-cell-center">{{name}}</div>
-            <table class="sheet-rolltemplate-mononoke">
-                {{#class}}
-                <tr>
-        	        <td class="sheet-rolltemplate-background">Class:</td>
-        	        <td colspan="3">{{class}}</td>
-        	    </tr>
-        	    {{/class}}
-        	    {{#level}}
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">Level:</td>
-        	        <td colspan="3">{{level}}</td>
-        	    </tr>
-        	    {{/level}}
-        	    {{#initiative}}
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">Initiative:</td>
-        	        <td colspan="3">{{initiative}}</td>
-        	    </tr>
-        	    {{/initiative}}
-        	    {{#perception}}
-                <tr>
-        	        <td class="sheet-rolltemplate-background">Senses:</td>
-        	        <td colspan="3">{{perception}}</td>
-        	    </tr>
-        	    {{/perception}}
-        	    {{#acc}}
-        	    <tr class="sheet-rolltemplate-background">
-        	        <td>ACC</td>
-        	        <td>EVA</td>
-        	        <td>CNJ</td>
-        	        <td>RES</td>
-        	    </tr>
-        	    <tr>
-        	        <td>{{acc}}</td>
-        	        <td>{{eva}}</td>
-        	        <td>{{cnj}}</td>
-        	        <td>{{res}}</td>
-        	    </tr>
-        	    {{/acc}}
-        	    {{#guard}}
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">Guard:</td>
-        	        <td>{{guard}}</td>
-        	        <td class="sheet-rolltemplate-background">Ward:</td>
-        	        <td>{{ward}}</td>
-        	    </tr>
-        	    {{/guard}}
-        	    {{#HP}}
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">HP:</td>
-        	        <td colspan="3">{{HP}}</td>
-        	    </tr>
-        	    {{/HP}}
-        	    {{#reaction}}
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">Reaction:</td>
-        	        <td colspan="3">{{reaction}}</td>
-        	    </tr>
-        	    {{/reaction}}
-        	    {{#speech}}
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">Speech:</td>
-        	        <td colspan="3">{{speech}}</td>
-        	    </tr>
-        	    {{/speech}}
-        	    {{#weaknesses}}
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background" colspan="4">Weaknesses:</td>
-        	    </tr>
-        	    <tr>
-        	        <td colspan="3">{{weaknesses}}</td>
-        	    </tr>
-        	    {{/weaknesses}}
-        	    {{#movement}}
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">Movement:</td>
-        	        <td colspan="3">{{movement}}</td>
-        	    </tr>
-        	    {{/movement}}
-        	    {{#size}}
-        	    <tr>
-        	        <td class="sheet-rolltemplate-background">Size:</td>
-        	        <td colspan="3">{{size}}</td>
-        	    </tr>
-        	    {{/size}}
-        	</table>
-    </div>
-</rolltemplate>
 
-
-
-<!--
-<button class="templatebutton" type="roll" name="NumenPoolRoll" title="Numen Pool" value="&{template:talent} {{name=@{character_name}}} {{talent=@{talent_name}} {{time=@{talent_time}} {{range=@{talent_range}} {{cost=@{talent_cost}} {{desc=@{talent_desc}}"> Numen Pool</button>
--->
-<script type="text/worker">
-/* ---- Auto Calc Nonsense ---- */
-
-//Accuracy Total & Physical Damage & Reistance & Hit Points
-//If we don't do it this way it only updates one stat if multiple on change are triggered off one stat
-
-on("change:accuracy change:strength change:accuracy_style change:accuracy_armor change:accuracy_weapon change:accuracy_accessory1 change:accuracy_accessory2 change:accuracy_talent change:accuracy_misc change:pd change:pd_weapon change:pd_style change:pd_armor change:pd_accessory1 change:pd_accessory2 change:pd_talent change:pd_misc sheet:opened change:will change:hitpoints_max change:hitpoints_weapon change:hitpoints_style change:hitpoints_armor change:hitpoints_accessory1 change:hitpoints_accessory2 change:hitpoints_talent change:hitpoints_misc change:resistance change:resistance_style change:resistance_armor change:resistance_weapon change:resistance_accessory1 change:resistance_accessory2 change:resistance_talent change:level change:resistance_misc change:strength_cover change:strength_talents change:strength_items change:strength_misc change:will_cover change:will_talents change:will_items change:will_misc", function() {
-    console.log("!---- Accuracy Total & Physical Damage & Reistance & Hit Points Update working.");
-    getAttrs ([ "strength", "will", "level",
-    "strength_cover", "strength_talents", "strength_items", "strength_misc", 
-    "will_cover", "will_talents", "will_items", "will_misc",
-    "accuracy", "accuracy_style", "accuracy_armor", "accuracy_weapon", "accuracy_accessory1", "accuracy_accessory2", "accuracy_talent", "accuracy_misc", 
-    "pd", "pd_weapon", "pd_style", "pd_armor", "pd_accessory1", "pd_accessory2", "pd_talent", "pd_misc",
-	"hitpoints", "hitpoints_weapon", "hitpoints_style", "hitpoints_armor", "hitpoints_accessory1", "hitpoints_accessory2", "hitpoints_talent", "hitpoints_misc",
-	"resistance_style", "resistance_armor", "resistance_weapon", "resistance_accessory1", "resistance_accessory2", "resistance_talent", "resistance_misc"], function(values) {
-    //stats we use more than once:
-	const str        		= parseInt(values.strength,10)||0;
-	const wil       		= parseInt(values.will,10)||0;
-	const lvl               = parseInt(values.level,10)||0;
-	//Accuracy
-    const acc_style         = parseInt(values.accuracy_style,10)||0;
-    const acc_weapon        = parseInt(values.accuracy_weapon,10)||0;
-    const acc_armor         = parseInt(values.accuracy_armor,10)||0;
-    const acc_accessory1    = parseInt(values.accuracy_accessory1,10)||0;
-    const acc_accessory2    = parseInt(values.accuracy_accessory2,10)||0;
-    const acc_talent        = parseInt(values.accuracy_talent,10)||0;
-    const acc_misc          = parseInt(values.accuracy_misc,10)||0;
-    console.log("accuracy", str, acc_style, acc_armor, acc_accessory1, acc_accessory2, acc_talent, acc_misc, acc_weapon);
-	//PD
-    const pd_third         	= Math.ceil(str/2);
-    const pd_weapon        	= parseInt(values.pd_weapon,10)||0;
-    const pd_style          = parseInt(values.pd_style,10)||0;
-    const pd_armor         	= parseInt(values.pd_armor,10)||0;
-    const pd_accessory1    	= parseInt(values.pd_accessory1,10)||0;
-    const pd_accessory2    	= parseInt(values.pd_accessory2,10)||0;
-    const pd_talent			= parseInt(values.pd_talent,10)||0;
-    const pd_misc			= parseInt(values.pd_misc,10)||0;
-    console.log("pd", str, pd_weapon, pd_style, pd_armor, pd_accessory1, pd_accessory2, pd_talent, pd_misc, values.strength, pd_third);
-	//Reistance
-	const res_style         = parseInt(values.resistance_style,10)||0;
-    const res_weapon        = parseInt(values.resistance_weapon,10)||0;
-    const res_armor         = parseInt(values.resistance_armor,10)||0;
-    const res_accessory1    = parseInt(values.resistance_accessory1,10)||0;
-    const res_accessory2    = parseInt(values.resistance_accessory2,10)||0;
-    const res_talent        = parseInt(values.resistance_talent,10)||0;
-    const res_misc          = parseInt(values.resistance_misc,10)||0;
-    console.log("resistance", wil, res_style, res_armor, res_accessory1, res_accessory2, res_talent, res_misc, res_weapon);
-	//Hitpoints
-	var hp_com             	= lvl * 3;
-    hp_com                 	= hp_com + str + wil;
-    const hp_weapon       	= parseInt(values.hitpoints_weapon,10)||0;
-    const hp_style          = parseInt(values.hitpoints_style,10)||0;
-    const hp_armor         	= parseInt(values.hitpoints_armor,10)||0;
-    const hp_accessory1		= parseInt(values.hitpoints_accessory1,10)||0;
-    const hp_accessory2    	= parseInt(values.hitpoints_accessory2,10)||0;
-    const hp_talent 	    = parseInt(values.hitpoints_talent,10)||0;
-    const hp_misc	        = parseInt(values.hitpoints_misc,10)||0;
-    console.log(hp_com, hp_weapon, hp_style, hp_armor, hp_accessory1, hp_accessory2, hp_talent, hp_misc);
-    //Generic Strength
-	const str_items         = parseInt(values.strength_items,10)||0;
-    const str_talents       = parseInt(values.strength_talents,10)||0;
-    const str_cover         = parseInt(values.strength_cover,10)||0;
-    const str_misc          = parseInt(values.strength_misc,10)||0;
-    console.log("Generic Stregnth", str, str_items, str_talents, str_cover, str_misc);
-    //Generic Will
-	const will_items         = parseInt(values.will_items,10)||0;
-    const will_talents       = parseInt(values.will_talents,10)||0;
-    const will_cover         = parseInt(values.will_cover,10)||0;
-    const will_misc          = parseInt(values.will_misc,10)||0;
-    console.log("Generic Int", wil, will_items, will_talents, will_cover, will_misc);
-	//Now we actualy set everything
-	setAttrs({                            
-		strength_generic: str + str_items + str_talents + str_cover + str_misc
-	});
-	setAttrs({                            
-		will_generic: wil + will_items + will_talents + will_cover + will_misc
-	});
-	setAttrs({                            
-		accuracy: str + acc_style + acc_armor + acc_accessory1 + acc_accessory2 + acc_talent + acc_misc + acc_weapon
-	});
-	setAttrs({                            
-		pd: pd_weapon + pd_style + pd_armor + pd_accessory1 + pd_accessory2 + pd_talent + pd_misc + pd_third
-	});
-	setAttrs({                            
-		resistance: wil + res_style + res_armor + res_accessory1 + res_accessory2 + res_talent + res_misc + res_weapon
-	});
-	setAttrs({                            
-		hitpoints_max: hp_com + hp_style + hp_armor + hp_accessory1 + hp_accessory2 + hp_talent + hp_misc
-	});
-
-    });
-    
-    
-});
-//Evasion & Initiative Total
-on("change:combat_move_misc change:full_move_misc change:evasion change:agility change:evasion_style change:evasion_armor change:evasion_weapon change:evasion_accessory1 change:evasion_accessory2 change:evasion_talent change:evasion_misc sheet:opened change:initiative change:initiative_weapon change:initiative_style change:initiative_armor change:initiative_accessory1 change:initiative_accessory2 change:initiative_talent change:initiative_misc change:agility_cover change:agility_talents change:agility_items change:agility_misc", function()
-    {
-    getAttrs (["agility", "evasion_style", "evasion_armor", "evasion_weapon", "evasion_accessory1", "evasion_accessory2", "evasion_talent", "evasion_misc",
-    "agility_cover", "agility_talents", "agility_items", "agility_misc",
-    "combat_move_misc",  "full_move_misc",
-    "initiative_weapon", "initiative_style", "initiative_armor", "initiative_accessory1", "initiative_accessory2", "initiative_talent", "initiative_misc"], function(values) {
-    //Multiuse stat    
-    const agi               = parseInt(values.agility,10)||0;
-    //Evasion
-    const eva_style         = parseInt(values.evasion_style,10)||0;
-    const eva_weapon        = parseInt(values.evasion_weapon,10)||0;
-    const eva_armor         = parseInt(values.evasion_armor,10)||0;
-    const eva_accessory1    = parseInt(values.evasion_accessory1,10)||0;
-    const eva_accessory2    = parseInt(values.evasion_accessory2,10)||0;
-    const eva_talent        = parseInt(values.evasion_talent,10)||0;
-    const eva_misc          = parseInt(values.evasion_misc,10)||0;
-    console.log("EVASION:", agi, eva_weapon, eva_style, eva_armor, eva_accessory1, eva_accessory2, eva_talent, eva_misc);
-    //Initiative
-    const ini_weapon        = parseInt(values.initiative_weapon,10)||0;
-    const ini_style         = parseInt(values.initiative_style,10)||0;
-    const ini_armor         = parseInt(values.initiative_armor,10)||0;
-    const ini_accessory1    = parseInt(values.initiative_accessory1,10)||0;
-    const ini_accessory2    = parseInt(values.initiative_accessory2,10)||0;
-    const ini_talent        = parseInt(values.initiative_talent,10)||0;
-    const ini_misc          = parseInt(values.initiative_misc,10)||0;
-    const init              = ini_weapon + ini_style + ini_armor + ini_accessory1 + ini_accessory2 + ini_talent + ini_misc + agi + 5
-    console.log("Initiative", agi, ini_style, ini_armor, ini_accessory1, ini_accessory2, ini_talent, ini_misc);
-    //Generic Agility
-    const agi_items         = parseInt(values.agility_items,10)||0;
-    const agi_talents       = parseInt(values.agility_talents,10)||0;
-    const agi_cover         = parseInt(values.agility_cover,10)||0;
-    const agi_misc          = parseInt(values.agility_misc,10)||0;
-    console.log("Generic Agi", agi, agi_items, agi_talents, agi_cover, agi_misc);
-    //Movement
-    //(Initiative + 5) / 3 COMBAT MOVE
-    const combat_move       = Math.ceil((init + 5)/3);
-    const combat_misc       = parseInt(values.combat_move_misc,10)||0;
-    //Initiative + 5 FULL MOVE
-    const full_misc         = parseInt(values.full_move_misc,10)||0;
-    
-    setAttrs({                            
-		combat_move_total: combat_move + combat_misc 
-	});
-	
-	setAttrs({                            
-		full_move_total: init + 5 + full_misc
-	});
-    
-    setAttrs({                            
-		agility_generic: agi + agi_items + agi_talents + agi_cover + agi_misc
-	});
-	
-	setAttrs({
-		evasion: agi + eva_style + eva_armor + eva_accessory1 + eva_accessory2 + eva_talent + eva_misc + eva_weapon
-	});
-	
-	setAttrs({                            
-		initiative: init
-	});
-	
-    });
-});
-//Invocation & MD Total
-on("change:intellect_cover change:intellect_talents change:intellect_items change:intellect_misc change:invocation change:intellect change:invocation_style change:invocation_weapon change:invocation_armor change:invocation_accessory1 change:invocation_accessory2 change:invocation_talent change:invocation_misc sheet:opened change:md change:md_weapon change:md_style change:md_armor change:md_accessory1 change:md_accessory2 change:md_talent change:md_misc", function()
-    {
-    getAttrs (["intellect",
-    "invocation_style", "invocation_armor", "invocation_weapon", "invocation_accessory1", "invocation_accessory2", "invocation_talent", "invocation_misc",
-    "intellect_cover", "intellect_talents", "intellect_items", "intellect_misc",
-    "md_weapon", "md_style", "md_armor", "md_accessory1", "md_accessory2", "md_talent", "md_misc"], function(values) {
-    //INT!
-    const int               = parseInt(values.intellect,10)||0;
-    //Invocation
-    const inv_style         = parseInt(values.invocation_style,10)||0;
-    const inv_weapon        = parseInt(values.invocation_weapon,10)||0;
-    const inv_armor         = parseInt(values.invocation_armor,10)||0;
-    const inv_accessory1    = parseInt(values.invocation_accessory1,10)||0;
-    const inv_accessory2    = parseInt(values.invocation_accessory2,10)||0;
-    const inv_talent        = parseInt(values.invocation_talent,10)||0;
-    const inv_misc          = parseInt(values.invocation_misc,10)||0;
-    console.log(int, inv_style, inv_armor, inv_accessory1, inv_accessory2, inv_talent, inv_misc, inv_weapon);
-    //Magic Damage
-    const md_third          = Math.ceil(int/2);
-    const md_weapon         = parseInt(values.md_weapon,10)||0;
-    const md_style          = parseInt(values.md_style,10)||0;
-    const md_armor          = parseInt(values.md_armor,10)||0;
-    const md_accessory1     = parseInt(values.md_accessory1,10)||0;
-    const md_accessory2     = parseInt(values.md_accessory2,10)||0;
-    const md_talent         = parseInt(values.md_talent,10)||0;
-    const md_misc           = parseInt(values.md_misc,10)||0;
-    console.log(md_weapon, md_style, md_armor, md_accessory1, md_accessory2, md_talent, md_misc);
-    //Generic intellect
-    const int_items         = parseInt(values.intellect_items,10)||0;
-    const int_talents       = parseInt(values.intellect_talents,10)||0;
-    const int_cover         = parseInt(values.intellect_cover,10)||0;
-    const int_misc          = parseInt(values.intellect_misc,10)||0;
-    console.log("Generic int", int, int_items, int_talents, int_cover, int_misc);
-    
-    setAttrs({                            
-		intellect_generic: int + int_items + int_talents + int_cover + int_misc
-	});
-    
-    //setAttrs({                            
-	//	agility_generic: agi + agi_items + agi_talents + agi_cover + agi_misc
-	//});
-	
-	setAttrs({                            
-		md: md_style + md_armor + md_accessory1 + md_accessory2 + md_talent + md_misc + md_third + md_weapon
-	});
-	setAttrs({                            
-		invocation: int + inv_style + inv_armor + inv_accessory1 + inv_accessory2 + inv_talent + inv_misc + inv_weapon
-	});
-    });
-});
-
-
-//Instinct Total
-
-on("change:instinct change:luck change:instinct_style change:luck_cover change:luck_talents change:luck_items change:luck_misc change:instinct_armor change:instinct_weapon change:instinct_accessory1 change:instinct_accessory2 change:instinct_talent change:instinct_misc sheet:opened", function()
-    {
-    getAttrs (["instinct", "luck", "instinct_style", "instinct_armor", "instinct_weapon", "instinct_accessory1", "instinct_accessory2", "instinct_talent", "instinct_misc",
-    "luck_cover", "luck_talents", "luck_items", "luck_misc"], function(values) {
-    const attrib        = parseInt(values.luck,10)||0;
-    const style         = parseInt(values.instinct_style,10)||0;
-    const weapon        = parseInt(values.instinct_weapon,10)||0;
-    const armor         = parseInt(values.instinct_armor,10)||0;
-    const accessory1    = parseInt(values.instinct_accessory1,10)||0;
-    const accessory2    = parseInt(values.instinct_accessory2,10)||0;
-    const talent        = parseInt(values.instinct_talent,10)||0;
-    const misc          = parseInt(values.instinct_misc,10)||0;
-    console.log(attrib, style, armor, accessory1, accessory2, talent, misc, weapon);
-    //Generic luck
-    const luck_items    = parseInt(values.luck_items,10)||0;
-    const luck_talents  = parseInt(values.luck_talents,10)||0;
-    const luck_cover    = parseInt(values.luck_cover,10)||0;
-    const luck_misc     = parseInt(values.luck_misc,10)||0;
-    console.log("Generic luck", attrib, luck_items, luck_talents, luck_cover, luck_misc);
-    
-    setAttrs({                            
-		luck_generic: attrib  + luck_items + luck_talents + luck_cover + luck_misc
-	});
-	setAttrs({                            
-		instinct: attrib + style + armor + accessory1 + accessory2 + talent + misc + weapon
-	});
-    });
-});
-
-//Guard
-
-on("change:guard change:guard_weapon change:guard_style change:guard_armor change:guard_accessory1 change:guard_accessory2 change:guard_talent change:guard_misc sheet:opened", function()
-    {
-    getAttrs (["guard", "guard_weapon", "guard_style", "guard_armor", "guard_accessory1", "guard_accessory2", "guard_talent", "guard_misc"], function(values) {
-    const weapon        = parseInt(values.guard_weapon,10)||0;
-    const style         = parseInt(values.guard_style,10)||0;
-    const armor         = parseInt(values.guard_armor,10)||0;
-    const accessory1    = parseInt(values.guard_accessory1,10)||0;
-    const accessory2    = parseInt(values.guard_accessory2,10)||0;
-    const talent        = parseInt(values.guard_talent,10)||0;
-    const misc          = parseInt(values.guard_misc,10)||0;
-    console.log(weapon, style, armor, accessory1, accessory2, talent, misc);
-	setAttrs({                            
-		guard: weapon + style + armor + accessory1 + accessory2 + talent + misc
-	});
-    });
-});
-
-//Ward Total
-on("change:ward change:ward_weapon change:ward_style change:ward_armor change:ward_accessory1 change:ward_accessory2 change:ward_talent change:ward_misc sheet:opened", function()
-    {
-    getAttrs (["ward", "ward_weapon", "ward_style", "ward_armor", "ward_accessory1", "ward_accessory2", "ward_talent", "ward_misc"], function(values) {
-    const weapon        = parseInt(values.ward_weapon,10)||0;
-    const style         = parseInt(values.ward_style,10)||0;
-    const armor         = parseInt(values.ward_armor,10)||0;
-    const accessory1    = parseInt(values.ward_accessory1,10)||0;
-    const accessory2    = parseInt(values.ward_accessory2,10)||0;
-    const talent        = parseInt(values.ward_talent,10)||0;
-    const misc          = parseInt(values.ward_misc,10)||0;
-    console.log(weapon, style, armor, accessory1, accessory2, talent, misc);
-	setAttrs({                            
-		ward: weapon + style + armor + accessory1 + accessory2 + talent + misc
-	});
-
-    
-    });
-});
-//Custom Roll?!
-on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items change:custom_roll_misc", function()
-    {
-    getAttrs (["custom_roll_cover", "custom_roll_talents", "custom_roll_items", "custom_roll_misc"], function(values) {
-    const cover         = parseInt(values.custom_roll_cover,10)||0;
-    const talents       = parseInt(values.custom_roll_talents,10)||0;
-    const items         = parseInt(values.custom_roll_items,10)||0;
-    const misc          = parseInt(values.custom_roll_misc,10)||0;
-    console.log(cover, talents, items, misc);
-	setAttrs({                            
-		custom_roll_total: cover + talents + items + misc 
-	});
-
-    
-    });
-});
-</script>
 
 
     <!--TABS -->
@@ -1873,3 +1430,448 @@ on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items
         </div>
     </div>
     </div>
+
+<!-- Numen Pool Template -->
+<rolltemplate class="sheet-rolltemplate-numen">
+    <div class="template-container">
+    	<div class="template-header sheet-cell-center">{{name}}'s Numen Roll</div>
+    	<table class="sheet-rolltemplate-numen">
+    	    <tr>
+    	        <td>1st:</td>
+    	        <td>{{die1}}</td>
+    	        <td>2nd:</td>
+    	        <td>{{die2}}</td>
+    	        <td>3rd:</td>
+    	        <td>{{die3}}</td>
+    	    </tr>
+    	    <tr>
+    	        <td>4th:</td>
+    	        <td>{{die4}}</td>
+    	        <td>5th:</td>
+    	        <td>{{die5}}</td>
+    	        <td>6th:</td>
+    	        <td>{{die6}}</td>
+    	    </tr>
+    	</table>
+    </div>
+</rolltemplate>
+<!-- Talent to Chat -->
+<rolltemplate class="sheet-rolltemplate-talent">
+    <div class="sheet-template-container">
+    	<div class="sheet-template-header2 sheet-cell-center">{{name}}</div>
+    	<div class="sheet-template-header sheet-cell-center">{{talent}}</div>
+            <table class="sheet-rolltemplate-talent">
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Timing:</td>
+        	        <td>{{time}}</td>
+        	    </tr>
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Range:</td>
+        	        <td>{{range}}</td>
+        	    </tr>
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Target:</td>
+        	        <td>{{target}}</td>
+        	    </tr>
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Cost:</td>
+        	        <td>{{cost}}</td>
+        	    </tr>
+        	</table>
+        <div>{{desc}}</div>
+    </div>
+</rolltemplate>
+<!-- Identify Mononoke/Aramitama -->
+<rolltemplate class="sheet-rolltemplate-mononoke">
+    <div class="sheet-template-container">
+    	<div class="sheet-template-header sheet-cell-center">{{name}}</div>
+            <table class="sheet-rolltemplate-mononoke">
+                {{#class}}
+                <tr>
+        	        <td class="sheet-rolltemplate-background">Class:</td>
+        	        <td colspan="3">{{class}}</td>
+        	    </tr>
+        	    {{/class}}
+        	    {{#level}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Level:</td>
+        	        <td colspan="3">{{level}}</td>
+        	    </tr>
+        	    {{/level}}
+        	    {{#initiative}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Initiative:</td>
+        	        <td colspan="3">{{initiative}}</td>
+        	    </tr>
+        	    {{/initiative}}
+        	    {{#perception}}
+                <tr>
+        	        <td class="sheet-rolltemplate-background">Senses:</td>
+        	        <td colspan="3">{{perception}}</td>
+        	    </tr>
+        	    {{/perception}}
+        	    {{#acc}}
+        	    <tr class="sheet-rolltemplate-background">
+        	        <td>ACC</td>
+        	        <td>EVA</td>
+        	        <td>CNJ</td>
+        	        <td>RES</td>
+        	    </tr>
+        	    <tr>
+        	        <td>{{acc}}</td>
+        	        <td>{{eva}}</td>
+        	        <td>{{cnj}}</td>
+        	        <td>{{res}}</td>
+        	    </tr>
+        	    {{/acc}}
+        	    {{#guard}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Guard:</td>
+        	        <td>{{guard}}</td>
+        	        <td class="sheet-rolltemplate-background">Ward:</td>
+        	        <td>{{ward}}</td>
+        	    </tr>
+        	    {{/guard}}
+        	    {{#HP}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">HP:</td>
+        	        <td colspan="3">{{HP}}</td>
+        	    </tr>
+        	    {{/HP}}
+        	    {{#reaction}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Reaction:</td>
+        	        <td colspan="3">{{reaction}}</td>
+        	    </tr>
+        	    {{/reaction}}
+        	    {{#speech}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Speech:</td>
+        	        <td colspan="3">{{speech}}</td>
+        	    </tr>
+        	    {{/speech}}
+        	    {{#weaknesses}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background" colspan="4">Weaknesses:</td>
+        	    </tr>
+        	    <tr>
+        	        <td colspan="3">{{weaknesses}}</td>
+        	    </tr>
+        	    {{/weaknesses}}
+        	    {{#movement}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Movement:</td>
+        	        <td colspan="3">{{movement}}</td>
+        	    </tr>
+        	    {{/movement}}
+        	    {{#size}}
+        	    <tr>
+        	        <td class="sheet-rolltemplate-background">Size:</td>
+        	        <td colspan="3">{{size}}</td>
+        	    </tr>
+        	    {{/size}}
+        	</table>
+    </div>
+</rolltemplate>
+
+
+
+<!--
+<button class="templatebutton" type="roll" name="NumenPoolRoll" title="Numen Pool" value="&{template:talent} {{name=@{character_name}}} {{talent=@{talent_name}} {{time=@{talent_time}} {{range=@{talent_range}} {{cost=@{talent_cost}} {{desc=@{talent_desc}}"> Numen Pool</button>
+-->
+<script type="text/worker">
+/* ---- Auto Calc Nonsense ---- */
+
+//Accuracy Total & Physical Damage & Reistance & Hit Points
+//If we don't do it this way it only updates one stat if multiple on change are triggered off one stat
+
+on("change:accuracy change:strength change:accuracy_style change:accuracy_armor change:accuracy_weapon change:accuracy_accessory1 change:accuracy_accessory2 change:accuracy_talent change:accuracy_misc change:pd change:pd_weapon change:pd_style change:pd_armor change:pd_accessory1 change:pd_accessory2 change:pd_talent change:pd_misc sheet:opened change:will change:hitpoints_max change:hitpoints_weapon change:hitpoints_style change:hitpoints_armor change:hitpoints_accessory1 change:hitpoints_accessory2 change:hitpoints_talent change:hitpoints_misc change:resistance change:resistance_style change:resistance_armor change:resistance_weapon change:resistance_accessory1 change:resistance_accessory2 change:resistance_talent change:level change:resistance_misc change:strength_cover change:strength_talents change:strength_items change:strength_misc change:will_cover change:will_talents change:will_items change:will_misc", function() {
+    console.log("!---- Accuracy Total & Physical Damage & Reistance & Hit Points Update working.");
+    getAttrs ([ "strength", "will", "level",
+    "strength_cover", "strength_talents", "strength_items", "strength_misc", 
+    "will_cover", "will_talents", "will_items", "will_misc",
+    "accuracy", "accuracy_style", "accuracy_armor", "accuracy_weapon", "accuracy_accessory1", "accuracy_accessory2", "accuracy_talent", "accuracy_misc", 
+    "pd", "pd_weapon", "pd_style", "pd_armor", "pd_accessory1", "pd_accessory2", "pd_talent", "pd_misc",
+	"hitpoints", "hitpoints_weapon", "hitpoints_style", "hitpoints_armor", "hitpoints_accessory1", "hitpoints_accessory2", "hitpoints_talent", "hitpoints_misc",
+	"resistance_style", "resistance_armor", "resistance_weapon", "resistance_accessory1", "resistance_accessory2", "resistance_talent", "resistance_misc"], function(values) {
+    //stats we use more than once:
+	const str        		= parseInt(values.strength,10)||0;
+	const wil       		= parseInt(values.will,10)||0;
+	const lvl               = parseInt(values.level,10)||0;
+	//Accuracy
+    const acc_style         = parseInt(values.accuracy_style,10)||0;
+    const acc_weapon        = parseInt(values.accuracy_weapon,10)||0;
+    const acc_armor         = parseInt(values.accuracy_armor,10)||0;
+    const acc_accessory1    = parseInt(values.accuracy_accessory1,10)||0;
+    const acc_accessory2    = parseInt(values.accuracy_accessory2,10)||0;
+    const acc_talent        = parseInt(values.accuracy_talent,10)||0;
+    const acc_misc          = parseInt(values.accuracy_misc,10)||0;
+    console.log("accuracy", str, acc_style, acc_armor, acc_accessory1, acc_accessory2, acc_talent, acc_misc, acc_weapon);
+	//PD
+    const pd_third         	= Math.ceil(str/2);
+    const pd_weapon        	= parseInt(values.pd_weapon,10)||0;
+    const pd_style          = parseInt(values.pd_style,10)||0;
+    const pd_armor         	= parseInt(values.pd_armor,10)||0;
+    const pd_accessory1    	= parseInt(values.pd_accessory1,10)||0;
+    const pd_accessory2    	= parseInt(values.pd_accessory2,10)||0;
+    const pd_talent			= parseInt(values.pd_talent,10)||0;
+    const pd_misc			= parseInt(values.pd_misc,10)||0;
+    console.log("pd", str, pd_weapon, pd_style, pd_armor, pd_accessory1, pd_accessory2, pd_talent, pd_misc, values.strength, pd_third);
+	//Reistance
+	const res_style         = parseInt(values.resistance_style,10)||0;
+    const res_weapon        = parseInt(values.resistance_weapon,10)||0;
+    const res_armor         = parseInt(values.resistance_armor,10)||0;
+    const res_accessory1    = parseInt(values.resistance_accessory1,10)||0;
+    const res_accessory2    = parseInt(values.resistance_accessory2,10)||0;
+    const res_talent        = parseInt(values.resistance_talent,10)||0;
+    const res_misc          = parseInt(values.resistance_misc,10)||0;
+    console.log("resistance", wil, res_style, res_armor, res_accessory1, res_accessory2, res_talent, res_misc, res_weapon);
+	//Hitpoints
+	var hp_com             	= lvl * 3;
+    hp_com                 	= hp_com + str + wil;
+    const hp_weapon       	= parseInt(values.hitpoints_weapon,10)||0;
+    const hp_style          = parseInt(values.hitpoints_style,10)||0;
+    const hp_armor         	= parseInt(values.hitpoints_armor,10)||0;
+    const hp_accessory1		= parseInt(values.hitpoints_accessory1,10)||0;
+    const hp_accessory2    	= parseInt(values.hitpoints_accessory2,10)||0;
+    const hp_talent 	    = parseInt(values.hitpoints_talent,10)||0;
+    const hp_misc	        = parseInt(values.hitpoints_misc,10)||0;
+    console.log(hp_com, hp_weapon, hp_style, hp_armor, hp_accessory1, hp_accessory2, hp_talent, hp_misc);
+    //Generic Strength
+	const str_items         = parseInt(values.strength_items,10)||0;
+    const str_talents       = parseInt(values.strength_talents,10)||0;
+    const str_cover         = parseInt(values.strength_cover,10)||0;
+    const str_misc          = parseInt(values.strength_misc,10)||0;
+    console.log("Generic Stregnth", str, str_items, str_talents, str_cover, str_misc);
+    //Generic Will
+	const will_items         = parseInt(values.will_items,10)||0;
+    const will_talents       = parseInt(values.will_talents,10)||0;
+    const will_cover         = parseInt(values.will_cover,10)||0;
+    const will_misc          = parseInt(values.will_misc,10)||0;
+    console.log("Generic Int", wil, will_items, will_talents, will_cover, will_misc);
+	//Now we actualy set everything
+	setAttrs({                            
+		strength_generic: str + str_items + str_talents + str_cover + str_misc
+	});
+	setAttrs({                            
+		will_generic: wil + will_items + will_talents + will_cover + will_misc
+	});
+	setAttrs({                            
+		accuracy: str + acc_style + acc_armor + acc_accessory1 + acc_accessory2 + acc_talent + acc_misc + acc_weapon
+	});
+	setAttrs({                            
+		pd: pd_weapon + pd_style + pd_armor + pd_accessory1 + pd_accessory2 + pd_talent + pd_misc + pd_third
+	});
+	setAttrs({                            
+		resistance: wil + res_style + res_armor + res_accessory1 + res_accessory2 + res_talent + res_misc + res_weapon
+	});
+	setAttrs({                            
+		hitpoints_max: hp_com + hp_style + hp_armor + hp_accessory1 + hp_accessory2 + hp_talent + hp_misc
+	});
+
+    });
+    
+    
+});
+//Evasion & Initiative Total
+on("change:combat_move_misc change:full_move_misc change:evasion change:agility change:evasion_style change:evasion_armor change:evasion_weapon change:evasion_accessory1 change:evasion_accessory2 change:evasion_talent change:evasion_misc sheet:opened change:initiative change:initiative_weapon change:initiative_style change:initiative_armor change:initiative_accessory1 change:initiative_accessory2 change:initiative_talent change:initiative_misc change:agility_cover change:agility_talents change:agility_items change:agility_misc", function()
+    {
+    getAttrs (["agility", "evasion_style", "evasion_armor", "evasion_weapon", "evasion_accessory1", "evasion_accessory2", "evasion_talent", "evasion_misc",
+    "agility_cover", "agility_talents", "agility_items", "agility_misc",
+    "combat_move_misc",  "full_move_misc",
+    "initiative_weapon", "initiative_style", "initiative_armor", "initiative_accessory1", "initiative_accessory2", "initiative_talent", "initiative_misc"], function(values) {
+    //Multiuse stat    
+    const agi               = parseInt(values.agility,10)||0;
+    //Evasion
+    const eva_style         = parseInt(values.evasion_style,10)||0;
+    const eva_weapon        = parseInt(values.evasion_weapon,10)||0;
+    const eva_armor         = parseInt(values.evasion_armor,10)||0;
+    const eva_accessory1    = parseInt(values.evasion_accessory1,10)||0;
+    const eva_accessory2    = parseInt(values.evasion_accessory2,10)||0;
+    const eva_talent        = parseInt(values.evasion_talent,10)||0;
+    const eva_misc          = parseInt(values.evasion_misc,10)||0;
+    console.log("EVASION:", agi, eva_weapon, eva_style, eva_armor, eva_accessory1, eva_accessory2, eva_talent, eva_misc);
+    //Initiative
+    const ini_weapon        = parseInt(values.initiative_weapon,10)||0;
+    const ini_style         = parseInt(values.initiative_style,10)||0;
+    const ini_armor         = parseInt(values.initiative_armor,10)||0;
+    const ini_accessory1    = parseInt(values.initiative_accessory1,10)||0;
+    const ini_accessory2    = parseInt(values.initiative_accessory2,10)||0;
+    const ini_talent        = parseInt(values.initiative_talent,10)||0;
+    const ini_misc          = parseInt(values.initiative_misc,10)||0;
+    const init              = ini_weapon + ini_style + ini_armor + ini_accessory1 + ini_accessory2 + ini_talent + ini_misc + agi + 5
+    console.log("Initiative", agi, ini_style, ini_armor, ini_accessory1, ini_accessory2, ini_talent, ini_misc);
+    //Generic Agility
+    const agi_items         = parseInt(values.agility_items,10)||0;
+    const agi_talents       = parseInt(values.agility_talents,10)||0;
+    const agi_cover         = parseInt(values.agility_cover,10)||0;
+    const agi_misc          = parseInt(values.agility_misc,10)||0;
+    console.log("Generic Agi", agi, agi_items, agi_talents, agi_cover, agi_misc);
+    //Movement
+    //(Initiative + 5) / 3 COMBAT MOVE
+    const combat_move       = Math.ceil((init + 5)/3);
+    const combat_misc       = parseInt(values.combat_move_misc,10)||0;
+    //Initiative + 5 FULL MOVE
+    const full_misc         = parseInt(values.full_move_misc,10)||0;
+    
+    setAttrs({                            
+		combat_move_total: combat_move + combat_misc 
+	});
+	
+	setAttrs({                            
+		full_move_total: init + 5 + full_misc
+	});
+    
+    setAttrs({                            
+		agility_generic: agi + agi_items + agi_talents + agi_cover + agi_misc
+	});
+	
+	setAttrs({
+		evasion: agi + eva_style + eva_armor + eva_accessory1 + eva_accessory2 + eva_talent + eva_misc + eva_weapon
+	});
+	
+	setAttrs({                            
+		initiative: init
+	});
+	
+    });
+});
+//Invocation & MD Total
+on("change:intellect_cover change:intellect_talents change:intellect_items change:intellect_misc change:invocation change:intellect change:invocation_style change:invocation_weapon change:invocation_armor change:invocation_accessory1 change:invocation_accessory2 change:invocation_talent change:invocation_misc sheet:opened change:md change:md_weapon change:md_style change:md_armor change:md_accessory1 change:md_accessory2 change:md_talent change:md_misc", function()
+    {
+    getAttrs (["intellect",
+    "invocation_style", "invocation_armor", "invocation_weapon", "invocation_accessory1", "invocation_accessory2", "invocation_talent", "invocation_misc",
+    "intellect_cover", "intellect_talents", "intellect_items", "intellect_misc",
+    "md_weapon", "md_style", "md_armor", "md_accessory1", "md_accessory2", "md_talent", "md_misc"], function(values) {
+    //INT!
+    const int               = parseInt(values.intellect,10)||0;
+    //Invocation
+    const inv_style         = parseInt(values.invocation_style,10)||0;
+    const inv_weapon        = parseInt(values.invocation_weapon,10)||0;
+    const inv_armor         = parseInt(values.invocation_armor,10)||0;
+    const inv_accessory1    = parseInt(values.invocation_accessory1,10)||0;
+    const inv_accessory2    = parseInt(values.invocation_accessory2,10)||0;
+    const inv_talent        = parseInt(values.invocation_talent,10)||0;
+    const inv_misc          = parseInt(values.invocation_misc,10)||0;
+    console.log(int, inv_style, inv_armor, inv_accessory1, inv_accessory2, inv_talent, inv_misc, inv_weapon);
+    //Magic Damage
+    const md_third          = Math.ceil(int/2);
+    const md_weapon         = parseInt(values.md_weapon,10)||0;
+    const md_style          = parseInt(values.md_style,10)||0;
+    const md_armor          = parseInt(values.md_armor,10)||0;
+    const md_accessory1     = parseInt(values.md_accessory1,10)||0;
+    const md_accessory2     = parseInt(values.md_accessory2,10)||0;
+    const md_talent         = parseInt(values.md_talent,10)||0;
+    const md_misc           = parseInt(values.md_misc,10)||0;
+    console.log(md_weapon, md_style, md_armor, md_accessory1, md_accessory2, md_talent, md_misc);
+    //Generic intellect
+    const int_items         = parseInt(values.intellect_items,10)||0;
+    const int_talents       = parseInt(values.intellect_talents,10)||0;
+    const int_cover         = parseInt(values.intellect_cover,10)||0;
+    const int_misc          = parseInt(values.intellect_misc,10)||0;
+    console.log("Generic int", int, int_items, int_talents, int_cover, int_misc);
+    
+    setAttrs({                            
+		intellect_generic: int + int_items + int_talents + int_cover + int_misc
+	});
+    
+    //setAttrs({                            
+	//	agility_generic: agi + agi_items + agi_talents + agi_cover + agi_misc
+	//});
+	
+	setAttrs({                            
+		md: md_style + md_armor + md_accessory1 + md_accessory2 + md_talent + md_misc + md_third + md_weapon
+	});
+	setAttrs({                            
+		invocation: int + inv_style + inv_armor + inv_accessory1 + inv_accessory2 + inv_talent + inv_misc + inv_weapon
+	});
+    });
+});
+
+
+//Instinct Total
+
+on("change:instinct change:luck change:instinct_style change:luck_cover change:luck_talents change:luck_items change:luck_misc change:instinct_armor change:instinct_weapon change:instinct_accessory1 change:instinct_accessory2 change:instinct_talent change:instinct_misc sheet:opened", function()
+    {
+    getAttrs (["instinct", "luck", "instinct_style", "instinct_armor", "instinct_weapon", "instinct_accessory1", "instinct_accessory2", "instinct_talent", "instinct_misc",
+    "luck_cover", "luck_talents", "luck_items", "luck_misc"], function(values) {
+    const attrib        = parseInt(values.luck,10)||0;
+    const style         = parseInt(values.instinct_style,10)||0;
+    const weapon        = parseInt(values.instinct_weapon,10)||0;
+    const armor         = parseInt(values.instinct_armor,10)||0;
+    const accessory1    = parseInt(values.instinct_accessory1,10)||0;
+    const accessory2    = parseInt(values.instinct_accessory2,10)||0;
+    const talent        = parseInt(values.instinct_talent,10)||0;
+    const misc          = parseInt(values.instinct_misc,10)||0;
+    console.log(attrib, style, armor, accessory1, accessory2, talent, misc, weapon);
+    //Generic luck
+    const luck_items    = parseInt(values.luck_items,10)||0;
+    const luck_talents  = parseInt(values.luck_talents,10)||0;
+    const luck_cover    = parseInt(values.luck_cover,10)||0;
+    const luck_misc     = parseInt(values.luck_misc,10)||0;
+    console.log("Generic luck", attrib, luck_items, luck_talents, luck_cover, luck_misc);
+    
+    setAttrs({                            
+		luck_generic: attrib  + luck_items + luck_talents + luck_cover + luck_misc
+	});
+	setAttrs({                            
+		instinct: attrib + style + armor + accessory1 + accessory2 + talent + misc + weapon
+	});
+    });
+});
+
+//Guard
+
+on("change:guard change:guard_weapon change:guard_style change:guard_armor change:guard_accessory1 change:guard_accessory2 change:guard_talent change:guard_misc sheet:opened", function()
+    {
+    getAttrs (["guard", "guard_weapon", "guard_style", "guard_armor", "guard_accessory1", "guard_accessory2", "guard_talent", "guard_misc"], function(values) {
+    const weapon        = parseInt(values.guard_weapon,10)||0;
+    const style         = parseInt(values.guard_style,10)||0;
+    const armor         = parseInt(values.guard_armor,10)||0;
+    const accessory1    = parseInt(values.guard_accessory1,10)||0;
+    const accessory2    = parseInt(values.guard_accessory2,10)||0;
+    const talent        = parseInt(values.guard_talent,10)||0;
+    const misc          = parseInt(values.guard_misc,10)||0;
+    console.log(weapon, style, armor, accessory1, accessory2, talent, misc);
+	setAttrs({                            
+		guard: weapon + style + armor + accessory1 + accessory2 + talent + misc
+	});
+    });
+});
+
+//Ward Total
+on("change:ward change:ward_weapon change:ward_style change:ward_armor change:ward_accessory1 change:ward_accessory2 change:ward_talent change:ward_misc sheet:opened", function()
+    {
+    getAttrs (["ward", "ward_weapon", "ward_style", "ward_armor", "ward_accessory1", "ward_accessory2", "ward_talent", "ward_misc"], function(values) {
+    const weapon        = parseInt(values.ward_weapon,10)||0;
+    const style         = parseInt(values.ward_style,10)||0;
+    const armor         = parseInt(values.ward_armor,10)||0;
+    const accessory1    = parseInt(values.ward_accessory1,10)||0;
+    const accessory2    = parseInt(values.ward_accessory2,10)||0;
+    const talent        = parseInt(values.ward_talent,10)||0;
+    const misc          = parseInt(values.ward_misc,10)||0;
+    console.log(weapon, style, armor, accessory1, accessory2, talent, misc);
+	setAttrs({                            
+		ward: weapon + style + armor + accessory1 + accessory2 + talent + misc
+	});
+
+    
+    });
+});
+//Custom Roll?!
+on("change:custom_roll_cover change:custom_roll_talents change:custom_roll_items change:custom_roll_misc", function()
+    {
+    getAttrs (["custom_roll_cover", "custom_roll_talents", "custom_roll_items", "custom_roll_misc"], function(values) {
+    const cover         = parseInt(values.custom_roll_cover,10)||0;
+    const talents       = parseInt(values.custom_roll_talents,10)||0;
+    const items         = parseInt(values.custom_roll_items,10)||0;
+    const misc          = parseInt(values.custom_roll_misc,10)||0;
+    console.log(cover, talents, items, misc);
+	setAttrs({                            
+		custom_roll_total: cover + talents + items + misc 
+	});
+
+    
+    });
+});
+</script>
