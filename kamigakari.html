@@ -992,63 +992,67 @@
                     <div class="buffer"></div>
                 </div>
                 <!--Repeating -->
-                <fieldset class="repeating_talents">
-                    <div class="section table">
-                        <div class="table-row input-border">
-                            <div class="table-cell cell-5 cell-right">Name:</div>
-                            <div class="table-cell cell-30"><input type="text" name="attr_talent_name" spellcheck="false"></div>
-                            <div class="table-cell cell-5 cell-right">Source:</div>
-                            <div class="table-cell cell-20"><input type="text" name="attr_talent_Source" spellcheck="false"></div>
-                            <div class="table-cell cell-5">
-                                <div class="table-cell">
-                                    <select name="attr_second_style_type" class="cell-drop">
-                                        <option value="-">-</option>
-                                        <option value="A">α</option>
-                                        <option value="B">Ω</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="table-cell cell-3">LV:</div>
-                            <div class="table-cell cell-5"><input type="text" name="attr_talent_level_taken" spellcheck="false"></div>
-                            <div class="table-cell cell-10">
-                                <div class="table-cell">                    
-                                    <select name="attr_talent_type" class="cell-drop">
-                                        <option value="0"> </option>
-                                        <option value="1">Key</option>
-                                        <option value="2">Expert</option>
-                                        <option value="3">Focus</option>
-                                        <option value="4">Ancestral</option>
-                                        <option value="5">High</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section table">
-                        <div class="table-row input-border cell-center">
-                            <div class="table-cell cell-a">Timing:</div>
-                            <div class="table-cell cell-12"><input type="text" name="attr_talent_time"></div>
-                            <div class="table-cell cell-a">Range:</div>
-                            <div class="table-cell cell-15"><input type="text" name="attr_talent_range"></div>
-                            <div class="table-cell cell-8">Target:</div>
-                            <div class="table-cell cell-15"><input type="text" name="attr_talent_target"></div>
-                            <div class="table-cell cell-5">Cost:</div>
-                            <div class="table-cell cell-12"><input type="text" name="attr_talent_cost"></div>
-                            <div class="table-cell cell-5">Share:</div>
-                            <div class="table-cell cell-8"><button class="templatebutton" type="roll" name="TalentPost" title="talentpost" value="/w gm &{template:talent} {{name=@{character_name}}} {{talent=@{talent_name}}} {{time=@{talent_time}}} {{range=@{talent_range}}} {{target=@{talent_target}}} {{cost=@{talent_cost}}} {{desc=@{talent_desc}}}">GM</button></div>
-                            <div class="table-cell cell-8"><button class="templatebutton" type="roll" name="TalentPost" title="talentpost" value="&{template:talent} {{name=@{character_name}}} {{talent=@{talent_name}}} {{time=@{talent_time}}} {{range=@{talent_range}}} {{target=@{talent_target}}} {{cost=@{talent_cost}}} {{desc=@{talent_desc}}}">Chat</button></div>
-                        </div>
-                    </div>
-                    <div class="section table">
-                        <div class="sheet-expand">
-                            <span name="attr_talent_desc"></span>
-                            <textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc" spellcheck="false"></textarea>
-                        </div>
-                    </div>
-                    <div class="section table">
-                        <div class="buffer"></div>
-                    </div>
-                </fieldset>
+				<div class="section table">
+					<fieldset class="repeating_talents">
+						<div>
+							<div class="table">
+								<div class="table-row input-border">
+									<div class="table-cell cell-5 cell-right">Name:</div>
+									<div class="table-cell cell-30"><input type="text" name="attr_talent_name" spellcheck="false"></div>
+									<div class="table-cell cell-5 cell-right">Source:</div>
+									<div class="table-cell cell-20"><input type="text" name="attr_talent_Source" spellcheck="false"></div>
+									<div class="table-cell cell-5">
+										<div class="table-cell">
+											<select name="attr_second_style_type" class="cell-drop">
+												<option value="-">-</option>
+												<option value="A">α</option>
+												<option value="B">Ω</option>
+											</select>
+										</div>
+									</div>
+									<div class="table-cell cell-3">LV:</div>
+									<div class="table-cell cell-5"><input type="text" name="attr_talent_level_taken" spellcheck="false"></div>
+									<div class="table-cell cell-10">
+										<div class="table-cell">                    
+											<select name="attr_talent_type" class="cell-drop">
+												<option value="0"> </option>
+												<option value="1">Key</option>
+												<option value="2">Expert</option>
+												<option value="3">Focus</option>
+												<option value="4">Ancestral</option>
+												<option value="5">High</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="table">
+								<div class="table-row input-border cell-center">
+									<div class="table-cell cell-a">Timing:</div>
+									<div class="table-cell cell-12"><input type="text" name="attr_talent_time"></div>
+									<div class="table-cell cell-a">Range:</div>
+									<div class="table-cell cell-15"><input type="text" name="attr_talent_range"></div>
+									<div class="table-cell cell-8">Target:</div>
+									<div class="table-cell cell-15"><input type="text" name="attr_talent_target"></div>
+									<div class="table-cell cell-5">Cost:</div>
+									<div class="table-cell cell-12"><input type="text" name="attr_talent_cost"></div>
+									<div class="table-cell cell-5">Share:</div>
+									<div class="table-cell cell-8"><button class="templatebutton" type="roll" name="TalentPost" title="talentpost" value="/w gm &{template:talent} {{name=@{character_name}}} {{talent=@{talent_name}}} {{time=@{talent_time}}} {{range=@{talent_range}}} {{target=@{talent_target}}} {{cost=@{talent_cost}}} {{desc=@{talent_desc}}}">GM</button></div>
+									<div class="table-cell cell-8"><button class="templatebutton" type="roll" name="TalentPost" title="talentpost" value="&{template:talent} {{name=@{character_name}}} {{talent=@{talent_name}}} {{time=@{talent_time}}} {{range=@{talent_range}}} {{target=@{talent_target}}} {{cost=@{talent_cost}}} {{desc=@{talent_desc}}}">Chat</button></div>
+								</div>
+							</div>
+							<div class="table">
+								<div class="sheet-expand">
+									<span name="attr_talent_desc"></span>
+									<textarea spellcheck="false" placeholder="Talent Description" name="attr_talent_desc" spellcheck="false"></textarea>
+								</div>
+							</div>
+							<div class="table">
+								<div class="buffer"></div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
             </div>
         </div>
     </div>
@@ -1146,7 +1150,7 @@
                     <div class="equipment-header">VESTURE:</div>
                     <div class="section table">
                     <fieldset class="repeating_armors">
-                        <div class="section table">
+                        <div class="table">
                             <div class="table-row  input-border">
                                     <div class="table-row">
                                         <div class="table-cell cell-a">Name:</div>
@@ -1186,7 +1190,7 @@
                     <div class="equipment-header">ACCESSORIES:</div>
                     <div class="section table">
                     <fieldset class="repeating_accessories">
-                        <div class="section table">
+                        <div class="table">
                             <div class="table-row  input-border">
                                     <div class="table-row">
                                         <div class="table-cell cell-15">Name:</div>
@@ -1212,6 +1216,7 @@
                         </div>
                     </fieldset>
                     </div>
+					<!--INVENTORY --->
                     <div class="equipment-header">INVENTORY:</div>
                     <div class="body">
                          <div class="section table">
@@ -1252,9 +1257,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    <!--INVENTORY --->
     </div>
+
     <!-- SETTINGS -->
     <div class="sheet-tabs-content sheet-tabs5">
         <div class="section2">
