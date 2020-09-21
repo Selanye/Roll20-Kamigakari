@@ -11,6 +11,23 @@ E7C9A9
 
 */
 
+/*Main Stats Bubble */
+
+.sheet-input-statsMain input[type="number"] {
+	min-width: 50px;
+	max-width: 75%;
+	width: 100%;
+	border: 3px black;
+	border-radius: 25px;
+	margin-top: 5px;
+	margin-bottom: 1px;
+	margin-right: 15%;
+	margin-left: 15%;
+	font-size: 30px;
+	text-align: center;
+}
+
+
 /*TABS*/
 div.sheet-tabs-content {
   display: none;
@@ -91,14 +108,14 @@ input.sheet-tabs-small[value="6"]:checked ~ div.sheet-tabs6
 /*Roll Template*/
 .sheet-rolltemplate-mononoke table,
 .sheet-rolltemplate-talent table,
-.sheet-rolltemplate-numen table {
+.sheet-rolltemplate-spirit table {
     width: 100%;
     
 }
 
 .sheet-rolltemplate-mononoke td,
 .sheet-rolltemplate-talent td,
-.sheet-rolltemplate-numen td {
+.sheet-rolltemplate-spirit td {
     width: auto;
     text-align: center;
     min-width: 20px;
@@ -119,7 +136,7 @@ input.sheet-tabs-small[value="6"]:checked ~ div.sheet-tabs6
 
 .sheet-rolltemplate-mononoke div.sheet-template-container, 
 .sheet-rolltemplate-talent div.sheet-template-container, 
-.sheet-rolltemplate-numen div.sheet-template-container {
+.sheet-rolltemplate-spirit div.sheet-template-container {
 	border: 2px solid #048B84;
 	border-radius: 5px 5px 5px 5px;
 	background-color: #DCCCB9;
@@ -128,7 +145,7 @@ input.sheet-tabs-small[value="6"]:checked ~ div.sheet-tabs6
 
 .sheet-rolltemplate-mononoke .sheet-template-header,
 .sheet-rolltemplate-talent .sheet-template-header,
-.sheet-rolltemplate-numen .sheet-template-header {
+.sheet-rolltemplate-spirit .sheet-template-header {
 	background-color: #048B84;
 	color: #FEFF59;
 	padding: 2px;
@@ -157,17 +174,17 @@ input.sheet-tabs-small[value="6"]:checked ~ div.sheet-tabs6
 
 .sheet-rolltemplate-mononoke div,
 .sheet-rolltemplate-talent div,
-.sheet-rolltemplate-numen div {
+.sheet-rolltemplate-spirit div {
 	padding: 5px;
 	border-bottom: 1px solid black;
 	font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
 }
 
-.sheet-rolltemplate-numen div {
+.sheet-rolltemplate-spirit div {
 	font-variant: small-caps;
 }
 
-.sheet-rolltemplate-numen .inlinerollresult  {
+.sheet-rolltemplate-spirit .inlinerollresult  {
 	display: inline-block;
 	min-width: 1.5em;
 	text-align: center;
@@ -178,17 +195,17 @@ input.sheet-tabs-small[value="6"]:checked ~ div.sheet-tabs6
 	font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
 }
 
-.sheet-rolltemplate-numen .inlinerollresult.fullcrit {
+.sheet-rolltemplate-spirit .inlinerollresult.fullcrit {
 	border: 2px solid #048B84;
 	color: #FEFF59;
 	background-color: #048B84;
 }
 
-.sheet-rolltemplate-numen .inlinerollresult.fullfail {
+.sheet-rolltemplate-spirit .inlinerollresult.fullfail {
 	border: 2px solid transparent;
 }
 
-.sheet-rolltemplate-numen .inlinerollresult.importantroll {
+.sheet-rolltemplate-spirit .inlinerollresult.importantroll {
 	border: 2px solid transparent;
 }
 
@@ -382,7 +399,7 @@ input.sheet-normal[type="radio"] + span::before
     border-radius: 50%;
 }
 
-/* Clear Numen Overflow */
+/* Clear spirit Overflow */
 input.sheet-zero[type="radio"]:checked + span::before
 {
     opacity: 0;
@@ -403,17 +420,12 @@ input.sheet-zero[type="radio"] + span::before
     
 }
 
-
 /* -----Remove dot from all radios _after_ selected one----- */
 input.sheet-normal[type="radio"]:checked ~ input.sheet-normal[type="radio"] + span::before
 {    
     content: "";
     background:white;
 }
-
-
-
-
 
 .charsheet {
     min-width: 850px;
@@ -423,36 +435,21 @@ input.sheet-normal[type="radio"]:checked ~ input.sheet-normal[type="radio"] + sp
 	
 }
 
-
-
 .sheet-section {
 	float: left;
 	width: 100%;
-    padding-top 15px;
-
+    padding-top: 15px;
 	background: #DCCCB9;
 	color: black;
 	font-weight: bold;
-
 	border: 15px #0f0;\
 	min-width: 848px;
 }
-
-.sheet-section-font125{font-size: 145%;}
-.sheet-section-font100{font-size: 100%;}
-.sheet-section-font85{font-size: 85%;}
-.sheet-section-font80{font-size: 80%;}
-.sheet-section-font95{font-size: 95%;}
-.sheet-section-font75{font-size: 75%;}
-.sheet-tracker-font{font-size: 75%;}
-.sheet-section-font45{font-size: 45%;}
-
 
 .sheet-equipment-header {
 	width: 99%;
     text-: center;
 	margin: 5px 2;
-
     padding-left: 10px;
 	background: #048B84;
 	color: #FEFF59;
@@ -462,14 +459,11 @@ input.sheet-normal[type="radio"]:checked ~ input.sheet-normal[type="radio"] + sp
 .sheet-section2 {
 	float: left;
 	width: 99%;
-
 	margin: 5px 2;
     margin-bottom: 4px;
-
 	background: #048B84;
 	color: #FEFF59;
 	font-weight: bold;
-	
 	border: 3px solid black;
 	min-width: 848px;
 }
@@ -480,7 +474,7 @@ select {
 	margin: 0;
 }
 
-/* TEXT AREA */
+/* TEXT AUTO EXPANDING AREA */
 
 .sheet-expand {
 	position: relative;
@@ -512,18 +506,7 @@ select {
 }
 
 
-.sheet-repitem,
-.repitem {
-	margin-bottom: 2px;
-}
-
-
-
-.repitem button {
-	height: 28px;
-	line-height: 20px;
-}
-
+/* Table Stuff */
 .sheet-table {
   display: table;
   width: 100%;
@@ -545,6 +528,16 @@ select {
     padding-right: 0px;
     padding-left: 1px;
 }
+
+/* Sizes */
+.sheet-section-font125{font-size: 145%;}
+.sheet-section-font100{font-size: 100%;}
+.sheet-section-font85{font-size: 85%;}
+.sheet-section-font80{font-size: 80%;}
+.sheet-section-font95{font-size: 95%;}
+.sheet-section-font75{font-size: 75%;}
+.sheet-tracker-font{font-size: 75%;}
+.sheet-section-font45{font-size: 45%;}
 
 .sheet-cell-a { width: auto; }
 .sheet-cell-3 { width: 3%; }
@@ -582,61 +575,18 @@ select {
     background-color: #048B84;
 }
 
+/* Spirit Dice Pool */
+
 select.sheet-cell-drop {
     vertical-align: top;
     width: 100%;
 }
 
-select.sheet-cell-drop-talent {
-    vertical-align: center;
-    width: 100%;
-    position: relative;
-    top: -15px;
-    margin-bottom: -15px;
-    
-    color: black;
-    font-size: 30px;
-    height:50px;
-}
-
-.sheet-dropdown-content {
-    color: black;
-    font-size: 30px;
-    height:50px;
-}
-
-  /* Padded columns */
-.sheet-table-padded {
-  margin-left:  1rem;
-  margin-right: 1rem;
-}
-
-.sheet-table-padded .sheet-table {
-  border-spacing: 1rem 0;
-}
-
-.sheet-rollbutton:hover
-{
-    048B84
-}
-
-button:hover[type=roll]{
-      background-color : #048B84; 
-      color : #FEFF59;
-      border-color: #FEFF59;
-}
-
-/*
-Kamigakuri Green: 048B84
-Kamigakuri Yellow: FEFF59
-Kamigakuri Brown: DEB16A
-*/
-
 button[type=roll]{
     background-color:#048B84 !important;
     border-color: black !important;
-    color:#FEFF59 !important;
     background-image:none;
+	color:#FEFF59 !important;
     text-shadow: #016560; 
     text-shadow:none;
 }
@@ -663,63 +613,15 @@ input[type="text"], textarea {
   max-width: 100%;
   width: 100%;
   border: 2px solid #FEFF59;
+  border-radius: 15px;
   background: #048B84;
-  border-radius: 15px;
   color: #FEFF59;
-}
-
-.sheet-input-statsMain input[type="number"] {
-  min-width: 50px;
-  max-width: 75%;
-  width: 100%;
-
-    background color: #D8CCBE;
-  
-  border: 3px black;
-  border-radius: 25px;
-
-  margin-top: 5px;
-  margin-bottom: 1px;
-  margin-right: 15%;
-  margin-left: 15%;
-
-  
-  font-size: 30px;
-  text-align: center;
-}
-
-.sheet-input-statsSub input[type="number"] {
-  min-width: 100px;
-  max-width: 75%;
-  width: 100%;
-  
-  border: 3px black;
-  border-radius: 15px;
-
-  margin-top: 1px;
-  margin-bottom: 1px;
-  margin-right: 5px;
-  margin-left: 5px;
-
-  
-  font-size: 15px;
-  text-align: center;
-}
-
-.sheet-select-border select {
-  min-width: 50px;
-  max-width: 100%;
-  width: 100%;
-  border: 2px solid black;
 }
 
 .sheet-input-border input[type="number"] {
   min-width: 15px;
   max-width: 100%;
   width: 100%;
-  border: 1px solid black;
   text-align: center;
+  border: 1px solid black;
 }
-
-/* TALENT THING */
-
